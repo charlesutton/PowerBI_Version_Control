@@ -1,0 +1,40 @@
+table 'Opp Total PPG'
+	lineageTag: 19ff8ff9-e195-42e5-813c-3246dc955631
+
+	column Opponent
+		lineageTag: b92a93eb-47bc-435c-8395-78d3da37a0e7
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: NBA Boxscore History[Opponent]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GAME DATE'
+		formatString: General Date
+		lineageTag: 4116db77-d643-40f5-96e7-9b88d6d88367
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: NBA Boxscore History[GAME DATE]
+
+		variation Variation
+			isDefault
+			relationship: 60ece7fa-57eb-45de-9385-b940ac3ee7b7
+			defaultHierarchy: LocalDateTable_eaa8c6cd-2233-4dd4-9289-a5e7aa75113e.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column @SumGamePoints
+		formatString: 0
+		lineageTag: 9e54b2e5-ae0d-4fe6-b7c9-3d05f8bb382d
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [@SumGamePoints]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Opp Total PPG' = calculated
+		mode: import
+		source = SUMMARIZE('NBA Boxscore History', 'NBA Boxscore History'[Opponent], 'NBA Boxscore History'[GAME DATE], "@SumGamePoints", SUM('NBA Boxscore History'[PTS]))
+
+	annotation PBI_Id = 3b8ddf2fbd974dd682340ca2c92aef0f
+

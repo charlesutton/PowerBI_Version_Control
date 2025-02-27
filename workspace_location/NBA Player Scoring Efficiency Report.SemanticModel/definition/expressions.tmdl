@@ -1,0 +1,51 @@
+expression 'NBACOM Opp Ratings' = ```
+		(oppPos as text) as table =>
+		let
+		    Source = Web.BrowserContents("https://www.nba.com/stats/teams/defense?Location=&PlayerPosition=" & oppPos & "&dir=A&sort=DEF_RATING"),
+		    #"Extracted Table From Html" = Html.Table(Source, {{"Column1", ".Crom_stickyRank__aN66p"}, {"Column2", ".Crom_primary__EajZu"}, {"Column3", ".Crom_primary__EajZu + *"}, {"Column4", ".Crom_primary__EajZu + TD + *"}, {"Column5", ".nba-stats-content-block TD:nth-child(5)"}, {"Column6", ".nba-stats-content-block TD:nth-child(6)"}, {"Column7", ".nba-stats-content-block TD:nth-child(7)"}, {"Column8", "TD:nth-child(8)"}, {"Column9", "TD:nth-child(9)"}, {"Column10", "TD:nth-child(10)"}, {"Column11", "TD:nth-child(11)"}, {"Column12", "TD:nth-child(12)"}, {"Column13", "TD:nth-child(13)"}, {"Column14", "TD:nth-child(14)"}, {"Column15", "TD:nth-child(15)"}}, [RowSelector=".Crom_stickyRank__aN66p"]),
+		    #"Promoted Headers" = Table.PromoteHeaders(#"Extracted Table From Html", [PromoteAllScalars=true]),
+		    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"", Int64.Type}, {"TEAM", type text}, {"GP", Int64.Type}, {"Column4", Int64.Type}, {"Column5", Int64.Type}, {"Column6", type number}, {"Column7", type number}, {"Column8", type number}, {"Column9", type number}, {"Column10", type number}, {"Column11", type number}, {"Column12", type number}, {"Column13", type number}, {"Column14", type number}, {"Column15", type number}}),
+		    #"Added Conditional Column" = Table.AddColumn(#"Changed Type", "Custom", each if [TEAM] = "Denver Nuggets" then "DEN" else if [TEAM] = "Atlanta Hawks" then "ATL" else if [TEAM] = "Milwaukee Bucks" then "MIL" else if [TEAM] = "Golden State Warriors" then "GSW" else if [TEAM] = "Houston Rockets" then "HOU" else if [TEAM] = "Portland Trail Blazers" then "POR" else if [TEAM] = "Philadelphia 76ers" then "PHI" else if [TEAM] = "San Antonio Spurs" then "SAS" else if [TEAM] = "LA Clippers" then "LAC" else if [TEAM] = "Los Angeles Lakers" then "LAL" else if [TEAM] = "Sacramento Kings" then "SAC" else if [TEAM] = "Oklahoma City Thunder" then "OKC" else if [TEAM] = "Phoenix Suns" then "PHX" else if [TEAM] = "Detroit Pistons" then "DET" else if [TEAM] = "Toronto Raptors" then "TOR" else if [TEAM] = "Cleveland Cavaliers" then "CLE" else if [TEAM] = "Charlotte Hornets" then "CHA" else if [TEAM] = "Dallas Mavericks" then "DAL" else if [TEAM] = "Memphis Grizzlies" then "MEM" else if [TEAM] = "Washington Wizards" then "WAS" else if [TEAM] = "Brooklyn Nets" then "BKN" else if [TEAM] = "Boston Celtics" then "BOS" else if [TEAM] = "New Orleans Pelicans" then "NOP" else if [TEAM] = "Minnesota Timberwolves" then "MIN" else if [TEAM] = "Utah Jazz" then "UTA" else if [TEAM] = "New York Knicks" then "NYK" else if [TEAM] = "Indiana Pacers" then "IND" else if [TEAM] = "Chicago Bulls" then "CHI" else if [TEAM] = "Miami Heat" then "MIA" else if [TEAM] = "Orlando Magic" then "ORL" else null),
+		    #"Renamed Columns" = Table.RenameColumns(#"Added Conditional Column", 
+		        {
+		            {"Column4", "Wins"}
+		            , {"Column5", "Losses"}
+		            , {"Column6", "Min"}
+		            , {"Column7", "DRtg"}
+		            , {"Custom", "Opp Abb for PP"}
+		        }
+		    ),
+		    #"Removed Columns" = Table.RemoveColumns(#"Renamed Columns",{"Column8", "Column9", "Column10", "Column11", "Column12", "Column13", "Column14", "Column15"})
+		in
+		    #"Removed Columns"
+		```
+	lineageTag: 2db355f4-f916-4e39-ba17-3a724041a771
+	queryGroup: 'NBACOM Opp Rating'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Function
+
+expression 'Errors in NBACOM Gamelogs' =
+		let
+		Source = #"NBACOM Gamelogs",
+		  #"Detected Type Mismatches" = let
+		    tableWithOnlyPrimitiveTypes = Table.SelectColumns(Source, Table.ColumnsOfType(Source, {type nullable number, type nullable text, type nullable logical, type nullable date, type nullable datetime, type nullable datetimezone, type nullable time, type nullable duration})),
+		    recordTypeFields = Type.RecordFields(Type.TableRow(Value.Type(tableWithOnlyPrimitiveTypes))),
+		    fieldNames = Record.FieldNames(recordTypeFields),
+		    fieldTypes = List.Transform(Record.ToList(recordTypeFields), each [Type]),
+		    pairs = List.Transform(List.Positions(fieldNames), (i) => {fieldNames{i}, (v) => if v = null or Value.Is(v, fieldTypes{i}) then v else error [Message = "The type of the value does not match the type of the column.", Detail = v], fieldTypes{i}})
+		in
+		    Table.TransformColumns(Source, pairs),
+		  #"Added Index" = Table.AddIndexColumn(#"Detected Type Mismatches", "Row Number" ,1),
+		  #"Kept Errors" = Table.SelectRowsWithErrors(#"Added Index", {"PLAYER", "TEAM", "MATCH UP", "GAME DATE", "W/L", "MIN", "PTS", "FGM", "FGA", "FG%", "3PM", "3PA", "3P%", "FTM", "FTA", "FT%", "OREB", "DREB", "REB", "AST", "STL", "BLK", "TOV", "PF", "+/-", "FP", "Key - PP", "Opponent", "Home Away Status"}),
+		  #"Reordered Columns" = Table.ReorderColumns(#"Kept Errors", {"Row Number", "PLAYER", "TEAM", "MATCH UP", "GAME DATE", "W/L", "MIN", "PTS", "FGM", "FGA", "FG%", "3PM", "3PA", "3P%", "FTM", "FTA", "FT%", "OREB", "DREB", "REB", "AST", "STL", "BLK", "TOV", "PF", "+/-", "FP", "Key - PP", "Opponent", "Home Away Status"})
+		in
+		  #"Reordered Columns"
+	lineageTag: 2881a63e-0d56-40e4-98f8-7ab97b861b4f
+	queryGroup: 'Query Errors - 11/22/2023 3:16:34 PM'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

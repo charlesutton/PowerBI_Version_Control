@@ -1,0 +1,5 @@
+relationship 2ebb2da9-5f7b-4d36-93ac-284b200dc008
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Archive.Date
+	toColumn: LocalDateTable_44f5b75d-f30d-47d5-bde3-f403ae09d1de.Date
+

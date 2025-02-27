@@ -1,0 +1,220 @@
+table 'Player Summary Stats'
+	lineageTag: 4a83602d-95cc-48a0-8b2b-f66d4a260dd4
+
+	column PPG
+		lineageTag: 28530e27-6fae-4e9a-8dbd-d0a328fe83ac
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [PPG]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'PPG Quintile Score' = ```
+			
+			SWITCH (
+			  TRUE (),
+			   [PPG] <= PERCENTILE.INC ( 'Player Summary Stats'[PPG], 0.20 ), "1",    
+			   [PPG] <= PERCENTILE.INC ( 'Player Summary Stats'[PPG], 0.40 ), "2", 
+			   [PPG] <= PERCENTILE.INC ( 'Player Summary Stats'[PPG], 0.60 ), "3", 
+			   [PPG] <= PERCENTILE.INC ( 'Player Summary Stats'[PPG], 0.80 ), "4",
+			   "5"
+			       )
+			
+			```
+		lineageTag: 72af1c33-4241-4420-9ccd-cd4bdd0632f7
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PP Key' = 'Player Summary Stats'[PLAYER] & " " & 'Player Summary Stats'[TEAM]
+		lineageTag: 1ba687d2-a8ad-4cc8-b027-f7d070ec292c
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FGAPG
+		lineageTag: d057cd71-c711-4855-b94c-36d63ddb8118
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [FGAPG]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'FGAPG Quintile Score' = ```
+			
+			SWITCH (
+			  TRUE (),
+			   [FGAPG] <= PERCENTILE.INC ( 'Player Summary Stats'[FGAPG], 0.20 ), "1",    
+			   [FGAPG] <= PERCENTILE.INC ( 'Player Summary Stats'[FGAPG], 0.40 ), "2", 
+			   [FGAPG] <= PERCENTILE.INC ( 'Player Summary Stats'[FGAPG], 0.60 ), "3", 
+			   [FGAPG] <= PERCENTILE.INC ( 'Player Summary Stats'[FGAPG], 0.80 ), "4",
+			   "5"
+			       )
+			```
+		lineageTag: 8c3ea281-e787-4e7f-8523-77aa8adf8538
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLAYER
+		lineageTag: 35a8fe04-be3f-42a5-9dc8-167032e91686
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: NBACOM Gamelogs[PLAYER]
+
+		annotation SummarizationSetBy = Automatic
+
+	column TEAM
+		lineageTag: eb82de1e-36a2-4b04-9193-a73cb257ac82
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: NBACOM Gamelogs[TEAM]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Overall Rank' =
+			('Player Summary Stats'[MINPG Quintile Score] + 'Player Summary Stats'[FGAPG Quintile Score] + 'Player Summary Stats'[FTAPG Quintile Score] + 'Player Summary Stats'[EFGPG Quintile Score] + 'Player Summary Stats'[TSPGPG Quintile Score])/5
+			
+			// average two columns reference: https://community.fabric.microsoft.com/t5/Desktop/How-to-calculate-Average-of-3-Columns-and-put-in-4th-Column/m-p/235228
+		dataType: int64
+		formatString: 0
+		lineageTag: 6a64d425-57c4-4fc5-b970-f674588f10d9
+		summarizeBy: none
+
+		annotation SummarizationSetBy = User
+
+	column FTAPG
+		lineageTag: 77e10e53-d08c-4e9c-9e8b-f2b65f6edf20
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [FTAPG]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MINPG
+		lineageTag: 91a9fa5c-020c-43ce-84da-7b4bab8b6dfe
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [MINPG]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'MINPG Quintile Score' = ```
+			
+			SWITCH (
+			  TRUE (),
+			   [MINPG] <= PERCENTILE.INC ( 'Player Summary Stats'[MINPG], 0.20 ), "1",    
+			   [MINPG] <= PERCENTILE.INC ( 'Player Summary Stats'[MINPG], 0.40 ), "2", 
+			   [MINPG] <= PERCENTILE.INC ( 'Player Summary Stats'[MINPG], 0.60 ), "3", 
+			   [MINPG] <= PERCENTILE.INC ( 'Player Summary Stats'[MINPG], 0.80 ), "4",
+			   "5"
+			       )
+			```
+		lineageTag: bd9835b1-b259-4eac-9f31-b42040630228
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FTAPG Quintile Score' = ```
+			
+			SWITCH (
+			  TRUE (),
+			   [FTAPG] <= PERCENTILE.INC ( 'Player Summary Stats'[FTAPG], 0.20 ), "1",    
+			   [FTAPG] <= PERCENTILE.INC ( 'Player Summary Stats'[FTAPG], 0.40 ), "2", 
+			   [FTAPG] <= PERCENTILE.INC ( 'Player Summary Stats'[FTAPG], 0.60 ), "3", 
+			   [FTAPG] <= PERCENTILE.INC ( 'Player Summary Stats'[FTAPG], 0.80 ), "4",
+			   "5"
+			       )
+			```
+		lineageTag: 21628f68-398f-4211-a06d-728e4012fda8
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FGMPG
+		lineageTag: c93fee3a-b931-457b-97fc-e7edde1b33ac
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [FGMPG]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column M3PPG
+		lineageTag: 385dcc6a-f11a-4114-939a-1b4b5ab09eb7
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [M3PPG]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column EFGPG = DIVIDE(((0.5 * 'Player Summary Stats'[M3PPG]) + 'Player Summary Stats'[FGMPG]), 'Player Summary Stats'[FGAPG], 0)
+		lineageTag: 4cc098c3-203f-4e10-b381-c67d4abad7bc
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'EFGPG Quintile Score' = ```
+			
+			SWITCH (
+			  TRUE (),
+			   [EFGPG] <= PERCENTILE.INC ( 'Player Summary Stats'[EFGPG], 0.20 ), 1,    
+			   [EFGPG] <= PERCENTILE.INC ( 'Player Summary Stats'[EFGPG], 0.40 ), 2, 
+			   [EFGPG] <= PERCENTILE.INC ( 'Player Summary Stats'[EFGPG], 0.60 ), 3, 
+			   [EFGPG] <= PERCENTILE.INC ( 'Player Summary Stats'[EFGPG], 0.80 ), 4,
+			   5
+			       )
+			```
+		formatString: 0
+		lineageTag: 57c20613-1413-453d-99b8-880b4517d76f
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column TSPPG = 'Player Summary Stats'[PPG]/(2 * ('Player Summary Stats'[FGAPG] +(0.44 * 'Player Summary Stats'[FTAPG])))
+		lineageTag: 2654b375-0fa6-4c07-a784-2e7cdc0ae73a
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'TSPGPG Quintile Score' = ```
+			
+			SWITCH (
+			  TRUE (),
+			   [TSPPG] <= PERCENTILE.INC ( 'Player Summary Stats'[TSPPG], 0.20 ), 1,    
+			   [TSPPG] <= PERCENTILE.INC ( 'Player Summary Stats'[TSPPG], 0.40 ), 2, 
+			   [TSPPG] <= PERCENTILE.INC ( 'Player Summary Stats'[TSPPG], 0.60 ), 3, 
+			   [TSPPG] <= PERCENTILE.INC ( 'Player Summary Stats'[TSPPG], 0.80 ), 4,
+			   5
+			       )
+			```
+		formatString: 0
+		lineageTag: 99a9d550-80af-4b8e-af40-3b3001ed5638
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Player Summary Stats' = calculated
+		mode: import
+		source =
+				SUMMARIZE('NBACOM Gamelogs','NBACOM Gamelogs'[PLAYER], 'NBACOM Gamelogs'[TEAM], "PPG",[PG Pts], "FGAPG", [PG FGA], "FGMPG", [PG FGM],"MINPG", [PG MIN], "FTAPG", [PG FTA], "M3PPG", [PG 3PM])
+				
+				// reference: https://community.fabric.microsoft.com/t5/Desktop/Calculating-percentile-off-of-a-measure/m-p/338509
+
+	annotation PBI_Id = 03b0c6db9b924b6aa0e537baff4ee495
+
