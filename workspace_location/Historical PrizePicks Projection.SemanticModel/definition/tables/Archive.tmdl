@@ -1,0 +1,148 @@
+table Archive
+	lineageTag: 5f625eb5-c4aa-43c2-97a4-cca9843b2e25
+
+	measure 'Pts Average Line' =
+			
+			AVERAGEX (
+			    ADDCOLUMNS (
+			        SUMMARIZE ( ALLSELECTED ( Archive[Index Step 1] ), Archive[Index Step 1] ),
+			        "@pts", CALCULATE ( SUM ( Archive[points_proj] ) )
+			    ),
+			    [@pts]
+			)
+			
+			// Average Line for Small Multiples Reference: https://stackoverflow.com/questions/72714550/how-to-create-an-avg-measure-in-dax-similar-to-the-built-in-chart-function-in-po
+		lineageTag: e258bc3f-8975-4d55-8c90-e683b67078b1
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Pts Average Lin v2' =
+			
+			AVERAGEX(VALUES(Archive[Index Step 1]), SUM(Archive[points_proj]))
+		lineageTag: 8845b2bc-d273-4633-bbac-ad9e24f56627
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure FirstLinePointLabel =
+			
+			IF (
+			    MIN ( Archive[Index Step 1] )
+			        > CALCULATE ( MIN ( Archive[Index Step 1] ), ALL ( Archive ) ),
+			    BLANK (),
+			    [Pts Average Line]
+			)
+			
+			// Label First Line Data Point Reference: https://data-goblins.com/power-bi/label-latest-datapoint
+		lineageTag: 0eaa1bfb-335b-4c28-94c6-9bd31f2b8f92
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Source.Name'
+		dataType: string
+		lineageTag: e884c02d-1948-49dd-b7b0-a4782e75fdea
+		summarizeBy: none
+		sourceColumn: Source.Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column player_name
+		dataType: string
+		lineageTag: f7fd7578-058b-4045-8bcb-70437f83ea4b
+		summarizeBy: none
+		sourceColumn: player_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column points_proj
+		dataType: double
+		lineageTag: 9b21f4a8-dc50-43ef-92ca-f9c2ff2b277c
+		summarizeBy: sum
+		sourceColumn: points_proj
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column team
+		dataType: string
+		lineageTag: cf48b190-f08e-4c7e-a717-4b7bc01fc841
+		summarizeBy: none
+		sourceColumn: team
+
+		annotation SummarizationSetBy = Automatic
+
+	column opp
+		dataType: string
+		lineageTag: 72779fb4-006c-462a-8b62-888e10e88086
+		summarizeBy: none
+		sourceColumn: opp
+
+		annotation SummarizationSetBy = Automatic
+
+	column pos
+		dataType: string
+		lineageTag: de307006-38c5-4631-8ee2-45ae2cdbeabc
+		summarizeBy: none
+		sourceColumn: pos
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 75c270cd-1f06-4473-b898-68ce2235e063
+		summarizeBy: none
+		sourceColumn: Date
+
+		variation Variation
+			isDefault
+			relationship: 2ebb2da9-5f7b-4d36-93ac-284b200dc008
+			defaultHierarchy: LocalDateTable_44f5b75d-f30d-47d5-bde3-f403ae09d1de.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Index
+		dataType: int64
+		formatString: 0
+		lineageTag: de235ec4-b333-4155-908b-137e04c86ea1
+		summarizeBy: sum
+		sourceColumn: Index
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Index Step 1' =
+			CALCULATE(COUNTROWS(Archive), FILTER(Archive, Archive[Date]<= EARLIER(Archive[Date])),FILTER(Archive, Archive[player_name] = EARLIER(Archive[player_name])))
+			
+			// Partion by in Power BI reference: https://www.youtube.com/watch?v=vVuH_qgbku8
+		formatString: 0
+		lineageTag: 00741808-cead-4284-be93-fc7025cea81e
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Archive = m
+		mode: import
+		source =
+				let
+				    Source = Folder.Files("C:\Users\charl\OneDrive\Documents\Datasets\Sports\NBA\PrizePicks\Archive"),
+				    #"Filtered Hidden Files1" = Table.SelectRows(Source, each [Attributes]?[Hidden]? <> true),
+				    #"Invoke Custom Function1" = Table.AddColumn(#"Filtered Hidden Files1", "Transform File", each #"Transform File"([Content])),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Invoke Custom Function1", {"Name", "Source.Name"}),
+				    #"Removed Other Columns1" = Table.SelectColumns(#"Renamed Columns1", {"Source.Name", "Transform File"}),
+				    #"Expanded Table Column1" = Table.ExpandTableColumn(#"Removed Other Columns1", "Transform File", Table.ColumnNames(#"Transform File"(#"Sample File"))),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Expanded Table Column1",{{"Source.Name", type text}, {"player_name", type text}, {"points_proj", type number}, {"team", type text}, {"opp", type text}, {"pos", type text}}),
+				    #"Duplicated Column" = Table.DuplicateColumn(#"Changed Type", "Source.Name", "Source.Name - Copy"),
+				    #"Extracted Text Between Delimiters" = Table.TransformColumns(#"Duplicated Column", {{"Source.Name - Copy", each Text.BetweenDelimiters(_, " ", "."), type text}}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Extracted Text Between Delimiters",{{"Source.Name - Copy", type date}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type1",{{"Source.Name - Copy", "Date"}}),
+				    #"Sorted Rows" = Table.Sort(#"Renamed Columns",{{"player_name", Order.Ascending}, {"Date", Order.Ascending}}),
+				    #"Added Index" = Table.AddIndexColumn(#"Sorted Rows", "Index", 1, 1, Int64.Type)
+				in
+				    #"Added Index"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

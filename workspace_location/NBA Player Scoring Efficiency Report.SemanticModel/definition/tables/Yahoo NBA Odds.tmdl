@@ -1,0 +1,76 @@
+table 'Yahoo NBA Odds'
+	lineageTag: f035bed1-107c-4f3f-b0b0-d62193e1aee6
+
+	column 'Team Name'
+		dataType: string
+		lineageTag: 20f6a38a-d0c2-45cc-8689-ba3f1b7fd841
+		summarizeBy: none
+		sourceColumn: Team Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Moneyline
+		dataType: int64
+		formatString: 0
+		lineageTag: ab7b0b4d-9b41-4ad0-b0b9-1fd0e99fdf61
+		summarizeBy: none
+		sourceColumn: Moneyline
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Point Spread'
+		dataType: double
+		lineageTag: 0c677b37-5d94-4033-a8d7-6bd8dbcdc1a6
+		summarizeBy: none
+		sourceColumn: Point Spread
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Key - PP'
+		dataType: string
+		lineageTag: 58fe016f-7fc2-4cb0-9156-0076b2b981da
+		summarizeBy: none
+		sourceColumn: Key - PP
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Team Points Proj' = ('Yahoo NBA Odds'[Total Points]/2)-'Yahoo NBA Odds'[Point Spread]
+		lineageTag: b8d638a8-063e-4d16-85dc-ea17e4b2b887
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Total Points'
+		dataType: double
+		lineageTag: 0dbcd704-c410-4ff4-989b-8dd9b1d15d63
+		summarizeBy: none
+		sourceColumn: Total Points
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Yahoo NBA Odds' = m
+		mode: import
+		source =
+				let
+				    Source = Web.BrowserContents("https://sports.yahoo.com/nba/odds/"),
+				    #"Extracted Table From Html" = Html.Table(Source, {{"Column1", ".Pend\(16px\) + *"}, {"Column2", ".sixpack-bet-ODDS_MONEY_LINE .LineClamp\(2\,80px\) *"}, {"Column3", ".sixpack-bet-ODDS_MONEY_LINE .Fw\(400\) + *"}, {"Column4", ".sixpack-bet-ODDS_MONEY_LINE .Pstart\(12px\)"}, {"Column5", ".sixpack-bet-ODDS_MONEY_LINE .Ta\(end\)"}, {"Column6", ".sixpack-bet-ODDS_MONEY_LINE .LineClamp\(2\,400px\)"}, {"Column7", ".sixpack-bet-ODDS_MONEY_LINE .Lh\(19px\) *"}, {"Column8", ".sixpack-bet-ODDS_POINT_SPREAD .Fw\(400\) + *"}, {"Column9", ".sixpack-bet-ODDS_POINT_SPREAD .Pstart\(12px\)"}, {"Column10", ".sixpack-bet-ODDS_POINT_SPREAD .Ta\(end\)"}, {"Column11", ".sixpack-bet-ODDS_POINT_SPREAD .LineClamp\(2\,400px\)"}, {"Column12", ".sixpack-bet-ODDS_POINT_SPREAD .Lh\(19px\) *"}, {"Column13", ".sixpack-bet-ODDS_POINT_SPREAD .Lh\(19px\).C\(\$c-fuji-shark\)"}, {"Column14", ".sixpack-bet-ODDS_TOTAL_POINTS .Fw\(400\) + *"}, {"Column15", ".sixpack-bet-ODDS_TOTAL_POINTS .Pstart\(12px\)"}, {"Column16", ".sixpack-bet-ODDS_TOTAL_POINTS .Ta\(end\)"}, {"Column17", ".sixpack-bet-ODDS_TOTAL_POINTS .LineClamp\(2\,400px\)"}, {"Column18", ".sixpack-bet-ODDS_TOTAL_POINTS .Lh\(19px\) *"}, {"Column19", ".sixpack-bet-ODDS_TOTAL_POINTS .Lh\(19px\).C\(\$c-fuji-shark\)"}, {"Column20", ".C\(dimmed-text\)"}, {"Column21", ".sixpack-bet-ODDS_POINT_SPREAD .LineClamp\(2\,80px\)"}, {"Column22", ".sixpack-bet-ODDS_TOTAL_POINTS .LineClamp\(2\,80px\)"}, {"Column23", ".sixpack-bet-ODDS_MONEY_LINE .Fw\(400\) *"}, {"Column24", ".sixpack-bet-ODDS_POINT_SPREAD .Fw\(400\) *"}, {"Column25", ".sixpack-bet-ODDS_TOTAL_POINTS .Fw\(400\) *"}, {"Column26", ".YDC-Col1 .W\(37\%\)"}, {"Column27", ".YDC-Col1 .W\(37\%\) + *"}, {"Column28", ".Fw\(400\):nth-child(2) .LineClamp\(2\,80px\) *"}, {"Column29", ".Pb\(12px\):nth-child(2) .D\(n\) + *"}, {"Column30", ".YDC-Col1 .Pb\(12px\):nth-child(3)"}, {"Column31", ".Pb\(12px\):nth-child(3) .D\(n\) + *"}, {"Column32", ".YDC-Col1 .Pb\(12px\):nth-child(4)"}, {"Column33", ".Pb\(12px\):nth-child(4) .D\(n\) + *"}, {"Column34", ".sixpack-game-info-link SPAN"}}, [RowSelector=".Pend\(16px\) + *"]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Extracted Table From Html",{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", Percentage.Type}, {"Column5", Percentage.Type}, {"Column6", type text}, {"Column7", Int64.Type}, {"Column8", type text}, {"Column9", Percentage.Type}, {"Column10", Percentage.Type}, {"Column11", type text}, {"Column12", type number}, {"Column13", Int64.Type}, {"Column14", type text}, {"Column15", Percentage.Type}, {"Column16", Percentage.Type}, {"Column17", type text}, {"Column18", type text}, {"Column19", Int64.Type}, {"Column20", type text}, {"Column21", type text}, {"Column22", type text}, {"Column23", type text}, {"Column24", type text}, {"Column25", type text}, {"Column26", type text}, {"Column27", type text}, {"Column28", type text}, {"Column29", type text}, {"Column30", type text}, {"Column31", type text}, {"Column32", type text}, {"Column33", type text}, {"Column34", type text}}),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Changed Type",{"Column1", "Column7", "Column12", "Column18"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Removed Other Columns",{{"Column1", "Team Name"}, {"Column7", "Moneyline"}, {"Column12", "Point Spread"}, {"Column18", "Total Points"}}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Renamed Columns","U ","",Replacer.ReplaceText,{"Total Points"}),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value","O ","",Replacer.ReplaceText,{"Total Points"}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Replaced Value1",{{"Total Points", type number}}),
+				    #"Added Conditional Column" = Table.AddColumn(#"Changed Type1", "Custom", each if [Team Name] = "Denver Nuggets" then "DEN" else if [Team Name] = "Atlanta Hawks" then "ATL" else if [Team Name] = "Milwaukee Bucks" then "MIL" else if [Team Name] = "Golden State Warriors" then "GSW" else if [Team Name] = "Houston Rockets" then "HOU" else if [Team Name] = "Portland Trail Blazers" then "POR" else if [Team Name] = "Philadelphia 76ers" then "PHI" else if [Team Name] = "San Antonio Spurs" then "SAS" else if [Team Name] = "LA Clippers" then "LAC" else if [Team Name] = "Los Angeles Lakers" then "LAL" else if [Team Name] = "Sacramento Kings" then "SAC" else if [Team Name] = "Oklahoma City Thunder" then "OKC" else if [Team Name] = "Phoenix Suns" then "PHX" else if [Team Name] = "Detroit Pistons" then "DET" else if [Team Name] = "Toronto Raptors" then "TOR" else if [Team Name] = "Cleveland Cavaliers" then "CLE" else if [Team Name] = "Charlotte Hornets" then "CHA" else if [Team Name] = "Dallas Mavericks" then "DAL" else if [Team Name] = "Memphis Grizzlies" then "MEM" else if [Team Name] = "Washington Wizards" then "WAS" else if [Team Name] = "Brooklyn Nets" then "BKN" else if [Team Name] = "Boston Celtics" then "BOS" else if [Team Name] = "New Orleans Pelicans" then "NOP" else if [Team Name] = "Minnesota Timberwolves" then "MIN" else if [Team Name] = "Utah Jazz" then "UTA" else if [Team Name] = "New York Knicks" then "NYK" else if [Team Name] = "Indiana Pacers" then "IND" else if [Team Name] = "Chicago Bulls" then "CHI" else if [Team Name] = "Miami Heat" then "MIA" else if [Team Name] = "Orlando Magic" then "ORL" else null),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Added Conditional Column",{{"Custom", "Key - PP"}}),
+				    #"Removed Duplicates" = Table.Distinct(#"Renamed Columns1", {"Team Name"})
+				in
+				    #"Removed Duplicates"
+
+	annotation PBI_ResultType = Table
+

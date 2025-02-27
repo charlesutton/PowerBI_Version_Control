@@ -1,0 +1,147 @@
+table 'Measures Table'
+	lineageTag: d4b069c9-8a64-4a0e-86c6-8047c0919d16
+
+	measure 'Avg PPG Last 20' = AVERAGEX(ALLSELECTED('NBA Boxscore History'[Game Number Sorted]), [Avg PPG])
+		formatString: 0
+		lineageTag: 315de72f-34c4-4674-99a3-da63a0b78b82
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Avg PPG' = AVERAGE('NBA Boxscore History'[PTS])
+		formatString: 0
+		lineageTag: 21c780d8-d201-432c-886f-db877b1e3cf7
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Avg PPG Last 20 Color Indicator' =
+			
+			VAR avgPPG = [Avg PPG Last 20]
+			
+			RETURN
+			SWITCH(TRUE(),
+			[Avg PPG] >= avgPPG - 0.5, "#007AC1",
+			"#FFFFFF"
+			)
+			
+			// Above Average Color Reference: https://medium.com/microsoft-power-bi/colour-conditional-formatting-ed5ed35f99ce
+		lineageTag: 80341592-dd4e-4604-a517-a3ed83cc9fa0
+
+	measure 'Avg FGMPG' = AVERAGE('NBA Boxscore History'[FGM])
+		formatString: 0
+		lineageTag: 6d5f81e9-863d-477e-ad3b-e59a2d6a904f
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Avg FGMPG Last 20' = AVERAGEX(ALLSELECTED('NBA Boxscore History'[Game Number Sorted]), [Avg FGMPG])
+		lineageTag: 9e6e10db-9b0e-4e63-a302-94b076c01911
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Avg 3PMPG' = AVERAGE('NBA Boxscore History'[3PM])
+		formatString: 0
+		lineageTag: f5ee3ba6-1959-4408-ab05-560fe54e4b4a
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Avg 3PMPG Last 20 Color Indicator' =
+			
+			VAR avg3PMPG = [Avg 3PMPG Last 20]
+			
+			RETURN
+			SWITCH(TRUE(),
+			[Avg 3PMPG] >= avg3PMPG - 0.5, "#007AC1",
+			"#FFFFFF"
+			)
+			
+			// Above Average Color Reference: https://medium.com/microsoft-power-bi/colour-conditional-formatting-ed5ed35f99ce
+		lineageTag: da6c9a68-d070-4d2e-978e-de6788017586
+
+	measure 'Avg 3PMPG Last 20' = AVERAGEX(ALLSELECTED('NBA Boxscore History'[Game Number Sorted]), [Avg 3PMPG])
+		lineageTag: f2fd553e-4286-4ea9-90e9-f6e483bf4806
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Avg FGMPG Last 20 Color Indicator' =
+			
+			VAR avgFGMPG = [Avg FGMPG Last 20]
+			
+			RETURN
+			SWITCH(TRUE(),
+			[Avg FGMPG] >= avgFGMPG - 0.5, "#007AC1",
+			"#FFFFFF"
+			)
+			
+			// Above Average Color Reference: https://medium.com/microsoft-power-bi/colour-conditional-formatting-ed5ed35f99ce
+		lineageTag: 74e98687-e76b-418e-af27-c90f18cb0fb1
+
+	measure 'Avg FTMPG' = AVERAGE('NBA Boxscore History'[FTM])
+		formatString: 0
+		lineageTag: dac388b7-e76b-483b-8d07-82596da964ef
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Avg FTMPG Last 20' = AVERAGEX(ALLSELECTED('NBA Boxscore History'[Game Number Sorted]), [Avg FTMPG])
+		lineageTag: 49c443fc-b2ad-477f-96b5-9da685c1bf0e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Avg FTMPG Last 20 Color Indicator' =
+			
+			VAR avgFTMPG = [Avg FTMPG Last 20]
+			
+			RETURN
+			SWITCH(TRUE(),
+			[Avg FTMPG] >= avgFTMPG - 0.5, "#007AC1",
+			"#FFFFFF"
+			)
+			
+			// Above Average Color Reference: https://medium.com/microsoft-power-bi/colour-conditional-formatting-ed5ed35f99ce
+		lineageTag: 338ec3ab-aba4-4fb1-8ecb-83b47972a130
+
+	measure 'Avg PPG Dynamic Title' = FORMAT([Avg PPG], "#,##0")  & " points per game at "
+		lineageTag: be0751c8-36de-49a9-a8f1-18eda4d965c9
+
+	measure 'Avg PPG Max Value' =
+			
+			VAR getAllIndexes = ALLSELECTED('NBA Boxscore History'[Game Number Sorted])
+			VAR getMaxValue = MAXX(getAllIndexes, CALCULATE(SUM('NBA Boxscore History'[PTS])))
+			RETURN
+			IF(SUM('NBA Boxscore History'[PTS]) = getMaxValue, getMaxValue, BLANK())
+			
+			// Highlight Max Point on Line Reference: https://powerbidocs.com/2021/03/10/highlighting-the-min-max-values-in-a-power-bi-line-chart/
+		formatString: 0
+		lineageTag: e2b2905d-d833-4abb-8e29-1f218a395c14
+
+	measure 'Avg PPG Min Value' =
+			
+			VAR getAllIndexes = ALLSELECTED('NBA Boxscore History'[Game Number Sorted])
+			VAR getMinValue = MINX(getAllIndexes, CALCULATE(SUM('NBA Boxscore History'[PTS])))
+			RETURN
+			IF(SUM('NBA Boxscore History'[PTS]) = getMinValue, getMinValue, BLANK())
+			
+			// Highlight lowest point on line chart reference: https://powerbidocs.com/2021/03/10/highlighting-the-min-max-values-in-a-power-bi-line-chart/
+		formatString: 0
+		lineageTag: 11ed8a30-d575-41e3-9a1f-17b050864531
+
+	measure '# of Games' = COUNTROWS('NBA Boxscore History')
+		formatString: 0
+		lineageTag: 3e3c12b6-1211-4a6b-9ee5-d46f2b4f616e
+
+	column Column
+		isHidden
+		formatString: 0
+		lineageTag: f6f9fd03-62b8-4603-b0e7-83e09d70e84c
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Measures Table' = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = 3860d3284fcd4eeca52ab4d3f180eb65
+
+	annotation 436ba87b-9c83-4389-a31b-ebd06a36be98 = {"Expression":""}
+

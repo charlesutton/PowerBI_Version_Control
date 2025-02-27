@@ -1,0 +1,39 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+queryGroup 'NBACOM Opp Rating'
+
+	annotation PBI_QueryGroupOrder = 0
+
+/// Errors in queries that were loaded on 11/22/2023 3:16:34 PM.
+queryGroup 'Query Errors - 11/22/2023 3:16:34 PM'
+
+	annotation PBI_QueryGroupOrder = 1
+
+annotation PBI_QueryOrder = ["PrizePicksFormatted_NBA","Yahoo NBA Odds","CBS Sportsline Projections","Report - Measures","NBACOM Gamelogs","NBACOM Opp Ratings","Opp Def - Opp Pos List","CBS Injuries","Errors in NBACOM Gamelogs"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.124.2028.0 (23.12)
+
+ref table PrizePicksFormatted_NBA
+ref table DateTableTemplate_3ec41eaf-eb52-47ea-a3fa-6b0c65f0ab19
+ref table 'Yahoo NBA Odds'
+ref table 'CBS Sportsline Projections'
+ref table 'Report - Measures'
+ref table 'NBACOM Gamelogs'
+ref table LocalDateTable_5a5e6e29-51a1-419a-bc6a-8d389a900723
+ref table 'Opp Def - Opp Pos List'
+ref table 'CBS Injuries'
+ref table LocalDateTable_925ec865-e137-47d3-a531-17dae8116130
+ref table 'Player Summary Stats'
+ref table PtsPerGameSummaryTable
+ref table LocalDateTable_79c54965-2509-4581-a813-f861b5e78256
+
+ref cultureInfo en-US
+
