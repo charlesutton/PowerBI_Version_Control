@@ -1,0 +1,286 @@
+table 'NBACOM Gamelogs'
+	lineageTag: 0626fc51-f00c-4f63-b215-58b19096ada4
+
+	column PLAYER
+		dataType: string
+		lineageTag: 40329505-db4b-4c70-b261-945a8b848c00
+		summarizeBy: none
+		sourceColumn: PLAYER
+
+		annotation SummarizationSetBy = Automatic
+
+	column TEAM
+		dataType: string
+		lineageTag: e20b0d0e-252e-4d35-8024-a132425aee49
+		summarizeBy: none
+		sourceColumn: TEAM
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'MATCH UP'
+		dataType: string
+		lineageTag: 32f0bc7c-114b-4972-aef5-4977117df40a
+		summarizeBy: none
+		sourceColumn: MATCH UP
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GAME DATE'
+		dataType: dateTime
+		formatString: mm/dd/yy
+		lineageTag: c3182b1a-c0d1-48f9-855f-660eef2d10ce
+		summarizeBy: none
+		sourceColumn: GAME DATE
+
+		variation Variation
+			isDefault
+			relationship: 49dc2906-ab42-4e3d-8f6b-608cecf4c6c8
+			defaultHierarchy: LocalDateTable_5a5e6e29-51a1-419a-bc6a-8d389a900723.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column W/L
+		dataType: string
+		lineageTag: 37dc06e7-ad8b-4057-afda-c0f0682e3b3c
+		summarizeBy: none
+		sourceColumn: W/L
+
+		annotation SummarizationSetBy = Automatic
+
+	column MIN
+		dataType: int64
+		formatString: 0
+		lineageTag: 141fdbf1-3e84-4203-92a1-dfa930483820
+		summarizeBy: sum
+		sourceColumn: MIN
+
+		annotation SummarizationSetBy = Automatic
+
+	column PTS
+		dataType: int64
+		formatString: 0
+		lineageTag: 0333e7d2-764f-4476-925f-f75f4cedb633
+		summarizeBy: sum
+		sourceColumn: PTS
+
+		annotation SummarizationSetBy = Automatic
+
+	column FGM
+		dataType: int64
+		formatString: 0
+		lineageTag: 746dc593-f7a5-4a42-940b-aefe8d0b96d7
+		summarizeBy: sum
+		sourceColumn: FGM
+
+		annotation SummarizationSetBy = Automatic
+
+	column FGA
+		dataType: int64
+		formatString: 0.0
+		lineageTag: 59e4ea91-2ca3-4456-869e-1a33afd09b42
+		summarizeBy: sum
+		sourceColumn: FGA
+
+		annotation SummarizationSetBy = Automatic
+
+	column FG%
+		dataType: decimal
+		formatString: #,0.0
+		lineageTag: 5ef54989-f1fc-43da-b809-2ab7c17f13e2
+		summarizeBy: sum
+		sourceColumn: FG%
+
+		annotation SummarizationSetBy = Automatic
+
+	column 3PM
+		dataType: int64
+		formatString: 0
+		lineageTag: df5c2291-7091-49c3-871b-6ad23581117a
+		summarizeBy: sum
+		sourceColumn: 3PM
+
+		annotation SummarizationSetBy = Automatic
+
+	column 3PA
+		dataType: int64
+		formatString: 0
+		lineageTag: 9549957b-24f4-46f0-9c9f-9200f3496905
+		summarizeBy: sum
+		sourceColumn: 3PA
+
+		annotation SummarizationSetBy = Automatic
+
+	column 3P%
+		dataType: string
+		lineageTag: b427fd61-136e-4500-921e-d2b826ce1f47
+		summarizeBy: none
+		sourceColumn: 3P%
+
+		annotation SummarizationSetBy = Automatic
+
+	column FTM
+		dataType: int64
+		formatString: 0
+		lineageTag: 4ccc1381-44fb-4cf7-a2d8-07dacf657c54
+		summarizeBy: sum
+		sourceColumn: FTM
+
+		annotation SummarizationSetBy = Automatic
+
+	column FTA
+		dataType: int64
+		formatString: 0
+		lineageTag: 6e9b0b17-9c22-4382-a441-c40f1b05d967
+		summarizeBy: sum
+		sourceColumn: FTA
+
+		annotation SummarizationSetBy = Automatic
+
+	column FT%
+		dataType: string
+		lineageTag: 15bf2b7c-ccdd-4629-9cb4-5b29c0337970
+		summarizeBy: none
+		sourceColumn: FT%
+
+		annotation SummarizationSetBy = Automatic
+
+	column OREB
+		dataType: int64
+		formatString: 0
+		lineageTag: 09804237-27b2-444c-99c7-3f2632a9909b
+		summarizeBy: sum
+		sourceColumn: OREB
+
+		annotation SummarizationSetBy = Automatic
+
+	column DREB
+		dataType: int64
+		formatString: 0
+		lineageTag: ed1587ac-c52c-4a04-b546-bd542b1d03fb
+		summarizeBy: sum
+		sourceColumn: DREB
+
+		annotation SummarizationSetBy = Automatic
+
+	column REB
+		dataType: int64
+		formatString: 0
+		lineageTag: f6077fda-23a6-4b1c-9f1d-626df920ec10
+		summarizeBy: sum
+		sourceColumn: REB
+
+		annotation SummarizationSetBy = Automatic
+
+	column AST
+		dataType: int64
+		formatString: 0
+		lineageTag: 408bd1f7-ebca-4733-b0a0-166669832fab
+		summarizeBy: sum
+		sourceColumn: AST
+
+		annotation SummarizationSetBy = Automatic
+
+	column STL
+		dataType: int64
+		formatString: 0
+		lineageTag: 53b2c79e-35a5-40c2-8038-da84dab70b89
+		summarizeBy: sum
+		sourceColumn: STL
+
+		annotation SummarizationSetBy = Automatic
+
+	column BLK
+		dataType: int64
+		formatString: 0
+		lineageTag: 2939360e-0cbb-416f-866e-2ea30cddc48b
+		summarizeBy: sum
+		sourceColumn: BLK
+
+		annotation SummarizationSetBy = Automatic
+
+	column TOV
+		dataType: int64
+		formatString: 0
+		lineageTag: 4567941a-5717-4891-a75c-07042b8c73c2
+		summarizeBy: sum
+		sourceColumn: TOV
+
+		annotation SummarizationSetBy = Automatic
+
+	column PF
+		dataType: int64
+		formatString: 0
+		lineageTag: 93ea23c1-5ff1-45e7-b4d6-d1b9b4984e48
+		summarizeBy: sum
+		sourceColumn: PF
+
+		annotation SummarizationSetBy = Automatic
+
+	column +/-
+		dataType: int64
+		formatString: 0
+		lineageTag: 19dc7198-1680-4aac-ac6a-235f75b361ab
+		summarizeBy: sum
+		sourceColumn: +/-
+
+		annotation SummarizationSetBy = Automatic
+
+	column FP
+		dataType: double
+		lineageTag: bc6ac4e3-8352-4b5e-b1be-5ec19c8654be
+		summarizeBy: sum
+		sourceColumn: FP
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Key - PP'
+		dataType: string
+		lineageTag: 0a8e303b-6fc8-411b-8f22-fad0afc618ac
+		summarizeBy: none
+		sourceColumn: Key - PP
+
+		annotation SummarizationSetBy = Automatic
+
+	column Opponent
+		dataType: string
+		lineageTag: ad24a1f3-5c0c-4b1a-a3bf-e4d0571b076e
+		summarizeBy: none
+		sourceColumn: Opponent
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Home Away Status'
+		dataType: string
+		lineageTag: 0c594c95-c62e-4d31-a7f4-657550db1fbe
+		summarizeBy: none
+		sourceColumn: Home Away Status
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'NBACOM Gamelogs' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\charl\OneDrive\Documents\Datasets\Sports\NBA\NBACOM Gamelog Stats 2023.xlsx"), null, true),
+				    Sheet1_Sheet = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(Sheet1_Sheet,{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type any}, {"Column5", type text}, {"Column6", type any}, {"Column7", type any}, {"Column8", type any}, {"Column9", type any}, {"Column10", type any}, {"Column11", type any}, {"Column12", type any}, {"Column13", type any}, {"Column14", type any}, {"Column15", type any}, {"Column16", type any}, {"Column17", type any}, {"Column18", type any}, {"Column19", type any}, {"Column20", type any}, {"Column21", type any}, {"Column22", type any}, {"Column23", type any}, {"Column24", type any}, {"Column25", type any}, {"Column26", type any}}),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"PLAYER", type text}, {"TEAM", type text}, {"MATCH UP", type text}, {"GAME DATE", type date}, {"W/L", type text}, {"MIN", Int64.Type}, {"PTS", Int64.Type}, {"FGM", Int64.Type}, {"FGA", Int64.Type}, {"FG%", type any}, {"3PM", Int64.Type}, {"3PA", Int64.Type}, {"3P%", type any}, {"FTM", Int64.Type}, {"FTA", Int64.Type}, {"FT%", type any}, {"OREB", Int64.Type}, {"DREB", Int64.Type}, {"REB", Int64.Type}, {"AST", Int64.Type}, {"STL", Int64.Type}, {"BLK", Int64.Type}, {"TOV", Int64.Type}, {"PF", Int64.Type}, {"+/-", Int64.Type}, {"FP", type number}}),
+				    #"Added Custom" = Table.AddColumn(#"Changed Type1", "Key - PP", each [PLAYER]&" "&[TEAM]),
+				    #"Replaced Value" = Table.ReplaceValue(#"Added Custom","-","",Replacer.ReplaceValue,{"FG%"}),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Replaced Value",{{"FG%", Currency.Type}}),
+				    #"Duplicated Column" = Table.DuplicateColumn(#"Changed Type2", "MATCH UP", "MATCH UP - Copy"),
+				    #"Extracted Last Characters" = Table.TransformColumns(#"Duplicated Column", {{"MATCH UP - Copy", each Text.End(_, 3), type text}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Extracted Last Characters",{{"MATCH UP - Copy", "Opponent"}}),
+				    #"Added Conditional Column" = Table.AddColumn(#"Renamed Columns", "Home Away Status", each if Text.Contains([MATCH UP], "@") then "Away" else "Home")
+				in
+				    #"Added Conditional Column"
+
+	annotation PBI_ResultType = Table
+

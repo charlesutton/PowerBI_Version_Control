@@ -1,0 +1,106 @@
+table 'Opp Def - Opp Pos List'
+	lineageTag: 5b4e2c8e-51f9-4289-a0f9-d0e998930868
+
+	column 'Opp Pos'
+		dataType: string
+		lineageTag: 0055b675-da8a-4987-9252-71ca6bfd0e71
+		summarizeBy: none
+		sourceColumn: Opp Pos
+
+		annotation SummarizationSetBy = Automatic
+
+	column TEAM
+		dataType: string
+		lineageTag: c8fcc205-ccdd-45fa-9414-2fa482d14ed5
+		summarizeBy: none
+		sourceColumn: TEAM
+
+		annotation SummarizationSetBy = Automatic
+
+	column GP
+		dataType: string
+		lineageTag: c802f5ad-f3a2-41cf-b1ed-cd3aa779c06c
+		summarizeBy: none
+		sourceColumn: GP
+
+		annotation SummarizationSetBy = Automatic
+
+	column Wins
+		dataType: string
+		lineageTag: 44d11e7a-806e-492c-ba87-f9016ca281c7
+		summarizeBy: none
+		sourceColumn: Wins
+
+		annotation SummarizationSetBy = Automatic
+
+	column Losses
+		dataType: string
+		lineageTag: 35bac165-5703-4690-aad6-996029f2f224
+		summarizeBy: none
+		sourceColumn: Losses
+
+		annotation SummarizationSetBy = Automatic
+
+	column Min
+		dataType: string
+		lineageTag: 6ee5f4f5-09fb-4d51-91dc-1392e9a204a1
+		summarizeBy: none
+		sourceColumn: Min
+
+		annotation SummarizationSetBy = Automatic
+
+	column DRtg
+		dataType: string
+		lineageTag: 1b2cb1c0-b008-41ab-8f3b-b4e30e118aee
+		summarizeBy: none
+		sourceColumn: DRtg
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Opp Abb for PP'
+		dataType: string
+		lineageTag: 705eb6d2-c203-451d-aa3d-61ffadf5bc6d
+		summarizeBy: none
+		sourceColumn: Opp Abb for PP
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Key - PP'
+		dataType: string
+		lineageTag: b4d21b3f-df97-486c-9553-e9e359b1a35d
+		summarizeBy: none
+		sourceColumn: Key - PP
+
+		annotation SummarizationSetBy = Automatic
+
+	column DRank
+		dataType: string
+		lineageTag: 1599b186-5bce-40c3-b73e-ba7665a50ae7
+		summarizeBy: none
+		sourceColumn: DRank
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Opp Def - Opp Pos List' = m
+		mode: import
+		queryGroup: 'NBACOM Opp Rating'
+		source = ```
+				let
+				    Source = #table(
+				                    type table [#"Opp Pos" = text], 
+				                    {
+				                        {"G"},
+				                        {"F"},
+				                        {"C"}
+				                        }
+				                    ),
+				    #"Invoked Custom Function" = Table.AddColumn(Source, "Opp Pos Ratings", each #"NBACOM Opp Ratings"([Opp Pos])),
+				    #"Expanded Opp Pos Ratings" = Table.ExpandTableColumn(#"Invoked Custom Function", "Opp Pos Ratings", {"", "TEAM", "GP", "Wins", "Losses", "Min", "DRtg", "Opp Abb for PP"}),
+				    #"Added Custom" = Table.AddColumn(#"Expanded Opp Pos Ratings", "Key - PP", each [Opp Abb for PP] & " " & [Opp Pos]),
+				    #"Renamed Columns" = Table.RenameColumns(#"Added Custom",{{"", "DRank"}})
+				in
+				    #"Renamed Columns"
+				```
+
+	annotation PBI_ResultType = Table
+

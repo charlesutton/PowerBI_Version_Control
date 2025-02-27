@@ -1,0 +1,48 @@
+relationship 1e85ab8e-27b1-47b6-b821-732efb69164a
+	fromColumn: PrizePicksFormatted_NBA.team
+	toColumn: 'Yahoo NBA Odds'.'Key - PP'
+
+relationship 49dc2906-ab42-4e3d-8f6b-608cecf4c6c8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'NBACOM Gamelogs'.'GAME DATE'
+	toColumn: LocalDateTable_5a5e6e29-51a1-419a-bc6a-8d389a900723.Date
+
+relationship 5af141e4-229d-4100-9514-d64a438699c4
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: 'CBS Sportsline Projections'.'Key - PP'
+	toColumn: PrizePicksFormatted_NBA.'Key - Sportsline and NBACOM'
+
+relationship 863a55c2-6fcf-44e7-9954-e46d1e5311f2
+	fromColumn: 'NBACOM Gamelogs'.'Key - PP'
+	toColumn: PrizePicksFormatted_NBA.'Key - Sportsline and NBACOM'
+
+relationship 074c5ec0-b9fa-42eb-bf46-a383a3dd874b
+	fromColumn: PrizePicksFormatted_NBA.'Key - NBACOM Def'
+	toColumn: 'Opp Def - Opp Pos List'.'Key - PP'
+
+relationship 46f9f559-6df3-4009-9bce-ff70279d9661
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CBS Injuries'.'Status Date'
+	toColumn: LocalDateTable_925ec865-e137-47d3-a531-17dae8116130.Date
+
+relationship eba1a666-cd31-4fbb-afe5-3496574cce18
+	fromColumn: 'NBACOM Gamelogs'.PLAYER
+	toColumn: 'CBS Injuries'.Player
+
+relationship f54229ec-6a0c-4632-804c-ce7c9b36a015
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: 'Player Summary Stats'.'PP Key'
+	toColumn: PrizePicksFormatted_NBA.'Key - Sportsline and NBACOM'
+
+relationship f9264ac6-c422-4a91-b717-6e52b2464958
+	joinOnDateBehavior: datePartOnly
+	fromColumn: PtsPerGameSummaryTable.'GAME DATE'
+	toColumn: LocalDateTable_79c54965-2509-4581-a813-f861b5e78256.Date
+
+relationship 77c5b4d7-d012-45d0-b5d0-25a1535c510f
+	isActive: false
+	fromColumn: 'NBACOM Gamelogs'.'Key - PP'
+	toColumn: 'Player Summary Stats'.'PP Key'
+

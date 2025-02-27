@@ -1,0 +1,110 @@
+table PrizePicksFormatted_NBA
+	lineageTag: cef3036d-2266-4212-9d52-d21d9abbc0ad
+
+	column player_name
+		dataType: string
+		lineageTag: 81b9d347-0fdd-41e1-84af-642a82d90c24
+		summarizeBy: none
+		sourceColumn: player_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column points_proj
+		dataType: double
+		lineageTag: 3c28db3d-4afa-44d9-b98f-b3616fc8f556
+		summarizeBy: sum
+		sourceColumn: points_proj
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column team
+		dataType: string
+		lineageTag: c967495a-146d-4ba1-878c-0db7583ac74c
+		summarizeBy: none
+		sourceColumn: team
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Key - Sportsline and NBACOM'
+		dataType: string
+		lineageTag: 3374ef45-4c40-44af-9a9a-32eddc5c304a
+		summarizeBy: none
+		sourceColumn: Key - Sportsline and NBACOM
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Moneyline LU' = RELATED('Yahoo NBA Odds'[Moneyline])
+		formatString: 0
+		lineageTag: 2d88c6ab-1ebb-481f-adf2-ec1b4f4ff877
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Team Pts Proj LU' = RELATED('Yahoo NBA Odds'[Team Points Proj])
+		lineageTag: 8dc5f84c-8259-4530-b924-3804a8a60785
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column opp
+		dataType: string
+		lineageTag: 4432f616-f962-442c-9c8e-ee41823b117e
+		summarizeBy: none
+		sourceColumn: opp
+
+		annotation SummarizationSetBy = Automatic
+
+	column pos
+		dataType: string
+		lineageTag: 3ad13685-5b4a-4a1d-b41e-514d9196dda7
+		summarizeBy: none
+		sourceColumn: pos
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Key - NBACOM Def'
+		dataType: string
+		lineageTag: f9dea235-424a-4d43-b0f6-8a75d5806c8d
+		summarizeBy: none
+		sourceColumn: Key - NBACOM Def
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'NBACOM DRank' = RELATED('Opp Def - Opp Pos List'[DRank])
+		dataType: int64
+		formatString: 0
+		lineageTag: c6e4a48d-ad70-45b4-91ad-5de461ac2d95
+		summarizeBy: sum
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Team Pts Total LU' = RELATED('Yahoo NBA Odds'[Total Points])
+		lineageTag: a1355570-f43c-436e-8ef1-496b4dfbcbc9
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition PrizePicksFormatted_NBA = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\charl\OneDrive\Documents\Datasets\Sports\NBA\PrizePicks\PrizePicksFormatted_NBA.csv"),[Delimiter=",", Columns=5, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"player_name", type text}, {"points_proj", type number}, {"team", type text}}),
+				    #"Added Custom" = Table.AddColumn(#"Changed Type", "Key - Sportsline and NBACOM", each [player_name]&" "&[team]),
+				    #"Added Custom1" = Table.AddColumn(#"Added Custom", "Key - NBACOM Def", each [opp] & " " &[pos])
+				in
+				    #"Added Custom1"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

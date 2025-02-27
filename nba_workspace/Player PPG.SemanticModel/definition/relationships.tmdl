@@ -1,9 +1,0 @@
-relationship 098ff5ff-207d-4f43-a5de-2bdae97c3dd9
-	joinOnDateBehavior: datePartOnly
-	fromColumn: ActivePlayerGamelogs.GAME_DATE
-	toColumn: LocalDateTable_22bde50c-ff7a-4c9c-a526-b0321be76bf1.Date
-
-relationship ebf96aea-1948-68aa-d7aa-4ac11ecf20c1
-	fromColumn: ActivePlayerGamelogs.Player_ID
-	toColumn: PlayersList.id
-

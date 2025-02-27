@@ -1,0 +1,102 @@
+table 'NBA Boxscore History Pie Chart'
+	lineageTag: 1bebba2d-9424-4086-af4f-55d34fe93b97
+
+	column PLAYER
+		dataType: string
+		lineageTag: 4bda3f6f-e5e9-4f96-8dee-c463d35d4cbc
+		summarizeBy: none
+		sourceColumn: PLAYER
+
+		annotation SummarizationSetBy = Automatic
+
+	column TEAM
+		dataType: string
+		lineageTag: c2bb7f28-b42a-4af4-9548-ef18dd348a5d
+		summarizeBy: none
+		sourceColumn: TEAM
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GAME DATE'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: e2de2607-00b9-416c-97a5-de33ea0d2fc3
+		summarizeBy: none
+		sourceColumn: GAME DATE
+
+		variation Variation
+			isDefault
+			relationship: e746165c-8ae9-47b4-95b7-5bdeb1d8120f
+			defaultHierarchy: LocalDateTable_fb869739-dc36-4afa-8c3e-e26988264ba7.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Scoring Type'
+		dataType: string
+		lineageTag: 5e37792b-22d6-4d24-804b-e82561527999
+		summarizeBy: none
+		sourceColumn: Scoring Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pts
+		dataType: int64
+		formatString: 0
+		lineageTag: d0cd33cf-0862-40e1-8a7b-c861073633ea
+		summarizeBy: sum
+		sourceColumn: Pts
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Game Date Key'
+		dataType: string
+		lineageTag: d7adc7c2-12cc-4f1e-ba02-c137508a428b
+		summarizeBy: none
+		sourceColumn: Game Date Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pie Chart Key'
+		dataType: string
+		lineageTag: 311ca2ca-7bbb-467b-aafd-a697444c8a8e
+		summarizeBy: none
+		sourceColumn: Pie Chart Key
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'NBA Boxscore History Pie Chart' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\charl\OneDrive\Documents\Datasets\Sports\NBA\NBACOM Gamelog Stats 2023.xlsx"), null, true),
+				    Sheet1_Sheet = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(Sheet1_Sheet,{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type any}, {"Column5", type text}, {"Column6", type any}, {"Column7", type any}, {"Column8", type any}, {"Column9", type any}, {"Column10", type any}, {"Column11", type any}, {"Column12", type any}, {"Column13", type any}, {"Column14", type any}, {"Column15", type any}, {"Column16", type any}, {"Column17", type any}, {"Column18", type any}, {"Column19", type any}, {"Column20", type any}, {"Column21", type any}, {"Column22", type any}, {"Column23", type any}, {"Column24", type any}, {"Column25", type any}, {"Column26", type any}}),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"PLAYER", type text}, {"TEAM", type text}, {"MATCH UP", type text}, {"GAME DATE", type date}, {"W/L", type text}, {"MIN", Int64.Type}, {"PTS", Int64.Type}, {"FGM", Int64.Type}, {"FGA", Int64.Type}, {"FG%", type any}, {"3PM", Int64.Type}, {"3PA", Int64.Type}, {"3P%", type any}, {"FTM", Int64.Type}, {"FTA", Int64.Type}, {"FT%", type any}, {"OREB", Int64.Type}, {"DREB", Int64.Type}, {"REB", Int64.Type}, {"AST", Int64.Type}, {"STL", Int64.Type}, {"BLK", Int64.Type}, {"TOV", Int64.Type}, {"PF", Int64.Type}, {"+/-", Int64.Type}, {"FP", type number}}),
+				    #"Added Conditional Column" = Table.AddColumn(#"Changed Type1", "Custom", each if Text.Contains([MATCH UP], "@") then "A" else "H"),
+				    #"Renamed Columns" = Table.RenameColumns(#"Added Conditional Column",{{"Custom", "Home/Away"}}),
+				    #"Duplicated Column" = Table.DuplicateColumn(#"Renamed Columns", "MATCH UP", "MATCH UP - Copy"),
+				    #"Extracted Last Characters" = Table.TransformColumns(#"Duplicated Column", {{"MATCH UP - Copy", each Text.End(_, 3), type text}}),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Extracted Last Characters",{{"MATCH UP - Copy", "Opponent"}}),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Renamed Columns1",{"PLAYER", "TEAM", "GAME DATE", "FGM", "3PM", "FTM"}),
+				    #"Added Custom" = Table.AddColumn(#"Removed Other Columns", "FGM Points", each [FGM] * 2),
+				    #"Added Custom1" = Table.AddColumn(#"Added Custom", "3PM Points", each [3PM] * 3),
+				    #"Added Custom2" = Table.AddColumn(#"Added Custom1", "FTM Points", each [FTM] * 1),
+				    #"Removed Columns" = Table.RemoveColumns(#"Added Custom2",{"FGM", "3PM", "FTM"}),
+				    #"Unpivoted Columns" = Table.UnpivotOtherColumns(#"Removed Columns", {"PLAYER", "TEAM", "GAME DATE"}, "Attribute", "Value"),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Unpivoted Columns",{{"Value", Int64.Type}}),
+				    #"Renamed Columns2" = Table.RenameColumns(#"Changed Type2",{{"Value", "Pts"}, {"Attribute", "Scoring Type"}}),
+				    #"Duplicated Column1" = Table.DuplicateColumn(#"Renamed Columns2", "GAME DATE", "GAME DATE - Copy"),
+				    #"Changed Type3" = Table.TransformColumnTypes(#"Duplicated Column1",{{"GAME DATE - Copy", Int64.Type}}),
+				    #"Renamed Columns3" = Table.RenameColumns(#"Changed Type3",{{"GAME DATE - Copy", "Game Date Key"}}),
+				    #"Changed Type4" = Table.TransformColumnTypes(#"Renamed Columns3",{{"Game Date Key", type text}}),
+				    #"Added Custom3" = Table.AddColumn(#"Changed Type4", "Custom", each [PLAYER]&" "&[TEAM]&" "&[Game Date Key]),
+				    #"Renamed Columns4" = Table.RenameColumns(#"Added Custom3",{{"Custom", "Pie Chart Key"}}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Renamed Columns4"," Points","",Replacer.ReplaceText,{"Scoring Type"})
+				in
+				    #"Replaced Value"
+
+	annotation PBI_ResultType = Table
+
