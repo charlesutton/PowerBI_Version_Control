@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Player PPG"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "113595be-f594-49a4-978f-51a9666d7a8a"
+  }
+}
