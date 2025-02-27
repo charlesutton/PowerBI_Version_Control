@@ -6,7 +6,7 @@ model Model
 		legacyRedirects
 		returnErrorValuesAsNull
 
-annotation PBI_QueryOrder = ["ActivePlayerGamelogs"]
+annotation PBI_QueryOrder = ["ActivePlayerGamelogs","PlayersList"]
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
@@ -17,6 +17,7 @@ annotation PBI_ProTooling = ["DevMode"]
 ref table ActivePlayerGamelogs
 ref table DateTableTemplate_a752824d-9047-45cd-b641-4651a20a19b4
 ref table LocalDateTable_22bde50c-ff7a-4c9c-a526-b0321be76bf1
+ref table PlayersList
 
 ref cultureInfo en-US
 

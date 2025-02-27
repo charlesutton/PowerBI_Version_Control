@@ -1,6 +1,26 @@
 table ActivePlayerGamelogs
 	lineageTag: e19e015e-c8e6-4271-bd5e-281054c9a72c
 
+	measure 'Avg PPG' = AVERAGE(ActivePlayerGamelogs[PTS])
+		lineageTag: fa6d35b7-8272-46f5-a986-2e1a006fdb4f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Avg AST' = AVERAGE(ActivePlayerGamelogs[AST])
+		lineageTag: eed4c037-0903-4f9a-a1c5-d4ecbdaba347
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Avg REB' = AVERAGE(ActivePlayerGamelogs[REB])
+		lineageTag: cd8994c3-9b72-4e63-81ab-92c2ee7bc835
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Avg STL' = AVERAGE(ActivePlayerGamelogs[STL])
+		lineageTag: cb43eb1d-249b-4c00-8ac4-b01da54196e2
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column SEASON_ID
 		dataType: int64
 		formatString: 0

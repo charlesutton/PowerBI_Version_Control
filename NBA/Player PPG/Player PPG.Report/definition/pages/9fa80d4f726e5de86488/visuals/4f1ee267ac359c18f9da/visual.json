@@ -3,9 +3,9 @@
   "name": "4f1ee267ac359c18f9da",
   "position": {
     "x": 0,
-    "y": 0,
+    "y": 94.346504559270514,
     "z": 0,
-    "height": 719.75683890577511,
+    "height": 625.41033434650456,
     "width": 1280,
     "tabOrder": 0
   },
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "ActivePlayerGamelogs"
+                      "Entity": "PlayersList"
                     }
                   },
-                  "Property": "Player_ID"
+                  "Property": "full_name"
                 }
               },
-              "queryRef": "ActivePlayerGamelogs.Player_ID",
-              "nativeQueryRef": "Player_ID",
+              "queryRef": "PlayersList.full_name",
+              "nativeQueryRef": "full_name",
               "active": true
             }
           ]
@@ -36,22 +36,17 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "ActivePlayerGamelogs"
-                        }
-                      },
-                      "Property": "PTS"
+                    "SourceRef": {
+                      "Entity": "ActivePlayerGamelogs"
                     }
                   },
-                  "Function": 1
+                  "Property": "Avg PPG"
                 }
               },
-              "queryRef": "Sum(ActivePlayerGamelogs.PTS)",
-              "nativeQueryRef": "Average of PTS"
+              "queryRef": "ActivePlayerGamelogs.Avg PPG",
+              "nativeQueryRef": "Avg PPG"
             }
           ]
         }
@@ -60,18 +55,13 @@
         "sort": [
           {
             "field": {
-              "Aggregation": {
+              "Measure": {
                 "Expression": {
-                  "Column": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "ActivePlayerGamelogs"
-                      }
-                    },
-                    "Property": "PTS"
+                  "SourceRef": {
+                    "Entity": "ActivePlayerGamelogs"
                   }
                 },
-                "Function": 1
+                "Property": "Avg PPG"
               }
             },
             "direction": "Descending"
@@ -88,6 +78,65 @@
               "expr": {
                 "Literal": {
                   "Value": "'Categorical'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 3,
+                      "Percent": 0.2
+                    }
+                  }
+                }
+              }
+            },
+            "borderShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "borderColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "fillTransparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "50D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
