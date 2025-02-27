@@ -1,0 +1,336 @@
+{
+  "config": "{\"version\":\"5.50\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY23SU08\",\"version\":\"5.48\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "pods": [
+    {
+      "boundSection": "ReportSectiond99ee8f5cd7364382b04",
+      "config": "{}",
+      "name": "Pod",
+      "parameters": "[{\"name\":\"Param_Filter3b1fd88657500a085541\",\"boundFilter\":\"Filter3b1fd88657500a085541\",\"fieldExpr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Player Summary Stats\"}},\"Property\":\"Overall Rank\"}}},{\"name\":\"Param_Filterff10df5c0a792010d546\",\"boundFilter\":\"Filterff10df5c0a792010d546\",\"fieldExpr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Player Summary Stats\"}},\"Property\":\"TEAM\"}}}]",
+      "type": 1
+    }
+  ],
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY23SU08",
+            "path": "BaseThemes/CY23SU08.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{\"visibility\":1}",
+      "displayName": "Duplicate of Page 3",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "ReportSection090926ec505ca9680817",
+      "ordinal": 2,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"4ca8e6e6338414e39e25\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":1000,\"width\":1280,\"height\":68.04766269477544,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Power of Heatmaps\",\"textStyle\":{\"fontSize\":\"32pt\",\"color\":\"#f38b02\"}}]}]}}]}}}",
+          "filters": "[]",
+          "height": 68.05,
+          "width": 1280.00,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"7870c2606b90ea6e7a85\",\"layouts\":[{\"id\":0,\"position\":{\"x\":55.14207149404216,\"y\":126.70944087992667,\"z\":2000,\"width\":1149.7708524289644,\"height\":215.87534372135656,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"pivotTable\",\"projections\":{\"Rows\":[{\"queryRef\":\"Player Summary Stats.Overall Rank\",\"active\":true}],\"Values\":[{\"queryRef\":\"Min(Player Summary Stats.PP Key)\"}],\"Columns\":[{\"queryRef\":\"Player Summary Stats.TEAM\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Player Summary Stats\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"PP Key\"}},\"Function\":5},\"Name\":\"Min(Player Summary Stats.PP Key)\",\"NativeReferenceName\":\"Count of PP Key\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Overall Rank\"},\"Name\":\"Player Summary Stats.Overall Rank\",\"NativeReferenceName\":\"Overall Rank\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"TEAM\"},\"Name\":\"Player Summary Stats.TEAM\",\"NativeReferenceName\":\"TEAM\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"TEAM\"}}}]},\"expansionStates\":[{\"roles\":[\"Rows\"],\"levels\":[{\"queryRefs\":[\"Player Summary Stats.Overall Rank\"],\"isCollapsed\":true,\"isPinned\":true}],\"root\":{\"identityValues\":null}}],\"drillFilterOtherVisuals\":true,\"objects\":{\"subTotals\":[{\"properties\":{\"rowSubtotals\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"columnSubtotals\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"values\":[{\"properties\":{},\"selector\":{\"data\":[{\"dataViewWildcard\":{\"matchingOption\":1}}],\"metadata\":\"Min(Player Summary Stats.PP Key)\"}},{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"13D\"}}}}}],\"columnWidth\":[{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"35.53761190499431D\"}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Player Summary Stats\"}},\"Property\":\"TEAM\"}},\"Right\":{\"Literal\":{\"Value\":\"'ATL'\"}}}}}]}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"62.75532607096886D\"}}}},\"selector\":{\"metadata\":\"Player Summary Stats.Overall Rank\"}}]}}}",
+          "filters": "[{\"name\":\"Filter2d3768cc93c40630b080\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Player Summary Stats\"}},\"Property\":\"PLAYER\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Player Summary Stats\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Not\":{\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"PLAYER\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"null\"}}]]}}}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{\"general\":[{\"properties\":{\"isInvertedSelectionMode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"isHiddenInViewMode\":false}]",
+          "height": 215.88,
+          "width": 1149.77,
+          "x": 55.14,
+          "y": 126.71,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"a0dc37d53707380823ac\",\"layouts\":[{\"id\":0,\"position\":{\"x\":55.14207149404216,\"y\":384.82126489459216,\"z\":0,\"width\":1149.7708524289644,\"height\":215.87534372135656,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"pivotTable\",\"projections\":{\"Rows\":[{\"queryRef\":\"Player Summary Stats.Overall Rank\",\"active\":true}],\"Values\":[{\"queryRef\":\"Min(Player Summary Stats.PP Key)\"}],\"Columns\":[{\"queryRef\":\"Player Summary Stats.TEAM\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Player Summary Stats\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"PP Key\"}},\"Function\":5},\"Name\":\"Min(Player Summary Stats.PP Key)\",\"NativeReferenceName\":\"Count of PP Key\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Overall Rank\"},\"Name\":\"Player Summary Stats.Overall Rank\",\"NativeReferenceName\":\"Overall Rank\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"TEAM\"},\"Name\":\"Player Summary Stats.TEAM\",\"NativeReferenceName\":\"TEAM\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"TEAM\"}}}]},\"expansionStates\":[{\"roles\":[\"Rows\"],\"levels\":[{\"queryRefs\":[\"Player Summary Stats.Overall Rank\"],\"isCollapsed\":true,\"isPinned\":true}],\"root\":{\"identityValues\":null}}],\"drillFilterOtherVisuals\":true,\"objects\":{\"subTotals\":[{\"properties\":{\"rowSubtotals\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"columnSubtotals\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"values\":[{\"properties\":{\"backColor\":{\"solid\":{\"color\":{\"expr\":{\"FillRule\":{\"Input\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Player Summary Stats\"}},\"Property\":\"PP Key\"}},\"Function\":5}},\"FillRule\":{\"linearGradient3\":{\"min\":{\"color\":{\"Literal\":{\"Value\":\"'#FFFFFF'\"}}},\"mid\":{\"color\":{\"Literal\":{\"Value\":\"'#F5D2AF'\"}}},\"max\":{\"color\":{\"Literal\":{\"Value\":\"'#F38B02'\"}}},\"nullColoringStrategy\":{\"strategy\":{\"Literal\":{\"Value\":\"'asZero'\"}}}}}}}}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"FillRule\":{\"Input\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Player Summary Stats\"}},\"Property\":\"PP Key\"}},\"Function\":5}},\"FillRule\":{\"linearGradient3\":{\"min\":{\"color\":{\"Literal\":{\"Value\":\"'#E88800'\"}},\"value\":{\"Literal\":{\"Value\":\"7D\"}}},\"mid\":{\"color\":{\"Literal\":{\"Value\":\"'#FFFFFF'\"}},\"value\":{\"Literal\":{\"Value\":\"8D\"}}},\"max\":{\"color\":{\"Literal\":{\"Value\":\"'#FFFFFF'\"}}},\"nullColoringStrategy\":{\"strategy\":{\"Literal\":{\"Value\":\"'asZero'\"}}}}}}}}}}},\"selector\":{\"data\":[{\"dataViewWildcard\":{\"matchingOption\":1}}],\"metadata\":\"Min(Player Summary Stats.PP Key)\"}},{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"13D\"}}},\"bold\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"columnWidth\":[{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"35.53761190499431D\"}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Player Summary Stats\"}},\"Property\":\"TEAM\"}},\"Right\":{\"Literal\":{\"Value\":\"'ATL'\"}}}}}]}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"62.75532607096886D\"}}}},\"selector\":{\"metadata\":\"Player Summary Stats.Overall Rank\"}}]}}}",
+          "filters": "[{\"name\":\"Filter2d3768cc93c40630b080\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Player Summary Stats\"}},\"Property\":\"PLAYER\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Player Summary Stats\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Not\":{\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"PLAYER\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"null\"}}]]}}}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{\"general\":[{\"properties\":{\"isInvertedSelectionMode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"isHiddenInViewMode\":false}]",
+          "height": 215.88,
+          "width": 1149.77,
+          "x": 55.14,
+          "y": 384.82,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{\"visibility\":1}",
+      "displayName": "Page 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "ReportSection10ed33e9ac75cceed177",
+      "ordinal": 3,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"8108ab53202426ecf458\",\"layouts\":[{\"id\":0,\"position\":{\"x\":9.605521030503024,\"y\":0,\"z\":0,\"width\":1270.6732106065429,\"height\":720.4140772877269,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"scatterChart\",\"projections\":{\"Category\":[{\"queryRef\":\"PLayer Summary Stats.PLAYER\",\"active\":true}],\"X\":[{\"queryRef\":\"Sum(PLayer Summary Stats.PPG)\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(PLayer Summary Stats.FGAPG)\"}],\"Series\":[{\"queryRef\":\"PLayer Summary Stats.PPG Quintile Score\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p1\",\"Entity\":\"Player Summary Stats\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p1\"}},\"Property\":\"PLAYER\"},\"Name\":\"PLayer Summary Stats.PLAYER\",\"NativeReferenceName\":\"PLAYER\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p1\"}},\"Property\":\"PPG\"}},\"Function\":0},\"Name\":\"Sum(PLayer Summary Stats.PPG)\",\"NativeReferenceName\":\"Sum of PPG\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p1\"}},\"Property\":\"FGAPG\"}},\"Function\":0},\"Name\":\"Sum(PLayer Summary Stats.FGAPG)\",\"NativeReferenceName\":\"Sum of FGAPG\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p1\"}},\"Property\":\"PPG Quintile Score\"},\"Name\":\"PLayer Summary Stats.PPG Quintile Score\",\"NativeReferenceName\":\"PPG Quintile Score\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 720.41,
+          "width": 1270.67,
+          "x": 9.61,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Player Analysis Dashbaord",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "ReportSection44a338fc01cc0cc0c644",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"045a43748660da50568e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":28.157653528872597,\"y\":95.03208065994501,\"z\":3000,\"width\":403.59303391384054,\"height\":360.1833180568286,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"barChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Player Summary Stats.Overall Rank\",\"active\":true}],\"Y\":[{\"queryRef\":\"Report - Measures.SS Player Num\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"r\",\"Entity\":\"Report - Measures\",\"Type\":0},{\"Name\":\"p\",\"Entity\":\"Player Summary Stats\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Overall Rank\"},\"Name\":\"Player Summary Stats.Overall Rank\",\"NativeReferenceName\":\"Overall Rank\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"SS Player Num\"},\"Name\":\"Report - Measures.SS Player Num\",\"NativeReferenceName\":\"SS Player Num\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"SS Player Num\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#F38B02'\"}}}}}}}]}}}",
+          "filters": "[]",
+          "height": 360.18,
+          "width": 403.59,
+          "x": 28.16,
+          "y": 95.03,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"33c21be2abd101ec71e0\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":4000,\"width\":1280,\"height\":68.04766269477544,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"NBA Player Scoring Efficiency Ranking\",\"textStyle\":{\"fontSize\":\"32pt\",\"color\":\"#f38b02\"}}]}]}}]}}}",
+          "filters": "[]",
+          "height": 68.05,
+          "width": 1280.00,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"5ca58212cd5750280b06\",\"layouts\":[{\"id\":0,\"position\":{\"x\":876.3525835866262,\"y\":95.31914893617022,\"z\":1000,\"width\":334.58966565349544,\"height\":359.87841945288756,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"treemap\",\"projections\":{\"Group\":[{\"queryRef\":\"Player Summary Stats.Overall Rank\",\"active\":true}],\"Values\":[{\"queryRef\":\"Sum(Player Summary Stats.PPG)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Player Summary Stats\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Overall Rank\"},\"Name\":\"Player Summary Stats.Overall Rank\",\"NativeReferenceName\":\"Overall Rank\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"PPG\"}},\"Function\":1},\"Name\":\"Sum(Player Summary Stats.PPG)\",\"NativeReferenceName\":\"Average of PPG\"}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#F38B02'\"}}}}}}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"FillRule\":{\"Input\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Player Summary Stats\"}},\"Property\":\"PPG\"}},\"Function\":1}},\"FillRule\":{\"linearGradient2\":{\"min\":{\"color\":{\"Literal\":{\"Value\":\"'#f5c4af'\"}}},\"max\":{\"color\":{\"Literal\":{\"Value\":\"'#F38B02'\"}}},\"nullColoringStrategy\":{\"strategy\":{\"Literal\":{\"Value\":\"'asZero'\"}}}}}}}}}}},\"selector\":{\"data\":[{\"dataViewWildcard\":{\"matchingOption\":1}}]}}]}}}",
+          "filters": "[]",
+          "height": 359.88,
+          "width": 334.59,
+          "x": 876.35,
+          "y": 95.32,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"8f649a92ebb700d251a3\",\"layouts\":[{\"id\":0,\"position\":{\"x\":61.00824931255729,\"y\":504.4912923923007,\"z\":0,\"width\":1149.7708524289644,\"height\":215.87534372135656,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"pivotTable\",\"projections\":{\"Rows\":[{\"queryRef\":\"Player Summary Stats.Overall Rank\",\"active\":true}],\"Values\":[{\"queryRef\":\"Min(Player Summary Stats.PP Key)\"}],\"Columns\":[{\"queryRef\":\"Player Summary Stats.TEAM\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Player Summary Stats\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"PP Key\"}},\"Function\":5},\"Name\":\"Min(Player Summary Stats.PP Key)\",\"NativeReferenceName\":\"Count of PP Key\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Overall Rank\"},\"Name\":\"Player Summary Stats.Overall Rank\",\"NativeReferenceName\":\"Overall Rank\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"TEAM\"},\"Name\":\"Player Summary Stats.TEAM\",\"NativeReferenceName\":\"TEAM\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"TEAM\"}}}]},\"expansionStates\":[{\"roles\":[\"Rows\"],\"levels\":[{\"queryRefs\":[\"Player Summary Stats.Overall Rank\"],\"isCollapsed\":true,\"isPinned\":true}],\"root\":{\"identityValues\":null}}],\"drillFilterOtherVisuals\":true,\"objects\":{\"subTotals\":[{\"properties\":{\"rowSubtotals\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"columnSubtotals\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"values\":[{\"properties\":{\"backColor\":{\"solid\":{\"color\":{\"expr\":{\"FillRule\":{\"Input\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Player Summary Stats\"}},\"Property\":\"PP Key\"}},\"Function\":5}},\"FillRule\":{\"linearGradient3\":{\"min\":{\"color\":{\"Literal\":{\"Value\":\"'#FFFFFF'\"}}},\"mid\":{\"color\":{\"Literal\":{\"Value\":\"'#F5D2AF'\"}}},\"max\":{\"color\":{\"Literal\":{\"Value\":\"'#F38B02'\"}}},\"nullColoringStrategy\":{\"strategy\":{\"Literal\":{\"Value\":\"'asZero'\"}}}}}}}}}}},\"selector\":{\"data\":[{\"dataViewWildcard\":{\"matchingOption\":1}}],\"metadata\":\"Min(Player Summary Stats.PP Key)\"}},{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"13D\"}}}}}],\"columnWidth\":[{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"35.53761190499431D\"}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Player Summary Stats\"}},\"Property\":\"TEAM\"}},\"Right\":{\"Literal\":{\"Value\":\"'ATL'\"}}}}}]}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"62.75532607096886D\"}}}},\"selector\":{\"metadata\":\"Player Summary Stats.Overall Rank\"}}]}}}",
+          "filters": "[{\"name\":\"Filter2d3768cc93c40630b080\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Player Summary Stats\"}},\"Property\":\"PLAYER\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Player Summary Stats\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Not\":{\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"PLAYER\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"null\"}}]]}}}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{\"general\":[{\"properties\":{\"isInvertedSelectionMode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"isHiddenInViewMode\":false}]",
+          "height": 215.88,
+          "width": 1149.77,
+          "x": 61.01,
+          "y": 504.49,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"deda37f5d39acb543b60\",\"layouts\":[{\"id\":0,\"position\":{\"x\":454.0421631530706,\"y\":95.03208065994501,\"z\":2000,\"width\":403.59303391384054,\"height\":360.1833180568286,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"barChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Player Summary Stats.Overall Rank\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(Player Summary Stats.MINPG)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Player Summary Stats\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Overall Rank\"},\"Name\":\"Player Summary Stats.Overall Rank\",\"NativeReferenceName\":\"Overall Rank\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"MINPG\"}},\"Function\":1},\"Name\":\"Sum(Player Summary Stats.MINPG)\",\"NativeReferenceName\":\"Average of MINPG\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Overall Rank\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#F38B02'\"}}}}}}}]}}}",
+          "filters": "[]",
+          "height": 360.18,
+          "width": 403.59,
+          "x": 454.04,
+          "y": 95.03,
+          "z": 2000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{\"objects\":{\"outspacePane\":[{\"properties\":{\"width\":{\"expr\":{\"Literal\":{\"Value\":\"320L\"}}}}}]},\"visibility\":1}",
+      "displayName": "Page 2",
+      "displayOption": 1,
+      "filters": "[{\"name\":\"Filter8578c842db99f80d66d7\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Player Summary Stats\"}},\"Property\":\"MINPG\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Player Summary Stats\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Comparison\":{\"ComparisonKind\":2,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"MINPG\"}},\"Right\":{\"Literal\":{\"Value\":\"15L\"}}}}}]},\"type\":\"Advanced\",\"howCreated\":1}]",
+      "height": 720.00,
+      "name": "ReportSectionae2b135e68f1a671a59c",
+      "ordinal": 4,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"182a975b85a840264717\",\"layouts\":[{\"id\":0,\"position\":{\"x\":983.3985581874357,\"y\":374.3769309989702,\"z\":4000,\"width\":274.1915550978373,\"height\":118.64057672502575,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Report - Measures.SS Player Num\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"r\",\"Entity\":\"Report - Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"SS Player Num\"},\"Name\":\"Report - Measures.SS Player Num\",\"NativeReferenceName\":\"SS Player Num\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"SS Player Num\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"27D\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"titleWrap\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}]}}}",
+          "filters": "[{\"name\":\"Filter296584984ac1904fd358\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Player Summary Stats\"}},\"Property\":\"Overall Rank\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Player Summary Stats\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Overall Rank\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"2L\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{}}]",
+          "height": 118.64,
+          "width": 274.19,
+          "x": 983.40,
+          "y": 374.38,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"5bc93c800ee8cdabb903\",\"layouts\":[{\"id\":0,\"position\":{\"x\":649.8867147270855,\"y\":493.0175077239959,\"z\":7000,\"width\":274.1915550978373,\"height\":118.64057672502575,\"tabOrder\":7000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Report - Measures.SS Player Perc\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"r\",\"Entity\":\"Report - Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"SS Player Perc\"},\"Name\":\"Report - Measures.SS Player Perc\",\"NativeReferenceName\":\"SS Player Perc\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"SS Player Perc\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"27D\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"titleWrap\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}]}}}",
+          "filters": "[{\"name\":\"Filter296584984ac1904fd358\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Player Summary Stats\"}},\"Property\":\"Overall Rank\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Player Summary Stats\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Overall Rank\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"3L\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{}}]",
+          "height": 118.64,
+          "width": 274.19,
+          "x": 649.89,
+          "y": 493.02,
+          "z": 7000.00
+        },
+        {
+          "config": "{\"name\":\"6a20d7c9334710c1c679\",\"layouts\":[{\"id\":0,\"position\":{\"x\":983.3985581874357,\"y\":493.0175077239959,\"z\":8000,\"width\":274.1915550978373,\"height\":118.64057672502575,\"tabOrder\":8000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Report - Measures.SS Player Perc\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"r\",\"Entity\":\"Report - Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"SS Player Perc\"},\"Name\":\"Report - Measures.SS Player Perc\",\"NativeReferenceName\":\"SS Player Perc\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"SS Player Perc\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"27D\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"titleWrap\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}]}}}",
+          "filters": "[{\"name\":\"Filter296584984ac1904fd358\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Player Summary Stats\"}},\"Property\":\"Overall Rank\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Player Summary Stats\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Overall Rank\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"2L\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{}}]",
+          "height": 118.64,
+          "width": 274.19,
+          "x": 983.40,
+          "y": 493.02,
+          "z": 8000.00
+        },
+        {
+          "config": "{\"name\":\"8ff6c5942982af466978\",\"layouts\":[{\"id\":0,\"position\":{\"x\":983.3985581874357,\"y\":176.64263645726058,\"z\":6000,\"width\":274.1915550978373,\"height\":118.64057672502575,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Report - Measures.SS Player Perc\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"r\",\"Entity\":\"Report - Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"SS Player Perc\"},\"Name\":\"Report - Measures.SS Player Perc\",\"NativeReferenceName\":\"SS Player Perc\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"SS Player Perc\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"27D\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"titleWrap\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}]}}}",
+          "filters": "[{\"name\":\"Filter296584984ac1904fd358\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Player Summary Stats\"}},\"Property\":\"Overall Rank\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Player Summary Stats\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Overall Rank\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"4L\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{}}]",
+          "height": 118.64,
+          "width": 274.19,
+          "x": 983.40,
+          "y": 176.64,
+          "z": 6000.00
+        },
+        {
+          "config": "{\"name\":\"9224d108512d79d992a5\",\"layouts\":[{\"id\":0,\"position\":{\"x\":983.3985581874357,\"y\":58.00205973223481,\"z\":2000,\"width\":274.1915550978373,\"height\":118.64057672502575,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Report - Measures.SS Player Num\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"r\",\"Entity\":\"Report - Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"SS Player Num\"},\"Name\":\"Report - Measures.SS Player Num\",\"NativeReferenceName\":\"SS Player Num\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"SS Player Num\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"27D\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"titleWrap\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}]}}}",
+          "filters": "[{\"name\":\"Filter296584984ac1904fd358\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Player Summary Stats\"}},\"Property\":\"Overall Rank\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Player Summary Stats\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Overall Rank\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"4L\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{}}]",
+          "height": 118.64,
+          "width": 274.19,
+          "x": 983.40,
+          "y": 58.00,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"a1c473927f2570d9a622\",\"layouts\":[{\"id\":0,\"position\":{\"x\":649.8867147270855,\"y\":58.00205973223481,\"z\":1000,\"width\":137.09577754891865,\"height\":79.09371781668384,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Report - Measures.SS Player Num\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"r\",\"Entity\":\"Report - Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"SS Player Num\"},\"Name\":\"Report - Measures.SS Player Num\",\"NativeReferenceName\":\"SS Player Num\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"SS Player Num\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"27D\"}}}}}]}}}",
+          "filters": "[{\"name\":\"Filter296584984ac1904fd358\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Player Summary Stats\"}},\"Property\":\"Overall Rank\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Player Summary Stats\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Overall Rank\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"5L\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{}}]",
+          "height": 79.09,
+          "width": 137.10,
+          "x": 649.89,
+          "y": 58.00,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"b907d28e80ff9bfb40ae\",\"layouts\":[{\"id\":0,\"position\":{\"x\":786.9824922760041,\"y\":38.228630278063854,\"z\":5000,\"width\":137.09577754891865,\"height\":118.64057672502575,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Report - Measures.SS Player Perc\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"r\",\"Entity\":\"Report - Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"SS Player Perc\"},\"Name\":\"Report - Measures.SS Player Perc\",\"NativeReferenceName\":\"SS Player Perc\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"SS Player Perc\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"27D\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"titleWrap\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}]}}}",
+          "filters": "[{\"name\":\"Filter296584984ac1904fd358\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Player Summary Stats\"}},\"Property\":\"Overall Rank\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Player Summary Stats\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Overall Rank\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"5L\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{}}]",
+          "height": 118.64,
+          "width": 137.10,
+          "x": 786.98,
+          "y": 38.23,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"b96087085c7b21ad8f9a\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10.545829042224511,\"y\":137.09577754891865,\"z\":0,\"width\":630.1132852729146,\"height\":582.6570545829043,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"scatterChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Player Summary Stats.PLAYER\",\"active\":true}],\"X\":[{\"queryRef\":\"Sum(Player Summary Stats.EFGPG)\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(Player Summary Stats.TSPPG)\"}],\"Size\":[{\"queryRef\":\"Sum(Player Summary Stats.MINPG)\"}],\"Series\":[{\"queryRef\":\"Player Summary Stats.Overall Rank\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Player Summary Stats\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"PLAYER\"},\"Name\":\"Player Summary Stats.PLAYER\",\"NativeReferenceName\":\"PLAYER\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"EFGPG\"}},\"Function\":0},\"Name\":\"Sum(Player Summary Stats.EFGPG)\",\"NativeReferenceName\":\"Sum of EFGPG\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"TSPPG\"}},\"Function\":0},\"Name\":\"Sum(Player Summary Stats.TSPPG)\",\"NativeReferenceName\":\"Sum of TSPPG\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"MINPG\"}},\"Function\":1},\"Name\":\"Sum(Player Summary Stats.MINPG)\",\"NativeReferenceName\":\"Average of MINPG\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Overall Rank\"},\"Name\":\"Player Summary Stats.Overall Rank\",\"NativeReferenceName\":\"Overall Rank\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"bubbles\":[{\"properties\":{\"bubbleSize\":{\"expr\":{\"Literal\":{\"Value\":\"-26L\"}}},\"markerRangeType\":{\"expr\":{\"Literal\":{\"Value\":\"'magnitude'\"}}}}}],\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 582.66,
+          "width": 630.11,
+          "x": 10.55,
+          "y": 137.10,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"f4730c924d3bb34f7292\",\"layouts\":[{\"id\":0,\"position\":{\"x\":649.8867147270855,\"y\":374.3769309989702,\"z\":3000,\"width\":274.1915550978373,\"height\":118.64057672502575,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Report - Measures.SS Player Num\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"r\",\"Entity\":\"Report - Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"SS Player Num\"},\"Name\":\"Report - Measures.SS Player Num\",\"NativeReferenceName\":\"SS Player Num\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"SS Player Num\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"27D\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"titleWrap\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}]}}}",
+          "filters": "[{\"name\":\"Filter296584984ac1904fd358\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Player Summary Stats\"}},\"Property\":\"Overall Rank\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Player Summary Stats\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Overall Rank\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"3L\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{}}]",
+          "height": 118.64,
+          "width": 274.19,
+          "x": 649.89,
+          "y": 374.38,
+          "z": 3000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{\"visibility\":1}",
+      "displayName": "Validation",
+      "displayOption": 1,
+      "filters": "[{\"name\":\"Filter04605e15bb9b54a02452\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Player Summary Stats\"}},\"Property\":\"MINPG\"}},\"type\":\"Advanced\",\"howCreated\":1},{\"name\":\"Filter21a9593c72b348b6e613\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Player Summary Stats\"}},\"Property\":\"Overall Rank\"}},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{}}]",
+      "height": 720.00,
+      "name": "ReportSectiond0396a6f8dd9c31d8044",
+      "ordinal": 5,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"3dc3222a08e90cb78104\",\"layouts\":[{\"id\":0,\"position\":{\"x\":19.945004582951423,\"y\":19.945004582951423,\"z\":1000,\"width\":395.3803849679194,\"height\":187.71769019248396,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Sum(Player Summary Stats.Overall Rank)\"},{\"queryRef\":\"Report - Measures.SS Player Num\"},{\"queryRef\":\"Report - Measures.SS Player Perc\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"r\",\"Entity\":\"Report - Measures\",\"Type\":0},{\"Name\":\"p\",\"Entity\":\"Player Summary Stats\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Overall Rank\"},\"Name\":\"Sum(Player Summary Stats.Overall Rank)\",\"NativeReferenceName\":\"Overall Rank\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"SS Player Num\"},\"Name\":\"Report - Measures.SS Player Num\",\"NativeReferenceName\":\"SS Player Num\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"SS Player Perc\"},\"Name\":\"Report - Measures.SS Player Perc\",\"NativeReferenceName\":\"SS Player Perc\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 187.72,
+          "width": 395.38,
+          "x": 19.95,
+          "y": 19.95,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"9d8a0e92381e40e24cd4\",\"layouts\":[{\"id\":0,\"position\":{\"x\":402.4197983501375,\"y\":9.385884509624198,\"z\":0,\"width\":396.55362053162236,\"height\":188.890925756187,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Sum(Player Summary Stats.Overall Rank)\"},{\"queryRef\":\"Report - Measures.SS Player Num\"},{\"queryRef\":\"Report - Measures.SS Player Perc\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"r\",\"Entity\":\"Report - Measures\",\"Type\":0},{\"Name\":\"p\",\"Entity\":\"Player Summary Stats\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Overall Rank\"},\"Name\":\"Sum(Player Summary Stats.Overall Rank)\",\"NativeReferenceName\":\"Overall Rank\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"SS Player Num\"},\"Name\":\"Report - Measures.SS Player Num\",\"NativeReferenceName\":\"SS Player Num\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"SS Player Perc\"},\"Name\":\"Report - Measures.SS Player Perc\",\"NativeReferenceName\":\"SS Player Perc\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[{\"name\":\"Filterb48aa4b562c666472657\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Player Summary Stats\"}},\"Property\":\"Overall Rank\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Player Summary Stats\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Overall Rank\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"5L\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{},\"isHiddenInViewMode\":false}]",
+          "height": 188.89,
+          "width": 396.55,
+          "x": 402.42,
+          "y": 9.39,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"ad1df218b5e0705c8c1d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":763.7763519706691,\"y\":0,\"z\":2000,\"width\":397.7268560953254,\"height\":188.890925756187,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"NBACOM Gamelogs.TEAM\"},{\"queryRef\":\"NBACOM Gamelogs.PLAYER\"},{\"queryRef\":\"Report - Measures.Avg PPG per Team per Date\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"r\",\"Entity\":\"Report - Measures\",\"Type\":0},{\"Name\":\"n\",\"Entity\":\"NBACOM Gamelogs\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"Avg PPG per Team per Date\"},\"Name\":\"Report - Measures.Avg PPG per Team per Date\",\"NativeReferenceName\":\"Avg PPG per Team per Date\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"n\"}},\"Property\":\"TEAM\"},\"Name\":\"NBACOM Gamelogs.TEAM\",\"NativeReferenceName\":\"TEAM\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"n\"}},\"Property\":\"PLAYER\"},\"Name\":\"NBACOM Gamelogs.PLAYER\",\"NativeReferenceName\":\"PLAYER\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"Avg PPG per Team per Date\"}}}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 188.89,
+          "width": 397.73,
+          "x": 763.78,
+          "y": 0.00,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"b82d6a5d88040cb2d87b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":716.8469294225482,\"y\":224.08799266727775,\"z\":4000,\"width\":563.1530705774519,\"height\":476.33363886342806,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Sum(Player Summary Stats.Overall Rank)\"},{\"queryRef\":\"Sum(Player Summary Stats.PPG)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Player Summary Stats\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"PPG\"}},\"Function\":1},\"Name\":\"Sum(Player Summary Stats.PPG)\",\"NativeReferenceName\":\"Average of PPG\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Overall Rank\"},\"Name\":\"Sum(Player Summary Stats.Overall Rank)\",\"NativeReferenceName\":\"Overall Rank\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 476.33,
+          "width": 563.15,
+          "x": 716.85,
+          "y": 224.09,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"d155ce3384d05099905d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":15.252062328139322,\"y\":224.08799266727775,\"z\":3000,\"width\":1006.6361136571953,\"height\":476.33363886342806,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"NBACOM Gamelogs.PLAYER\"},{\"queryRef\":\"NBACOM Gamelogs.TEAM\"},{\"queryRef\":\"NBACOM Gamelogs.GAME DATE\"},{\"queryRef\":\"Sum(NBACOM Gamelogs.PTS)\"},{\"queryRef\":\"Report - Measures.Avg PPG per Team per Date\"},{\"queryRef\":\"Report - Measures.Total Per Team Per Date\"},{\"queryRef\":\"Report - Measures.Total Per Team Per Date v2\"},{\"queryRef\":\"Report - Measures.Percent of Player Points per Game\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"n\",\"Entity\":\"NBACOM Gamelogs\",\"Type\":0},{\"Name\":\"r\",\"Entity\":\"Report - Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"n\"}},\"Property\":\"PLAYER\"},\"Name\":\"NBACOM Gamelogs.PLAYER\",\"NativeReferenceName\":\"PLAYER\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"n\"}},\"Property\":\"TEAM\"},\"Name\":\"NBACOM Gamelogs.TEAM\",\"NativeReferenceName\":\"TEAM\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"n\"}},\"Property\":\"GAME DATE\"},\"Name\":\"NBACOM Gamelogs.GAME DATE\",\"NativeReferenceName\":\"GAME DATE\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"n\"}},\"Property\":\"PTS\"}},\"Function\":0},\"Name\":\"Sum(NBACOM Gamelogs.PTS)\",\"NativeReferenceName\":\"Sum of PTS\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"Avg PPG per Team per Date\"},\"Name\":\"Report - Measures.Avg PPG per Team per Date\",\"NativeReferenceName\":\"Avg PPG per Team per Date\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"Total Per Team Per Date\"},\"Name\":\"Report - Measures.Total Per Team Per Date\",\"NativeReferenceName\":\"Total Per Team Per Date\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"Percent of Player Points per Game\"},\"Name\":\"Report - Measures.Percent of Player Points per Game\",\"NativeReferenceName\":\"Percent of Player Points per Game\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"Total Per Team Per Date v2\"},\"Name\":\"Report - Measures.Total Per Team Per Date v2\",\"NativeReferenceName\":\"Total Per Team Per Date v2\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"n\"}},\"Property\":\"TEAM\"}}},{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"n\"}},\"Property\":\"GAME DATE\"}}},{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"n\"}},\"Property\":\"PTS\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[{\"name\":\"Filter06e2a4436c9d1b8b4ccd\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"NBACOM Gamelogs\"}},\"Property\":\"PLAYER\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"n\",\"Entity\":\"NBACOM Gamelogs\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"n\"}},\"Property\":\"PLAYER\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Stephen Curry'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{\"general\":[{\"properties\":{}}]},\"isHiddenInViewMode\":false}]",
+          "height": 476.33,
+          "width": 1006.64,
+          "x": 15.25,
+          "y": 224.09,
+          "z": 3000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Player Ranking Details",
+      "displayOption": 1,
+      "filters": "[{\"name\":\"Filter3b1fd88657500a085541\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Player Summary Stats\"}},\"Property\":\"Overall Rank\"}},\"type\":\"Categorical\",\"howCreated\":5},{\"name\":\"Filterff10df5c0a792010d546\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Player Summary Stats\"}},\"Property\":\"TEAM\"}},\"type\":\"Categorical\",\"howCreated\":5}]",
+      "height": 720.00,
+      "name": "ReportSectiond99ee8f5cd7364382b04",
+      "ordinal": 1,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"1ab92bf2b50762778db9\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10.174880763116057,\"y\":78.34658187599364,\"z\":0,\"width\":1269.825119236884,\"height\":602.3529411764706,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Player Summary Stats.PLAYER\"},{\"queryRef\":\"Player Summary Stats.TEAM\"},{\"queryRef\":\"Sum(Player Summary Stats.PPG)\"},{\"queryRef\":\"Player Summary Stats.Overall Rank\"},{\"queryRef\":\"Player Summary Stats.MINPG Quintile Score\"},{\"queryRef\":\"Player Summary Stats.FGAPG Quintile Score\"},{\"queryRef\":\"Player Summary Stats.FTAPG Quintile Score\"},{\"queryRef\":\"Player Summary Stats.PPG Quintile Score\"},{\"queryRef\":\"Sum(Player Summary Stats.EFGPG Quintile Score)\"},{\"queryRef\":\"Sum(Player Summary Stats.TSPGPG Quintile Score)\"},{\"queryRef\":\"Report - Measures.SS Player Num\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Player Summary Stats\",\"Type\":0},{\"Name\":\"r\",\"Entity\":\"Report - Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"PLAYER\"},\"Name\":\"Player Summary Stats.PLAYER\",\"NativeReferenceName\":\"PLAYER\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"TEAM\"},\"Name\":\"Player Summary Stats.TEAM\",\"NativeReferenceName\":\"TEAM\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"PPG\"},\"Name\":\"Sum(Player Summary Stats.PPG)\",\"NativeReferenceName\":\"PPG\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Overall Rank\"},\"Name\":\"Player Summary Stats.Overall Rank\",\"NativeReferenceName\":\"Overall Rank\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"MINPG Quintile Score\"},\"Name\":\"Player Summary Stats.MINPG Quintile Score\",\"NativeReferenceName\":\"MINPG Quintile Score\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"FGAPG Quintile Score\"},\"Name\":\"Player Summary Stats.FGAPG Quintile Score\",\"NativeReferenceName\":\"FGAPG Quintile Score\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"FTAPG Quintile Score\"},\"Name\":\"Player Summary Stats.FTAPG Quintile Score\",\"NativeReferenceName\":\"FTAPG Quintile Score\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"PPG Quintile Score\"},\"Name\":\"Player Summary Stats.PPG Quintile Score\",\"NativeReferenceName\":\"PPG Quintile Score\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"EFGPG Quintile Score\"},\"Name\":\"Sum(Player Summary Stats.EFGPG Quintile Score)\",\"NativeReferenceName\":\"EFGPG Quintile Score\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"TSPGPG Quintile Score\"},\"Name\":\"Sum(Player Summary Stats.TSPGPG Quintile Score)\",\"NativeReferenceName\":\"TSPGPG Quintile Score\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"SS Player Num\"},\"Name\":\"Report - Measures.SS Player Num\",\"NativeReferenceName\":\"SS Player Num\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"PPG\"}}}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 602.35,
+          "width": 1269.83,
+          "x": 10.17,
+          "y": 78.35,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"3d084afc399d045e0eb4\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":10,\"z\":2000,\"width\":1280,\"height\":68.04766269477544,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Basketball Player Rank Details\",\"textStyle\":{\"fontSize\":\"32pt\",\"color\":\"#f38b02\"}}]}]}}]}}}",
+          "filters": "[]",
+          "height": 68.05,
+          "width": 1280.00,
+          "x": 0.00,
+          "y": 10.00,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"5fcd5bccc8de508a0dd0\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":680.6995230524642,\"z\":1000,\"width\":131.25596184419715,\"height\":39.68203497615262,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'back'\"}}},\"lineWeight\":{\"expr\":{\"Literal\":{\"Value\":\"1L\"}}}},\"selector\":{\"id\":\"default\"}}],\"text\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}},{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Previous Page'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'Back'\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 39.68,
+          "width": 131.26,
+          "x": 0.00,
+          "y": 680.70,
+          "z": 1000.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

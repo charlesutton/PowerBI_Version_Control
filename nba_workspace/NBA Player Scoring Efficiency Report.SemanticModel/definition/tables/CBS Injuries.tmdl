@@ -1,0 +1,83 @@
+table 'CBS Injuries'
+	lineageTag: 439d1901-c8a8-483e-bb79-9aa13acadd8e
+
+	column 'Player Abb'
+		dataType: string
+		lineageTag: 850355c9-c4a1-4258-b1bd-7d9925f01527
+		summarizeBy: none
+		sourceColumn: Player Abb
+
+		annotation SummarizationSetBy = Automatic
+
+	column Player
+		dataType: string
+		lineageTag: 3fa42695-ef0e-460a-8d15-48aa01ebb7ae
+		summarizeBy: none
+		sourceColumn: Player
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Status Date'
+		dataType: dateTime
+		formatString: mm/dd/yy
+		lineageTag: b6778aba-3a7a-4723-b00e-75ff2d9c75a4
+		summarizeBy: none
+		sourceColumn: Status Date
+
+		variation Variation
+			isDefault
+			relationship: 46f9f559-6df3-4009-9bce-ff70279d9661
+			defaultHierarchy: LocalDateTable_925ec865-e137-47d3-a531-17dae8116130.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column Position
+		dataType: string
+		lineageTag: 342f4b26-6d1c-4720-a9e2-c2989e039460
+		summarizeBy: none
+		sourceColumn: Position
+
+		annotation SummarizationSetBy = Automatic
+
+	column Injury
+		dataType: string
+		lineageTag: 84d77759-ce4c-4bd8-8ada-f70cd0f39a27
+		summarizeBy: none
+		sourceColumn: Injury
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Injury Note'
+		dataType: string
+		lineageTag: a8d0e8b2-7622-4f7a-baa6-db8d8830eb77
+		summarizeBy: none
+		sourceColumn: Injury Note
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Key - CBS Projections'
+		dataType: string
+		lineageTag: 202aeaea-fb5a-48a2-95c9-b76884b85936
+		summarizeBy: none
+		sourceColumn: Key - CBS Projections
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'CBS Injuries' = m
+		mode: import
+		source =
+				let
+				    Source = Web.BrowserContents("https://www.cbssports.com/nba/injuries/"),
+				    #"Extracted Table From Html" = Html.Table(Source, {{"Column1", ".CellPlayerName\-\-short A"}, {"Column2", ".CellPlayerName\-\-long A"}, {"Column3", ".CellGameDate"}, {"Column4", ".TableBase-bodyTd:nth-child(2)"}, {"Column5", ".TableBase-bodyTd:nth-child(4)"}, {"Column6", ".TableBase-bodyTd:nth-child(5)"}}, [RowSelector=".CellPlayerName\-\-short A"]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Extracted Table From Html",{{"Column1", type text}, {"Column2", type text}, {"Column3", type date}, {"Column4", type text}, {"Column5", type text}, {"Column6", type text}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"Column1", "Player Abb"}, {"Column2", "Player"}, {"Column3", "Status Date"}, {"Column4", "Position"}, {"Column5", "Injury"}, {"Column6", "Injury Note"}}),
+				    #"Added Custom" = Table.AddColumn(#"Renamed Columns", "Key - CBS Projections", each [Player] & " " & [Position])
+				in
+				    #"Added Custom"
+
+	annotation PBI_ResultType = Table
+

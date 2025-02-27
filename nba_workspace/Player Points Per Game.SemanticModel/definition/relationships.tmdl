@@ -1,0 +1,40 @@
+relationship 3a423a20-0148-493d-9c3d-c18c82bf2859
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Date Table'.Date
+	toColumn: LocalDateTable_3085d958-1b5a-4afa-856f-1e3605223591.Date
+
+relationship 9191eef9-ca72-48bb-9333-4655f780cb7b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Date Table'.'Start of Month'
+	toColumn: LocalDateTable_385c1721-f217-4dd1-b68a-b3078772bc2a.Date
+
+relationship e5f5e665-7328-4b1d-8db1-f8f6d632f007
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Date Table'.'End of Month'
+	toColumn: LocalDateTable_54c5412b-00d8-442b-866d-6b317e0a03bf.Date
+
+relationship 61c9bc08-ab58-4eb1-9405-5abe8f7ff417
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Date Table'.'Start of Week'
+	toColumn: LocalDateTable_c68b703a-bc58-4c23-a3e0-02a94d67aca3.Date
+
+relationship f853890e-fb9c-4784-8663-7165761e6c47
+	fromColumn: 'NBA Boxscore History'.'GAME DATE'
+	toColumn: 'Date Table'.Date
+
+relationship 60ece7fa-57eb-45de-9385-b940ac3ee7b7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Opp Total PPG'.'GAME DATE'
+	toColumn: LocalDateTable_eaa8c6cd-2233-4dd4-9289-a5e7aa75113e.Date
+
+relationship e746165c-8ae9-47b4-95b7-5bdeb1d8120f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'NBA Boxscore History Pie Chart'.'GAME DATE'
+	toColumn: LocalDateTable_fb869739-dc36-4afa-8c3e-e26988264ba7.Date
+
+relationship 74d92367-31f5-44a7-babd-3d1670bc1b85
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: 'NBA Boxscore History Pie Chart'.'Pie Chart Key'
+	toColumn: 'NBA Boxscore History'.'Pie Chart Key'
+

@@ -1,0 +1,33 @@
+table 'Opp Avg PPG'
+	lineageTag: e7c30d27-ce7a-4ad1-b29d-411354ac5a28
+
+	column Opponent
+		lineageTag: 4fcf4644-0999-4b23-8708-322b47c8fe7d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Opp Total PPG[Opponent]
+
+		annotation SummarizationSetBy = Automatic
+
+	column @AvgPPG
+		formatString: 0.0
+		lineageTag: 0d6c81de-1f99-4c30-ba31-2ab360d1be3b
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [@AvgPPG]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PPG Rank' = RANKX('Opp Avg PPG', 'Opp Avg PPG'[@AvgPPG],,ASC)
+		formatString: 0
+		lineageTag: 2af3f97d-32df-44d8-b8e7-d4edf29adc51
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Opp Avg PPG' = calculated
+		mode: import
+		source = SUMMARIZE('Opp Total PPG', 'Opp Total PPG'[Opponent], "@AvgPPG", AVERAGE('Opp Total PPG'[@SumGamePoints]))
+
+	annotation PBI_Id = 8ef7e112fc934f0a818c9bfdff1fe81f
+

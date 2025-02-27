@@ -1,0 +1,127 @@
+table 'Report - Measures'
+	lineageTag: f4f13444-4063-45eb-9602-8443f14daed4
+
+	measure 'PP CBS Proj Diff' = SUM('CBS Sportsline Projections'[PTS]) - SUM(PrizePicksFormatted_NBA[points_proj])
+		lineageTag: 7289188e-2d6d-4254-a0c7-9f68756ebe84
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'PP NBACOM Proj Diff' = AVERAGE('NBACOM Gamelogs'[PTS]) - SUM(PrizePicksFormatted_NBA[points_proj])
+		lineageTag: 3309471d-5716-46c6-99b8-ef68f5a5be6b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Pts NBAGL 25th Percentile' = PERCENTILEX.INC( VALUES('Player Summary Stats'[PLAYER] ), [PG Pts], 0.9 )
+		lineageTag: 9b53c269-d0b0-4146-85ed-3018fcb1df0b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'PG Pts' = AVERAGE('NBACOM Gamelogs'[PTS])
+		lineageTag: b5f9a4b9-fe03-47e0-85c6-5c1297001575
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'PG FGA' = AVERAGE('NBACOM Gamelogs'[FGA])
+		lineageTag: 456ed04d-53b2-4621-b2f3-b755283b942a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'PG MIN' = AVERAGE('NBACOM Gamelogs'[MIN])
+		lineageTag: a10a20a9-950d-41d6-bfda-c67478de9a05
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'PG FTA' = AVERAGE('NBACOM Gamelogs'[FTA])
+		lineageTag: 4e6691ce-a35e-4b10-aff7-e6a01944017f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'PG 3PM' = AVERAGE('NBACOM Gamelogs'[3PM])
+		lineageTag: 7fc0dd06-68d6-4efa-889a-95b870d4c4d7
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'PG FGM' = AVERAGE('NBACOM Gamelogs'[FGM])
+		lineageTag: eee86aaa-4e3f-4212-95b5-8b4f1d52dfe6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'SS Player Num' = COUNTROWS('Player Summary Stats')
+		formatString: 0
+		lineageTag: b915e565-8611-4c71-a779-2a41d8fc523d
+
+	measure 'SS Player Perc' = ```
+			
+			VAR selPlayers = [SS Player Num]
+			VAR rankPlayers = 
+			    CALCULATE([SS Player Num]
+			    , ALL()
+			    , 'Player Summary Stats'[MINPG] >= 15
+			     )
+			RETURN DIVIDE(selPlayers, rankPlayers, 0)
+			
+			// percent of group total reference: https://blog.enterprisedna.co/percentage-of-total-using-all-and-allselected/ or https://www.popautomation.com/post/power-bi-percentage-of-total or https://stackoverflow.com/questions/63416449/percent-of-total-from-subgroups-power-bi
+			```
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 1a2894c5-01fc-42c3-8708-3acd414ab57c
+
+	measure 'Avg PPG per Team per Date' = ```
+			
+			    VAR teamTable = SUMMARIZE('NBACOM Gamelogs', 'NBACOM Gamelogs'[GAME DATE], 'NBACOM Gamelogs'[TEAM], "Value", SUM('NBACOM Gamelogs'[PTS]))
+			RETURN
+			    AVERAGEX(teamTable, [Value])
+			
+			//Sum then average by group reference: https://www.youtube.com/watch?v=BY-5waiLp0g
+			```
+		lineageTag: a902d4b3-0415-4811-9f4e-c63be196bee4
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Per Team Per Date' =
+			
+			VAR totalAmount = CALCULATE(SUM('NBACOM Gamelogs'[PTS]), ALL('NBACOM Gamelogs'[PLAYER]))
+			
+			RETURN totalAmount
+			
+			// pts per team per date reference: https://www.enjoysharepoint.com/power-bi-show-value-as-percentage/
+		formatString: 0
+		lineageTag: 2ae768df-5771-4fe2-98ce-a33fc8e2ec20
+
+	measure 'Total Points Player' = SUM('NBACOM Gamelogs'[PTS])
+		formatString: 0
+		lineageTag: 72a18534-3b3b-4e1a-ae01-33bacadc224a
+
+	measure 'Percent of Player Points per Game' = DIVIDE([Total Points Player], [Total Per Team Per Date], 0)
+		lineageTag: f0b76e77-205e-4361-a493-f14edd8d4f9c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Per Team Per Date v2' =
+			
+			VAR totalAmount = CALCULATE(SUM('NBACOM Gamelogs'[PTS]), ALL('NBACOM Gamelogs'[PLAYER]))
+			
+			RETURN AVERAGEX('NBACOM Gamelogs', totalAmount)
+			
+			// pts per team per date reference: https://www.enjoysharepoint.com/power-bi-show-value-as-percentage/
+		formatString: 0
+		lineageTag: 717598f9-3d6a-4298-9874-07d02107b784
+
+	column Column1
+		dataType: string
+		lineageTag: 05b22e25-ae17-4472-a2fe-3498a25b1e3c
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Report - Measures' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

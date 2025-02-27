@@ -1,0 +1,370 @@
+table 'NBA Boxscore History'
+	lineageTag: acd5a381-029c-48b8-9294-0e3ec0156799
+
+	column PLAYER
+		dataType: string
+		lineageTag: 1e6e9f4b-aa06-461b-b8d0-884ab0140546
+		summarizeBy: none
+		sourceColumn: PLAYER
+
+		annotation SummarizationSetBy = Automatic
+
+	column TEAM
+		dataType: string
+		lineageTag: 86ea1e86-cc38-4ead-9bbe-c3e5fd16a840
+		summarizeBy: none
+		sourceColumn: TEAM
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'MATCH UP'
+		dataType: string
+		lineageTag: 7ee5d7a6-02e2-46a0-b804-cf2820ca5fe9
+		summarizeBy: none
+		sourceColumn: MATCH UP
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GAME DATE'
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: 0a3224d5-02e5-4134-a533-94df91c3452e
+		summarizeBy: none
+		sourceColumn: GAME DATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column W/L
+		dataType: string
+		lineageTag: 8650ffc1-1bb0-4cdb-b5ef-51ca9d1aebb3
+		summarizeBy: none
+		sourceColumn: W/L
+
+		annotation SummarizationSetBy = Automatic
+
+	column MIN
+		dataType: int64
+		formatString: 0
+		lineageTag: 5116084a-2b7e-4c8e-8f01-54e8f75c12c9
+		summarizeBy: sum
+		sourceColumn: MIN
+
+		annotation SummarizationSetBy = Automatic
+
+	column PTS
+		dataType: int64
+		formatString: 0
+		lineageTag: 987ccb46-653c-44d4-9d98-ccbec9425769
+		summarizeBy: sum
+		sourceColumn: PTS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"NBA Boxscore History","TableItemName":"PTS (bins)","ObjectType":4},"LinkType":"UsedInGroup"}]
+
+	column FGM
+		dataType: int64
+		formatString: 0
+		lineageTag: a2f761a2-2c0c-4ba2-81fb-618cfc6b77df
+		summarizeBy: sum
+		sourceColumn: FGM
+
+		annotation SummarizationSetBy = Automatic
+
+	column FGA
+		dataType: int64
+		formatString: 0
+		lineageTag: 23500360-08b1-404b-88f6-56ced27fcb6c
+		summarizeBy: sum
+		sourceColumn: FGA
+
+		annotation SummarizationSetBy = Automatic
+
+	column FG%
+		dataType: string
+		lineageTag: 72c8c8df-82e2-4285-8a0f-85abc130efbf
+		summarizeBy: none
+		sourceColumn: FG%
+
+		annotation SummarizationSetBy = Automatic
+
+	column 3PM
+		dataType: int64
+		formatString: 0
+		lineageTag: 07b9235e-21ea-4b63-becd-ea5281c81312
+		summarizeBy: sum
+		sourceColumn: 3PM
+
+		annotation SummarizationSetBy = Automatic
+
+	column 3PA
+		dataType: int64
+		formatString: 0
+		lineageTag: 10fd3b17-698f-47ec-ac7f-4e065c83a8ce
+		summarizeBy: sum
+		sourceColumn: 3PA
+
+		annotation SummarizationSetBy = Automatic
+
+	column 3P%
+		dataType: string
+		lineageTag: bd9429ff-d7b7-4410-82d2-481f6a3abe63
+		summarizeBy: none
+		sourceColumn: 3P%
+
+		annotation SummarizationSetBy = Automatic
+
+	column FTM
+		dataType: int64
+		formatString: 0
+		lineageTag: e2ce447a-a199-435b-a528-fba58dddf127
+		summarizeBy: sum
+		sourceColumn: FTM
+
+		annotation SummarizationSetBy = Automatic
+
+	column FTA
+		dataType: int64
+		formatString: 0
+		lineageTag: 761bc80f-667f-4648-9d90-f0675b3ce044
+		summarizeBy: sum
+		sourceColumn: FTA
+
+		annotation SummarizationSetBy = Automatic
+
+	column FT%
+		dataType: string
+		lineageTag: ee6fd7c1-3915-445d-aae0-271f9c8a0a1d
+		summarizeBy: none
+		sourceColumn: FT%
+
+		annotation SummarizationSetBy = Automatic
+
+	column OREB
+		dataType: int64
+		formatString: 0
+		lineageTag: 25e3e2fd-c1ac-4e90-b086-39517fa8f7f4
+		summarizeBy: sum
+		sourceColumn: OREB
+
+		annotation SummarizationSetBy = Automatic
+
+	column DREB
+		dataType: int64
+		formatString: 0
+		lineageTag: e37974be-28e6-43c5-8c59-1d4506f59a8d
+		summarizeBy: sum
+		sourceColumn: DREB
+
+		annotation SummarizationSetBy = Automatic
+
+	column REB
+		dataType: int64
+		formatString: 0
+		lineageTag: 5c6eb2d2-91a8-416e-ac96-1340c6f13110
+		summarizeBy: sum
+		sourceColumn: REB
+
+		annotation SummarizationSetBy = Automatic
+
+	column AST
+		dataType: int64
+		formatString: 0
+		lineageTag: 06210ab5-e7d9-4d89-9b4e-4c70f00f183b
+		summarizeBy: sum
+		sourceColumn: AST
+
+		annotation SummarizationSetBy = Automatic
+
+	column STL
+		dataType: int64
+		formatString: 0
+		lineageTag: 38e00594-5de2-4a01-aa46-fa8e12f173c9
+		summarizeBy: sum
+		sourceColumn: STL
+
+		annotation SummarizationSetBy = Automatic
+
+	column BLK
+		dataType: int64
+		formatString: 0
+		lineageTag: 0295e649-998f-4010-8a4f-8745b7d7c794
+		summarizeBy: sum
+		sourceColumn: BLK
+
+		annotation SummarizationSetBy = Automatic
+
+	column TOV
+		dataType: int64
+		formatString: 0
+		lineageTag: cde9db95-a52d-4df9-ba6e-d0233a17585b
+		summarizeBy: sum
+		sourceColumn: TOV
+
+		annotation SummarizationSetBy = Automatic
+
+	column PF
+		dataType: int64
+		formatString: 0
+		lineageTag: 7c4bed76-2e24-43f1-8f22-69ded91c69d6
+		summarizeBy: sum
+		sourceColumn: PF
+
+		annotation SummarizationSetBy = Automatic
+
+	column +/-
+		dataType: int64
+		formatString: 0
+		lineageTag: 343bb9ce-a748-4189-825f-cc2032a4ffb5
+		summarizeBy: sum
+		sourceColumn: +/-
+
+		annotation SummarizationSetBy = Automatic
+
+	column FP
+		dataType: double
+		lineageTag: dabd656d-ab0d-45db-9116-ca4ec6e0df13
+		summarizeBy: sum
+		sourceColumn: FP
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Game Number' =
+			CALCULATE(COUNTROWS('NBA Boxscore History'), FILTER('NBA Boxscore History', 'NBA Boxscore History'[GAME DATE]>= EARLIER('NBA Boxscore History'[GAME DATE])),FILTER('NBA Boxscore History', 'NBA Boxscore History'[PLAYER] = EARLIER('NBA Boxscore History'[PLAYER])))
+			
+			// Row_Number Partition Method to Create Index Column Reference: https://www.youtube.com/watch?v=vVuH_qgbku8&t=373s
+			// Create an index column in Power Query: https://community.fabric.microsoft.com/t5/Power-Query/Index-column-in-power-query-based-on-date-sorting/td-p/2315727
+			// An Alternative Way with RANKX Reference: https://community.fabric.microsoft.com/t5/Desktop/Conditional-Index-Column-Based-on-Date/m-p/313955
+		formatString: 0
+		lineageTag: 4736effa-5bde-46ee-8feb-2a8d8025e59e
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Home/Away
+		dataType: string
+		lineageTag: 5ec64987-e0b9-46cd-943c-27a4c1a709d5
+		summarizeBy: none
+		sourceColumn: Home/Away
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Game Number Sorted' = -1 * 'NBA Boxscore History'[Game Number]
+		formatString: 0
+		lineageTag: 292a863e-15c6-479d-bc1e-196785f18f34
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Opponent
+		dataType: string
+		lineageTag: 70d78443-8fac-426b-a7b1-b61834e3d359
+		summarizeBy: none
+		sourceColumn: Opponent
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Opponent PPG Rank' = LOOKUPVALUE('Opp Avg PPG'[PPG Rank], 'Opp Avg PPG'[Opponent], 'NBA Boxscore History'[Opponent])
+		formatString: 0
+		lineageTag: 1c907a7d-ea78-4a83-b703-26f014d4568c
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Top 10 Rank Bucket' =
+			
+			SWITCH(
+			    TRUE(),
+			    'NBA Boxscore History'[Opponent PPG Rank] <= 10, "T10",
+			    'NBA Boxscore History'[Opponent PPG Rank] <= 20, "M10",
+			    "B10"
+			)
+		lineageTag: 6c2cf36d-76ff-49e0-bf69-ea9c1bd67fe7
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Game Date Key'
+		dataType: string
+		lineageTag: ee6740b4-c3a7-44e8-9648-12e0f7acc5be
+		summarizeBy: none
+		sourceColumn: Game Date Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pie Chart Key'
+		dataType: string
+		lineageTag: 8500cf8e-2b83-4dff-b1db-d9222479d29d
+		summarizeBy: none
+		sourceColumn: Pie Chart Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PTS (bins)' =
+			IF(
+				ISBLANK('NBA Boxscore History'[PTS]),
+				BLANK(),
+				INT('NBA Boxscore History'[PTS] / 4.0) * 4.0
+			)
+		dataType: int64
+		formatString: 0
+		lineageTag: 644a76cc-228b-4287-b3c6-c627d9fc124c
+		summarizeBy: none
+
+		extendedProperty GroupingMetadata =
+				{
+				  "version": 0,
+				  "groupedColumns": [
+				    {
+				      "Column": {
+				        "Expression": {
+				          "SourceRef": {
+				            "Entity": "NBA Boxscore History"
+				          }
+				        },
+				        "Property": "PTS"
+				      }
+				    }
+				  ],
+				  "binningMetadata": {
+				    "binSize": {
+				      "value": 4.0,
+				      "unit": 0
+				    }
+				  }
+				}
+
+		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"n","Entity":"NBA Boxscore History"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"n"}},"Property":"PTS"}}],"BinItem":{"Expression":{"Floor":{"Expression":{"Column":{"Expression":{"SourceRef":{"Source":"n"}},"Property":"PTS"}},"Size":4.0}}}}
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'NBA Boxscore History' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\charl\OneDrive\Documents\Datasets\Sports\NBA\NBACOM Gamelog Stats 2023.xlsx"), null, true),
+				    Sheet1_Sheet = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(Sheet1_Sheet,{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type any}, {"Column5", type text}, {"Column6", type any}, {"Column7", type any}, {"Column8", type any}, {"Column9", type any}, {"Column10", type any}, {"Column11", type any}, {"Column12", type any}, {"Column13", type any}, {"Column14", type any}, {"Column15", type any}, {"Column16", type any}, {"Column17", type any}, {"Column18", type any}, {"Column19", type any}, {"Column20", type any}, {"Column21", type any}, {"Column22", type any}, {"Column23", type any}, {"Column24", type any}, {"Column25", type any}, {"Column26", type any}}),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"PLAYER", type text}, {"TEAM", type text}, {"MATCH UP", type text}, {"GAME DATE", type date}, {"W/L", type text}, {"MIN", Int64.Type}, {"PTS", Int64.Type}, {"FGM", Int64.Type}, {"FGA", Int64.Type}, {"FG%", type any}, {"3PM", Int64.Type}, {"3PA", Int64.Type}, {"3P%", type any}, {"FTM", Int64.Type}, {"FTA", Int64.Type}, {"FT%", type any}, {"OREB", Int64.Type}, {"DREB", Int64.Type}, {"REB", Int64.Type}, {"AST", Int64.Type}, {"STL", Int64.Type}, {"BLK", Int64.Type}, {"TOV", Int64.Type}, {"PF", Int64.Type}, {"+/-", Int64.Type}, {"FP", type number}}),
+				    #"Added Conditional Column" = Table.AddColumn(#"Changed Type1", "Custom", each if Text.Contains([MATCH UP], "@") then "A" else "H"),
+				    #"Renamed Columns" = Table.RenameColumns(#"Added Conditional Column",{{"Custom", "Home/Away"}}),
+				    #"Duplicated Column" = Table.DuplicateColumn(#"Renamed Columns", "MATCH UP", "MATCH UP - Copy"),
+				    #"Extracted Last Characters" = Table.TransformColumns(#"Duplicated Column", {{"MATCH UP - Copy", each Text.End(_, 3), type text}}),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Extracted Last Characters",{{"MATCH UP - Copy", "Opponent"}}),
+				    #"Duplicated Column1" = Table.DuplicateColumn(#"Renamed Columns1", "GAME DATE", "GAME DATE - Copy"),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Duplicated Column1",{{"GAME DATE - Copy", Int64.Type}}),
+				    #"Renamed Columns2" = Table.RenameColumns(#"Changed Type2",{{"GAME DATE - Copy", "Game Date Key"}}),
+				    #"Changed Type3" = Table.TransformColumnTypes(#"Renamed Columns2",{{"Game Date Key", type text}}),
+				    #"Added Custom" = Table.AddColumn(#"Changed Type3", "Pie Chart Key", each [PLAYER]&" "&[TEAM]&" "&[Game Date Key])
+				in
+				    #"Added Custom"
+
+	annotation PBI_ResultType = Table
+
