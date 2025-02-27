@@ -1,7 +1,7 @@
 table ActivePlayerGamelogs
 	lineageTag: e19e015e-c8e6-4271-bd5e-281054c9a72c
 
-	measure 'Avg PPG' = AVERAGE(ActivePlayerGamelogs[PTS]) + 0
+	measure 'Avg PPG' = AVERAGE(ActivePlayerGamelogs[PTS])
 		lineageTag: fa6d35b7-8272-46f5-a986-2e1a006fdb4f
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}

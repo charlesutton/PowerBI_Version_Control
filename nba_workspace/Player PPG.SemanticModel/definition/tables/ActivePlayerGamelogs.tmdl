@@ -21,6 +21,9 @@ table ActivePlayerGamelogs
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure 'Win Loss Count' = COUNTROWS(ActivePlayerGamelogs)
+		formatString: 0
+		lineageTag: 33c73292-8247-43cb-b829-cd7bbfafb379
 	column SEASON_ID
 		dataType: int64
 		formatString: 0
