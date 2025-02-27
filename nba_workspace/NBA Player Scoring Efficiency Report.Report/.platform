@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "NBA Player Scoring Efficiency Report"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "df60e889-0dce-81bd-40ea-dd0fd81b1f70"
+  }
+}

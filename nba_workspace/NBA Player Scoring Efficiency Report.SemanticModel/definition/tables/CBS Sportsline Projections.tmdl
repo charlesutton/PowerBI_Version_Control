@@ -1,0 +1,272 @@
+table 'CBS Sportsline Projections'
+	lineageTag: 3d85dff0-0127-4f5a-bfaf-77ba1b33742d
+
+	column PLAYER
+		dataType: string
+		lineageTag: 981572f4-f0ed-42fa-9cb2-e3de7f062fb5
+		summarizeBy: none
+		sourceColumn: PLAYER
+
+		annotation SummarizationSetBy = Automatic
+
+	column POS
+		dataType: string
+		lineageTag: 460764f9-551a-4365-a87c-c2a1fffc247d
+		summarizeBy: none
+		sourceColumn: POS
+
+		annotation SummarizationSetBy = Automatic
+
+	column TEAM
+		dataType: string
+		lineageTag: d12a871a-229c-442e-8221-98bf1d5bb9d1
+		summarizeBy: none
+		sourceColumn: TEAM
+
+		annotation SummarizationSetBy = Automatic
+
+	column GAME
+		dataType: string
+		lineageTag: 686c9de6-5017-4357-8c09-9948e7f08587
+		summarizeBy: none
+		sourceColumn: GAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column FP
+		dataType: double
+		lineageTag: f12aa328-25b3-437b-a0e9-9096ceeab002
+		summarizeBy: sum
+		sourceColumn: FP
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DK
+		dataType: double
+		lineageTag: f546657c-ac4f-4f25-bf73-21aba461f72f
+		summarizeBy: sum
+		sourceColumn: DK
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FD
+		dataType: double
+		lineageTag: 604855b3-c4ed-40d6-878e-014123f532e1
+		summarizeBy: sum
+		sourceColumn: FD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PROJ
+		dataType: int64
+		formatString: 0
+		lineageTag: f3b403f0-ce8d-4397-83b6-6c6bb9b3d811
+		summarizeBy: sum
+		sourceColumn: PROJ
+
+		annotation SummarizationSetBy = Automatic
+
+	column PTS
+		dataType: double
+		lineageTag: f3ab7e33-f6d0-4916-991a-eaa02c4f9a46
+		summarizeBy: sum
+		sourceColumn: PTS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MIN
+		dataType: int64
+		formatString: 0
+		lineageTag: 45d6e4b0-6d88-45db-b81e-597f82a4106c
+		summarizeBy: sum
+		sourceColumn: MIN
+
+		annotation SummarizationSetBy = Automatic
+
+	column FG
+		dataType: double
+		lineageTag: cdaf07bd-0a0f-457b-911e-98c60e614e4c
+		summarizeBy: sum
+		sourceColumn: FG
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FGA
+		dataType: double
+		lineageTag: 6665b989-7f43-4401-a0be-764b60bfc02a
+		summarizeBy: sum
+		sourceColumn: FGA
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column AST
+		dataType: double
+		lineageTag: c8060277-2dbb-46c7-95da-fe4d9be67f48
+		summarizeBy: sum
+		sourceColumn: AST
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TRB
+		dataType: double
+		lineageTag: 74cbb978-15b6-4c9f-89bd-04a1081edb9b
+		summarizeBy: sum
+		sourceColumn: TRB
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DRB
+		dataType: double
+		lineageTag: f673ae43-0744-43c1-9e4e-20d7b50e0484
+		summarizeBy: sum
+		sourceColumn: DRB
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ORB
+		dataType: double
+		lineageTag: 2c1d6e05-b8bc-4a79-b8c5-b09f84541103
+		summarizeBy: sum
+		sourceColumn: ORB
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column BK
+		dataType: string
+		lineageTag: 871bbaba-8628-454d-a4df-1e6247ab193a
+		summarizeBy: none
+		sourceColumn: BK
+
+		annotation SummarizationSetBy = Automatic
+
+	column ST
+		dataType: double
+		lineageTag: 4e2178a3-aec5-434f-8fe9-47d6ab363823
+		summarizeBy: sum
+		sourceColumn: ST
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO
+		dataType: double
+		lineageTag: 8c15f08c-301e-4d90-9232-e44c48229444
+		summarizeBy: sum
+		sourceColumn: TO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FT
+		dataType: double
+		lineageTag: c0c3e82f-67be-4b73-84a5-2cc16cc3a021
+		summarizeBy: sum
+		sourceColumn: FT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FTP
+		dataType: double
+		lineageTag: b9e36088-70b9-43fb-8797-ee1432418ecf
+		summarizeBy: sum
+		sourceColumn: FTP
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FGP
+		dataType: double
+		lineageTag: 6c05d2d0-76c7-452a-ab16-be3aa77e1131
+		summarizeBy: sum
+		sourceColumn: FGP
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Key - PP'
+		dataType: string
+		lineageTag: f1f75961-b907-4405-8e1b-56cd9aa9b517
+		summarizeBy: none
+		sourceColumn: Key - PP
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Player Format for PP Key'
+		dataType: string
+		lineageTag: 3cc9cf85-7658-48cb-8425-97717900d89b
+		summarizeBy: none
+		sourceColumn: Player Format for PP Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Team Format for PP Key'
+		dataType: string
+		lineageTag: 213b3e4e-07ab-4838-bcda-c91d7aa324dd
+		summarizeBy: none
+		sourceColumn: Team Format for PP Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Key - CBS Injuries'
+		dataType: string
+		lineageTag: d8a8e05d-55a8-4b80-bfeb-d1f0d43865aa
+		summarizeBy: none
+		sourceColumn: Key - CBS Injuries
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'CBS Sportsline Projections' = m
+		mode: import
+		source = ```
+				let
+				    Source = Web.BrowserContents("https://www.sportsline.com/nba/expert-projections/simulation/"),
+				    #"Extracted Table From Html" = Html.Table(Source, {{"Column1", "TABLE.sc-63394aef-7.ginGlq > * > TR > :nth-child(1)"}, {"Column2", "TABLE.sc-63394aef-7.ginGlq > * > TR > :nth-child(2)"}, {"Column3", "TABLE.sc-63394aef-7.ginGlq > * > TR > :nth-child(3)"}, {"Column4", "TABLE.sc-63394aef-7.ginGlq > * > TR > :nth-child(4)"}, {"Column5", "TABLE.sc-63394aef-7.ginGlq > * > TR > :nth-child(5)"}, {"Column6", "TABLE.sc-63394aef-7.ginGlq > * > TR > :nth-child(6)"}, {"Column7", "TABLE.sc-63394aef-7.ginGlq > * > TR > :nth-child(7)"}, {"Column8", "TABLE.sc-63394aef-7.ginGlq > * > TR > :nth-child(8)"}, {"Column9", "TABLE.sc-63394aef-7.ginGlq > * > TR > :nth-child(9)"}, {"Column10", "TABLE.sc-63394aef-7.ginGlq > * > TR > :nth-child(10)"}, {"Column11", "TABLE.sc-63394aef-7.ginGlq > * > TR > :nth-child(11)"}, {"Column12", "TABLE.sc-63394aef-7.ginGlq > * > TR > :nth-child(12)"}, {"Column13", "TABLE.sc-63394aef-7.ginGlq > * > TR > :nth-child(13)"}, {"Column14", "TABLE.sc-63394aef-7.ginGlq > * > TR > :nth-child(14)"}, {"Column15", "TABLE.sc-63394aef-7.ginGlq > * > TR > :nth-child(15)"}, {"Column16", "TABLE.sc-63394aef-7.ginGlq > * > TR > :nth-child(16)"}, {"Column17", "TABLE.sc-63394aef-7.ginGlq > * > TR > :nth-child(17)"}, {"Column18", "TABLE.sc-63394aef-7.ginGlq > * > TR > :nth-child(18)"}, {"Column19", "TABLE.sc-63394aef-7.ginGlq > * > TR > :nth-child(19)"}, {"Column20", "TABLE.sc-63394aef-7.ginGlq > * > TR > :nth-child(20)"}, {"Column21", "TABLE.sc-63394aef-7.ginGlq > * > TR > :nth-child(21)"}, {"Column22", "TABLE.sc-63394aef-7.ginGlq > * > TR > :nth-child(22)"}}, [RowSelector="TABLE.sc-63394aef-7.ginGlq > * > TR"]),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Extracted Table From Html", [PromoteAllScalars=true]),
+				    #"Column Formatting" = Table.TransformColumnTypes(#"Promoted Headers",{{"PLAYER", type text}, {"POS", type text}, {"TEAM", type text}, {"GAME", type text}, {"FP", type number}, {"DK", type number}, {"FD", type number}, {"PROJ", Int64.Type}, {"PTS", type number}, {"MIN", Int64.Type}, {"FG", type number}, {"FGA", type number}, {"AST", type number}, {"TRB", type number}, {"DRB", type number}, {"ORB", type number}, {"BK", type text}, {"ST", type number}, {"TO", type number}, {"FT", type number}, {"FTP", type number}, {"FGP", type number}}),
+				    #"Replaced Comma Format" = Table.ReplaceValue(#"Column Formatting","`","'",Replacer.ReplaceText,{"PLAYER"}),
+				    #"Custom Name Modification" = Table.AddColumn(#"Replaced Comma Format", "Player Format for PP Key", each if [PLAYER] = "Taurean Waller-Prince" then "Taurean Prince"
+				        else if [PLAYER] = "Tim Hardaway" then "Tim Hardaway Jr."
+				        else if [PLAYER] = "Jabari Smith" then "Jabari Smith Jr."
+				        else if [PLAYER] = "Kelly Oubre" then "Kelly Oubre Jr."
+				        else if [PLAYER] = "PJ Washington" then "P.J. Washington"
+				        else [PLAYER]),
+				    #"Team Name Modification" = Table.AddColumn(#"Custom Name Modification", "Team Format for PP Key", each if [TEAM] = "NO" then "NOP" 
+				        else if [TEAM] = "PHO" then "PHX"
+				        else if [TEAM] = "SA" then "SAS"
+				        else if [TEAM] = "GS" then "GSW"
+				        else if [TEAM] = "NY" then "NYK"
+				        else [TEAM]),
+				    #"Added Custom" = Table.AddColumn(#"Team Name Modification", "Key - PP", each [Player Format for PP Key]&" "&[Team Format for PP Key]),
+				    #"Added Custom1" = Table.AddColumn(#"Added Custom", "Key - CBS Injuries", each [PLAYER] & " " & [POS])
+				in
+				    #"Added Custom1"
+				```
+
+	annotation PBI_ResultType = Table
+

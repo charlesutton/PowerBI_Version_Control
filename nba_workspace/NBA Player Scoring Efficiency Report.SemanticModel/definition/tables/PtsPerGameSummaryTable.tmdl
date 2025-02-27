@@ -1,0 +1,43 @@
+table PtsPerGameSummaryTable
+	lineageTag: 7d4ca825-d30c-44d9-932c-899ff89cd226
+
+	column 'GAME DATE'
+		formatString: General Date
+		lineageTag: 90274e4d-e4cd-49de-ba96-b73495cce398
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: NBACOM Gamelogs[GAME DATE]
+
+		variation Variation
+			isDefault
+			relationship: f9264ac6-c422-4a91-b717-6e52b2464958
+			defaultHierarchy: LocalDateTable_79c54965-2509-4581-a813-f861b5e78256.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column PPG
+		formatString: 0
+		lineageTag: 9d26afb7-055a-409e-8187-f13efe6431a7
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [PPG]
+
+		annotation SummarizationSetBy = Automatic
+
+	column TEAM
+		lineageTag: 742ab275-bb67-4a04-a70a-482d41923a0b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: NBACOM Gamelogs[TEAM]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition PtsPerGameSummaryTable = calculated
+		mode: import
+		source =
+				SUMMARIZE(ALL('NBACOM Gamelogs'), 'NBACOM Gamelogs'[GAME DATE], 'NBACOM Gamelogs'[TEAM], "PPG", SUM('NBACOM Gamelogs'[PTS]))
+				
+				// Create a table of sum by group reference: https://stackoverflow.com/questions/66681505/dax-power-bi-summarize-table-based-on-two-columns
+
+	annotation PBI_Id = 82fde833b68d440eb4318f91b6c8ccc8
+

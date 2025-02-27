@@ -1,0 +1,35 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+/// Errors in queries that were loaded on 3/27/2024 12:50:57 PM.
+queryGroup 'Query Errors - 3/27/2024 12:50:57 PM'
+
+	annotation PBI_QueryGroupOrder = 0
+
+annotation PBI_QueryOrder = ["NBA Boxscore History","Date Table","NBA Boxscore History Pie Chart","Errors in NBA Boxscore History"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.127.1327.0 (24.03)
+
+ref table 'NBA Boxscore History'
+ref table DateTableTemplate_8c6dd5d4-57da-452d-a0f5-71ea3b228918
+ref table 'Date Table'
+ref table LocalDateTable_3085d958-1b5a-4afa-856f-1e3605223591
+ref table LocalDateTable_385c1721-f217-4dd1-b68a-b3078772bc2a
+ref table LocalDateTable_54c5412b-00d8-442b-866d-6b317e0a03bf
+ref table LocalDateTable_c68b703a-bc58-4c23-a3e0-02a94d67aca3
+ref table 'Opp Total PPG'
+ref table 'Opp Avg PPG'
+ref table LocalDateTable_eaa8c6cd-2233-4dd4-9289-a5e7aa75113e
+ref table 'NBA Boxscore History Pie Chart'
+ref table LocalDateTable_fb869739-dc36-4afa-8c3e-e26988264ba7
+ref table 'Measures Table'
+
+ref cultureInfo en-US
+

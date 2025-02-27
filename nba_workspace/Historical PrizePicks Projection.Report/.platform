@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Historical PrizePicks Projection"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "e249db54-5c67-83b6-4fcc-b8c43ab03698"
+  }
+}

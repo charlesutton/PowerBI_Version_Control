@@ -1,0 +1,355 @@
+table 'Date Table'
+	lineageTag: 45187240-bb5a-4697-b246-73ec9a082a1d
+
+	column Date
+		dataType: dateTime
+		formatString: mm/dd/yy
+		lineageTag: ec3fcc95-ead6-4ace-9bb5-475c62944e90
+		summarizeBy: none
+		sourceColumn: Date
+
+		variation Variation
+			isDefault
+			relationship: 3a423a20-0148-493d-9c3d-c18c82bf2859
+			defaultHierarchy: LocalDateTable_3085d958-1b5a-4afa-856f-1e3605223591.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Date Integer'
+		dataType: int64
+		formatString: 0
+		lineageTag: fbe2ed6a-00cc-4082-950e-ab521e70b37c
+		summarizeBy: sum
+		sourceColumn: Date Integer
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: d305484b-bbfd-4e9a-8379-16e1401fdc76
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year Default'
+		dataType: string
+		lineageTag: 88304f2b-1fda-40e5-9eb9-412c7dde564e
+		summarizeBy: none
+		sourceColumn: Year Default
+
+		annotation SummarizationSetBy = Automatic
+
+	column YYYY-MM
+		dataType: string
+		lineageTag: c7e69712-e1b4-41f4-9ba7-01dfee8cf1b7
+		summarizeBy: none
+		sourceColumn: YYYY-MM
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month-Year
+		dataType: string
+		lineageTag: e3469d25-4cfd-457a-ae37-5b7d62895ff9
+		summarizeBy: none
+		sourceColumn: Month-Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Of Year'
+		dataType: int64
+		formatString: 0
+		lineageTag: e31d1226-cdc8-4898-ac4a-18a5c28ef9e0
+		summarizeBy: sum
+		sourceColumn: Month Of Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Name'
+		dataType: string
+		lineageTag: 3e1ff5ba-1167-4991-b012-5f3a70c50349
+		summarizeBy: none
+		sourceColumn: Month Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Name Short'
+		dataType: string
+		lineageTag: a5593996-184c-486c-9e58-8c78dc2d4e35
+		summarizeBy: none
+		sourceColumn: Month Name Short
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Name Default'
+		dataType: string
+		lineageTag: 3c7bb0c1-4b1a-4d8d-bc4e-06707be54987
+		summarizeBy: none
+		sourceColumn: Month Name Default
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Start of Month'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 892b124b-1219-4aef-bafe-9c8e4456f522
+		summarizeBy: none
+		sourceColumn: Start of Month
+
+		variation Variation
+			isDefault
+			relationship: 9191eef9-ca72-48bb-9333-4655f780cb7b
+			defaultHierarchy: LocalDateTable_385c1721-f217-4dd1-b68a-b3078772bc2a.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'End of Month'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 798658ec-33b9-4553-8951-249d823e26de
+		summarizeBy: none
+		sourceColumn: End of Month
+
+		variation Variation
+			isDefault
+			relationship: e5f5e665-7328-4b1d-8db1-f8f6d632f007
+			defaultHierarchy: LocalDateTable_54c5412b-00d8-442b-866d-6b317e0a03bf.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Days in Month'
+		dataType: int64
+		formatString: 0
+		lineageTag: 171e3953-e1fe-48f3-ad11-806702d7d6da
+		summarizeBy: sum
+		sourceColumn: Days in Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ISO Weeknumber'
+		dataType: int64
+		formatString: 0
+		lineageTag: 39e9ace5-3b80-492a-bf02-a86c00c5ba07
+		summarizeBy: sum
+		sourceColumn: ISO Weeknumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ISO Year'
+		dataType: int64
+		formatString: 0
+		lineageTag: bde7766d-facd-4e77-a6a3-69469dade39a
+		summarizeBy: sum
+		sourceColumn: ISO Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Start of Week'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: aa7d55eb-77d3-413b-b065-46fe35c58347
+		summarizeBy: none
+		sourceColumn: Start of Week
+
+		variation Variation
+			isDefault
+			relationship: 61c9bc08-ab58-4eb1-9405-5abe8f7ff417
+			defaultHierarchy: LocalDateTable_c68b703a-bc58-4c23-a3e0-02a94d67aca3.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Quarter Number'
+		dataType: int64
+		formatString: 0
+		lineageTag: 0111b017-4c47-4ac9-af3f-e2dd97b86ebc
+		summarizeBy: sum
+		sourceColumn: Quarter Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		dataType: string
+		lineageTag: 488183e9-79c5-4517-9a6a-baa98ffa8303
+		summarizeBy: none
+		sourceColumn: Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year-Quarter
+		dataType: string
+		lineageTag: 2d3395c0-4b7a-46e4-bfab-de6806775f6c
+		summarizeBy: none
+		sourceColumn: Year-Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day Name'
+		dataType: string
+		lineageTag: 38ba8f0a-2df3-4194-8668-9d6af55c7c99
+		summarizeBy: none
+		sourceColumn: Day Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day Name Short'
+		dataType: string
+		lineageTag: edaa65b7-3e8a-4628-bcb6-e0f50e4d6c14
+		summarizeBy: none
+		sourceColumn: Day Name Short
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of Month Number'
+		dataType: int64
+		formatString: 0
+		lineageTag: 1cad21c4-2fb6-40f9-bd3a-0a87a618138c
+		summarizeBy: sum
+		sourceColumn: Day of Month Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of Week Number'
+		dataType: int64
+		formatString: 0
+		lineageTag: 9b3c1568-86cd-46cc-b913-5bbda0533c97
+		summarizeBy: sum
+		sourceColumn: Day of Week Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of Year Number'
+		dataType: int64
+		formatString: 0
+		lineageTag: 7c579e70-2be4-4bbb-82f2-4b813a31a57d
+		summarizeBy: sum
+		sourceColumn: Day of Year Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day Offset'
+		dataType: int64
+		formatString: 0
+		lineageTag: 08142f33-a871-4fce-97f2-41271afcac6c
+		summarizeBy: sum
+		sourceColumn: Day Offset
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Week Offset'
+		dataType: int64
+		formatString: 0
+		lineageTag: 0d7a1a91-a446-4088-878f-204023de08ad
+		summarizeBy: sum
+		sourceColumn: Week Offset
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Offset'
+		dataType: int64
+		formatString: 0
+		lineageTag: a6728da0-0c61-4f3f-a059-e58b305e05f7
+		summarizeBy: sum
+		sourceColumn: Month Offset
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quarter Offset'
+		dataType: int64
+		formatString: 0
+		lineageTag: fcc03197-e5ee-4ad8-ba89-4e2fe73aec16
+		summarizeBy: sum
+		sourceColumn: Quarter Offset
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year Offset'
+		dataType: int64
+		formatString: 0
+		lineageTag: 4001a9b3-3b24-4c4a-90e5-3645b4fe553c
+		summarizeBy: sum
+		sourceColumn: Year Offset
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Weekend'
+		dataType: int64
+		formatString: 0
+		lineageTag: 131e73db-3484-4e99-a60a-f7cf5bdaa206
+		summarizeBy: sum
+		sourceColumn: Is Weekend
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Weekday'
+		dataType: int64
+		formatString: 0
+		lineageTag: ff89dfce-bd4a-4ec4-978c-c7568ab1bdba
+		summarizeBy: sum
+		sourceColumn: Is Weekday
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Date Table' = m
+		mode: import
+		source = ```
+				let
+				    Today = Date.From( DateTime.LocalNow() ),
+				    StartDate = #date(2024, 1, 1),
+				    EndDate = Date.EndOfYear( Today ),
+				    #"List of Dates" = List.Dates( StartDate, Duration.Days( EndDate - StartDate ) +1, #duration( 1, 0, 0, 0 ) ),
+				    #"Converted to Table" = Table.FromList( #"List of Dates", Splitter.SplitByNothing(), type table[Date = Date.Type] ),
+				    #"Insert Date Integer" = Table.AddColumn(#"Converted to Table", "Date Integer", each Number.From( Date.ToText( [Date], "yyyyMMdd" ) ), Int64.Type ),
+				    #"Insert Year" = Table.AddColumn(#"Insert Date Integer", "Year", each Date.Year([Date]), Int64.Type),
+				    // Creates a dynamic year value called 'Current' that moves with the current date. Put this value in a slicer and it automatically switches to the Current period.
+				    #"Add Year Default" = Table.AddColumn(#"Insert Year", "Year Default", each if Date.Year( Today ) = [Year] then "Current" else Text.From( [Year] ), type text),
+				    #"Insert YYYY-MM" = Table.AddColumn(#"Add Year Default", "YYYY-MM", each Date.ToText( [Date], "yyyy-MM"), type text),
+				    #"Insert Month-Year" = Table.AddColumn(#"Insert YYYY-MM", "Month-Year", each Date.ToText( [Date], "MMM yyyy"), type text),
+				    #"Insert Month Number" = Table.AddColumn(#"Insert Month-Year", "Month Of Year", each Date.Month([Date]), Int64.Type),
+				    #"Insert Month Name" = Table.AddColumn(#"Insert Month Number", "Month Name", each Date.MonthName([Date], "EN-us"), type text),
+				    #"Insert Month Name Short" = Table.AddColumn(#"Insert Month Name", "Month Name Short", each Date.ToText( [Date] , "MMM", "EN-us" ), type text),
+				    // Creates a dynamic year value called 'Current' that moves with the current date. Put this value in a slicer and it automatically switches to the current period.
+				    #"Add Month Name Default" = Table.AddColumn(#"Insert Month Name Short", "Month Name Default", each if Date.Month( Today ) = [Month Of Year] then "Current" else [Month Name], type text ),
+				    #"Insert Start of Month" = Table.AddColumn(#"Add Month Name Default", "Start of Month", each Date.StartOfMonth([Date]), type date),
+				    #"Inserted End of Month" = Table.AddColumn(#"Insert Start of Month", "End of Month", each Date.EndOfMonth( [Date] ), type date),
+				    #"Inserted Days in Month" = Table.AddColumn(#"Inserted End of Month", "Days in Month", each Date.DaysInMonth([Date]), Int64.Type),
+				    #"Add ISO Week" = Table.AddColumn(#"Inserted Days in Month", "ISO Weeknumber", each let
+				   CurrentThursday = Date.AddDays([Date], 3 - Date.DayOfWeek([Date], Day.Monday ) ),
+				   YearCurrThursday = Date.Year( CurrentThursday ),
+				   FirstThursdayOfYear = Date.AddDays(#date( YearCurrThursday,1,7),- Date.DayOfWeek(#date(YearCurrThursday,1,1), Day.Friday) ),
+				   ISO_Week = Duration.Days( CurrentThursday - FirstThursdayOfYear) / 7 + 1
+				in ISO_Week, Int64.Type ),
+				    #"Add ISO Year" = Table.AddColumn(#"Add ISO Week", "ISO Year", each Date.Year(  Date.AddDays( [Date], 26 - [ISO Weeknumber] ) ), Int64.Type ),
+				    #"Insert Start of Week" = Table.AddColumn(#"Add ISO Year", "Start of Week", each Date.StartOfWeek([Date], Day.Monday ), type date),
+				    #"Insert Quarter Number" = Table.AddColumn(#"Insert Start of Week", "Quarter Number", each Date.QuarterOfYear([Date]), Int64.Type),
+				    #"Added Quarter" = Table.AddColumn(#"Insert Quarter Number", "Quarter", each "Q" & Text.From( Date.QuarterOfYear([Date]) ), type text ),
+				    #"Add Year-Quarter" = Table.AddColumn(#"Added Quarter", "Year-Quarter", each Text.From( Date.Year([Date]) ) & "-Q" & Text.From( Date.QuarterOfYear([Date]) ), type text ),
+				    #"Insert Day Name" = Table.AddColumn(#"Add Year-Quarter", "Day Name", each Date.DayOfWeekName([Date], "EN-us" ), type text),
+				    #"Insert Day Name Short" = Table.AddColumn( #"Insert Day Name", "Day Name Short", each Date.ToText( [Date], "ddd", "EN-us" ), type text),
+				    #"Insert Day of Month Number" = Table.AddColumn(#"Insert Day Name Short", "Day of Month Number", each Date.Day([Date]), Int64.Type),
+				    // Day.Monday indicates the week starts on Monday. Change this in case you want the week to start on a different date. 
+				    #"Insert Day of Week" = Table.AddColumn(#"Insert Day of Month Number", "Day of Week Number", each Date.DayOfWeek( [Date], Day.Monday ), Int64.Type),
+				    #"Insert Day of Year" = Table.AddColumn(#"Insert Day of Week", "Day of Year Number", each Date.DayOfYear( [Date] ), Int64.Type),
+				    #"Add Day Offset" = Table.AddColumn(#"Insert Day of Year", "Day Offset", each Number.From( Date.From( Today ) - [Date] ) , Int64.Type ),
+				    #"Add Week Offset" = Table.AddColumn(#"Add Day Offset", "Week Offset", each Duration.Days( Date.StartOfWeek( [Date], Day.Monday ) - Date.StartOfWeek( Today, Day.Monday ) ) / 7 , Int64.Type ),
+				    #"Add Month Offset" = Table.AddColumn(#"Add Week Offset", "Month Offset", each ( [Year] - Date.Year( Today ) ) * 12 + ( [Month Of Year] - Date.Month( Today ) ), Int64.Type ),
+				    #"Add Quarter Offset" = Table.AddColumn(#"Add Month Offset", "Quarter Offset", each ( [Year] - Date.Year(Today) ) * 4 + Date.QuarterOfYear( [Date] ) - Date.QuarterOfYear( Today ), Int64.Type ),
+				    #"Add Year Offset" = Table.AddColumn(#"Add Quarter Offset", "Year Offset", each [Year] - Date.Year(Today), Int64.Type ),
+				    #"Insert Is Weekend" = Table.AddColumn(#"Add Year Offset", "Is Weekend", each if Date.DayOfWeek( [Date] ) >= 5 then 1 else 0, Int64.Type ),
+				    #"Insert Is Weekday" = Table.AddColumn(#"Insert Is Weekend", "Is Weekday", each if Date.DayOfWeek( [Date] ) < 5 then 1 else 0, Int64.Type )
+				in
+				    #"Insert Is Weekday"
+				```
+
+	annotation PBI_ResultType = Table
+

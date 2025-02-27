@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Player Points Per Game"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "547efceb-ee91-ae70-47bc-d01cd0c106f1"
+  }
+}
