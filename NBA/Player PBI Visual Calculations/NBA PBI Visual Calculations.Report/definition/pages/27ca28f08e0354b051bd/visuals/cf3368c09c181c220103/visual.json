@@ -1,0 +1,181 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
+  "name": "cf3368c09c181c220103",
+  "position": {
+    "x": 94.346504559270514,
+    "y": 155.62310030395136,
+    "z": 2000,
+    "height": 417.26443768996961,
+    "width": 1099.0881458966567,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ActivePlayerGamelogsNamesIncluded"
+                    }
+                  },
+                  "Property": "full_name"
+                }
+              },
+              "queryRef": "ActivePlayerGamelogsNamesIncluded.full_name",
+              "nativeQueryRef": "full_name",
+              "active": true
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Table"
+                    }
+                  },
+                  "Property": "Total Points"
+                }
+              },
+              "queryRef": "Table.Total Points",
+              "nativeQueryRef": "Value",
+              "displayName": "Value"
+            },
+            {
+              "field": {
+                "NativeVisualCalculation": {
+                  "Language": "dax",
+                  "Expression": "\r\nRANK(\r\n    DENSE,\r\n    ROWS,\r\n    ORDERBY([Value], DESC)\r\n)",
+                  "Name": "Rank"
+                }
+              },
+              "queryRef": "select",
+              "nativeQueryRef": "Rank"
+            },
+            {
+              "field": {
+                "NativeVisualCalculation": {
+                  "Language": "dax",
+                  "Expression": "FORMAT(DIVIDE([Value], COLLAPSEALL([Value], ROWS)), \"percent\")",
+                  "Name": "Grand Total"
+                }
+              },
+              "queryRef": "select1",
+              "nativeQueryRef": "Grand Total"
+            },
+            {
+              "field": {
+                "NativeVisualCalculation": {
+                  "Language": "dax",
+                  "Expression": "\r\nSUMX(\r\n    WINDOW(\r\n        0, ABS,\r\n        0, REL, ROWS, \r\n        ORDERBY([Value], DESC))\r\n        , [Value])",
+                  "Name": "Cumulative Value"
+                }
+              },
+              "queryRef": "select2",
+              "nativeQueryRef": "Cumulative Value"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Table"
+                  }
+                },
+                "Property": "Total Points"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "stylePreset": [
+        {
+          "properties": {
+            "name": {
+              "expr": {
+                "Literal": {
+                  "Value": "'None'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "1bce496576c62deab038",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ActivePlayerGamelogsNamesIncluded"
+              }
+            },
+            "Property": "SEASON_ID"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "a",
+              "Entity": "ActivePlayerGamelogsNamesIncluded",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "a"
+                          }
+                        },
+                        "Property": "SEASON_ID"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "22023L"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ]
+  }
+}
