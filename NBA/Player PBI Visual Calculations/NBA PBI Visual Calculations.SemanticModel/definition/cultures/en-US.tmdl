@@ -1180,6 +1180,16 @@ cultureInfo en-US
 			            },
 			            "Weight": 0.466
 			          }
+			        },
+			        {
+			          "Player Name": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -5978,233 +5988,58 @@ cultureInfo en-US
 			            },
 			            "Weight": 0.491
 			          }
-			        },
-			        {
-			          "Value": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
 			        }
 			      ]
 			    }
 			  },
 			  "Relationships": {
-			    "active_player_gamelogs_name_included_is_active": {
-			      "Binding": {
-			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "active_player_gamelogs_name_included": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included"
-			          }
-			        },
-			        "active_player_gamelogs_name_included.is_active": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included.is_active"
-			          }
-			        }
-			      },
-			      "Conditions": [
-			        {
-			          "Target": {
-			            "Role": "active_player_gamelogs_name_included.is_active"
-			          },
-			          "Operator": "Equals",
-			          "Value": {
-			            "Boolean": [
-			              true
-			            ]
-			          }
-			        }
-			      ],
-			      "Phrasings": [
-			        {
-			          "Adjective": {
-			            "Subject": {
-			              "Role": "active_player_gamelogs_name_included"
-			            },
-			            "Adjectives": [
-			              {
-			                "active": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ]
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "some_active_player_gamelogs_name_included_are_active_active_player_gamelogs_name_included"
-			        }
-			      ]
-			    },
-			    "date_table_is_weekend": {
+			    "date_table_start_of_week_date_hierarchy_has_date_table_start_of_week_quarter": {
 			      "Binding": {
 			        "ConceptualEntity": "Date Table"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "date_table": {
+			        "date_table.start_of_week.date_hierarchy": {
 			          "Target": {
-			            "Entity": "date_table"
+			            "Entity": "date_table.start_of_week.date_hierarchy"
 			          }
 			        },
-			        "date_table.is_weekend": {
+			        "date_table.start_of_week.quarter": {
 			          "Target": {
-			            "Entity": "date_table.is_weekend"
+			            "Entity": "date_table.start_of_week.quarter"
 			          }
 			        }
 			      },
 			      "Phrasings": [
 			        {
-			          "Adjective": {
-			            "Subject": {
-			              "Role": "date_table"
-			            },
-			            "Adjectives": [
-			              {
-			                "weekend": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ],
-			            "Measurement": {
-			              "Role": "date_table.is_weekend"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "is_weekend_indicates_how_weekend_date_tables_are"
-			        },
-			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "date_table"
+			              "Role": "date_table.start_of_week.date_hierarchy"
 			            },
 			            "Object": {
-			              "Role": "date_table.is_weekend"
+			              "Role": "date_table.start_of_week.quarter"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "date_tables_have_is_weekends"
+			          "ID": "start_of_week_date_hierarchy_have_start_of_week_quarter"
 			        }
 			      ]
 			    },
-			    "date_table_is_weekday": {
+			    "date_table_start_of_week_date_hierarchy_has_date_table_start_of_week_year": {
 			      "Binding": {
 			        "ConceptualEntity": "Date Table"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "date_table": {
+			        "date_table.start_of_week.date_hierarchy": {
 			          "Target": {
-			            "Entity": "date_table"
+			            "Entity": "date_table.start_of_week.date_hierarchy"
 			          }
 			        },
-			        "date_table.is_weekday": {
+			        "date_table.start_of_week.year": {
 			          "Target": {
-			            "Entity": "date_table.is_weekday"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Adjective": {
-			            "Subject": {
-			              "Role": "date_table"
-			            },
-			            "Adjectives": [
-			              {
-			                "weekday": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ],
-			            "Measurement": {
-			              "Role": "date_table.is_weekday"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "is_weekday_indicates_how_weekday_date_tables_are"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "date_table"
-			            },
-			            "Object": {
-			              "Role": "date_table.is_weekday"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "date_tables_have_is_weekdays"
-			        }
-			      ]
-			    },
-			    "active_player_gamelogs_name_included_is_gamed_on_game_date": {
-			      "Binding": {
-			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "active_player_gamelogs_name_included": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included"
-			          }
-			        },
-			        "active_player_gamelogs_name_included.game_date": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included.game_date"
-			          }
-			        }
-			      },
-			      "SemanticSlots": {
-			        "When": {
-			          "Role": "active_player_gamelogs_name_included.game_date"
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Verb": {
-			            "Verbs": [
-			              {
-			                "game": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ],
-			            "Object": {
-			              "Role": "active_player_gamelogs_name_included"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.9,
-			          "ID": "active_player_gamelogs_name_included_are_gamed_on_game_dates"
-			        }
-			      ]
-			    },
-			    "active_player_gamelogs_name_included_has_season_id": {
-			      "Binding": {
-			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "active_player_gamelogs_name_included": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included"
-			          }
-			        },
-			        "active_player_gamelogs_name_included.season_id": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included.season_id"
+			            "Entity": "date_table.start_of_week.year"
 			          }
 			        }
 			      },
@@ -6212,1616 +6047,65 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "active_player_gamelogs_name_included"
+			              "Role": "date_table.start_of_week.date_hierarchy"
 			            },
 			            "Object": {
-			              "Role": "active_player_gamelogs_name_included.season_id"
+			              "Role": "date_table.start_of_week.year"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "active_player_gamelogs_name_included_have_season_ids"
+			          "ID": "start_of_week_date_hierarchy_have_start_of_week_year"
 			        }
 			      ]
 			    },
-			    "active_player_gamelogs_name_included_has_player_ID": {
-			      "Binding": {
-			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "active_player_gamelogs_name_included": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included"
-			          }
-			        },
-			        "active_player_gamelogs_name_included.player_ID": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included.player_ID"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "active_player_gamelogs_name_included"
-			            },
-			            "Object": {
-			              "Role": "active_player_gamelogs_name_included.player_ID"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "active_player_gamelogs_name_included_have_player_ID"
-			        }
-			      ]
-			    },
-			    "active_player_gamelogs_name_included_has_game_ID": {
-			      "Binding": {
-			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "active_player_gamelogs_name_included": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included"
-			          }
-			        },
-			        "active_player_gamelogs_name_included.game_ID": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included.game_ID"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "active_player_gamelogs_name_included"
-			            },
-			            "Object": {
-			              "Role": "active_player_gamelogs_name_included.game_ID"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "active_player_gamelogs_name_included_have_game_ID"
-			        }
-			      ]
-			    },
-			    "active_player_gamelogs_name_included_has_game_date": {
-			      "Binding": {
-			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "active_player_gamelogs_name_included": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included"
-			          }
-			        },
-			        "active_player_gamelogs_name_included.game_date": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included.game_date"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "active_player_gamelogs_name_included"
-			            },
-			            "Object": {
-			              "Role": "active_player_gamelogs_name_included.game_date"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "active_player_gamelogs_name_included_have_game_dates"
-			        }
-			      ]
-			    },
-			    "active_player_gamelogs_name_included_has_matchup": {
-			      "Binding": {
-			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "active_player_gamelogs_name_included": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included"
-			          }
-			        },
-			        "active_player_gamelogs_name_included.matchup": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included.matchup"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "active_player_gamelogs_name_included"
-			            },
-			            "Object": {
-			              "Role": "active_player_gamelogs_name_included.matchup"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "active_player_gamelogs_name_included_have_matchups"
-			        }
-			      ]
-			    },
-			    "active_player_gamelogs_name_included_has_wl": {
-			      "Binding": {
-			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "active_player_gamelogs_name_included": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included"
-			          }
-			        },
-			        "active_player_gamelogs_name_included.wl": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included.wl"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "active_player_gamelogs_name_included"
-			            },
-			            "Object": {
-			              "Role": "active_player_gamelogs_name_included.wl"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "active_player_gamelogs_name_included_have_wl"
-			        }
-			      ]
-			    },
-			    "active_player_gamelogs_name_included_has_min": {
-			      "Binding": {
-			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "active_player_gamelogs_name_included": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included"
-			          }
-			        },
-			        "active_player_gamelogs_name_included.min": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included.min"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "active_player_gamelogs_name_included"
-			            },
-			            "Object": {
-			              "Role": "active_player_gamelogs_name_included.min"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "active_player_gamelogs_name_included_have_mins"
-			        }
-			      ]
-			    },
-			    "active_player_gamelogs_name_included_has_fgm": {
-			      "Binding": {
-			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "active_player_gamelogs_name_included": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included"
-			          }
-			        },
-			        "active_player_gamelogs_name_included.fgm": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included.fgm"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "active_player_gamelogs_name_included"
-			            },
-			            "Object": {
-			              "Role": "active_player_gamelogs_name_included.fgm"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "active_player_gamelogs_name_included_have_fgms"
-			        }
-			      ]
-			    },
-			    "active_player_gamelogs_name_included_has_fga": {
-			      "Binding": {
-			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "active_player_gamelogs_name_included": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included"
-			          }
-			        },
-			        "active_player_gamelogs_name_included.fga": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included.fga"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "active_player_gamelogs_name_included"
-			            },
-			            "Object": {
-			              "Role": "active_player_gamelogs_name_included.fga"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "active_player_gamelogs_name_included_have_fga"
-			        }
-			      ]
-			    },
-			    "active_player_gamelogs_name_included_has_fg_pct": {
-			      "Binding": {
-			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "active_player_gamelogs_name_included": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included"
-			          }
-			        },
-			        "active_player_gamelogs_name_included.fg_pct": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included.fg_pct"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "active_player_gamelogs_name_included"
-			            },
-			            "Object": {
-			              "Role": "active_player_gamelogs_name_included.fg_pct"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "active_player_gamelogs_name_included_have_fg_pcts"
-			        }
-			      ]
-			    },
-			    "active_player_gamelogs_name_included_has_fg_3m": {
-			      "Binding": {
-			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "active_player_gamelogs_name_included": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included"
-			          }
-			        },
-			        "active_player_gamelogs_name_included.fg_3m": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included.fg_3m"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "active_player_gamelogs_name_included"
-			            },
-			            "Object": {
-			              "Role": "active_player_gamelogs_name_included.fg_3m"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "active_player_gamelogs_name_included_have_fg_3m"
-			        }
-			      ]
-			    },
-			    "active_player_gamelogs_name_included_has_fg_3a": {
-			      "Binding": {
-			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "active_player_gamelogs_name_included": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included"
-			          }
-			        },
-			        "active_player_gamelogs_name_included.fg_3a": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included.fg_3a"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "active_player_gamelogs_name_included"
-			            },
-			            "Object": {
-			              "Role": "active_player_gamelogs_name_included.fg_3a"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "active_player_gamelogs_name_included_have_fg_3as"
-			        }
-			      ]
-			    },
-			    "active_player_gamelogs_name_included_has_fg_3_pct": {
-			      "Binding": {
-			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "active_player_gamelogs_name_included": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included"
-			          }
-			        },
-			        "active_player_gamelogs_name_included.fg_3_pct": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included.fg_3_pct"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "active_player_gamelogs_name_included"
-			            },
-			            "Object": {
-			              "Role": "active_player_gamelogs_name_included.fg_3_pct"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "active_player_gamelogs_name_included_have_fg_3_pcts"
-			        }
-			      ]
-			    },
-			    "active_player_gamelogs_name_included_has_ftm": {
-			      "Binding": {
-			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "active_player_gamelogs_name_included": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included"
-			          }
-			        },
-			        "active_player_gamelogs_name_included.ftm": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included.ftm"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "active_player_gamelogs_name_included"
-			            },
-			            "Object": {
-			              "Role": "active_player_gamelogs_name_included.ftm"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "active_player_gamelogs_name_included_have_ftms"
-			        }
-			      ]
-			    },
-			    "active_player_gamelogs_name_included_has_fta": {
-			      "Binding": {
-			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "active_player_gamelogs_name_included": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included"
-			          }
-			        },
-			        "active_player_gamelogs_name_included.fta": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included.fta"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "active_player_gamelogs_name_included"
-			            },
-			            "Object": {
-			              "Role": "active_player_gamelogs_name_included.fta"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "active_player_gamelogs_name_included_have_ftas"
-			        }
-			      ]
-			    },
-			    "active_player_gamelogs_name_included_has_ft_pct": {
-			      "Binding": {
-			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "active_player_gamelogs_name_included": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included"
-			          }
-			        },
-			        "active_player_gamelogs_name_included.ft_pct": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included.ft_pct"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "active_player_gamelogs_name_included"
-			            },
-			            "Object": {
-			              "Role": "active_player_gamelogs_name_included.ft_pct"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "active_player_gamelogs_name_included_have_ft_pcts"
-			        }
-			      ]
-			    },
-			    "active_player_gamelogs_name_included_has_oreb": {
-			      "Binding": {
-			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "active_player_gamelogs_name_included": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included"
-			          }
-			        },
-			        "active_player_gamelogs_name_included.oreb": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included.oreb"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "active_player_gamelogs_name_included"
-			            },
-			            "Object": {
-			              "Role": "active_player_gamelogs_name_included.oreb"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "active_player_gamelogs_name_included_have_orebs"
-			        }
-			      ]
-			    },
-			    "active_player_gamelogs_name_included_has_dreb": {
-			      "Binding": {
-			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "active_player_gamelogs_name_included": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included"
-			          }
-			        },
-			        "active_player_gamelogs_name_included.dreb": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included.dreb"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "active_player_gamelogs_name_included"
-			            },
-			            "Object": {
-			              "Role": "active_player_gamelogs_name_included.dreb"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "active_player_gamelogs_name_included_have_drebs"
-			        }
-			      ]
-			    },
-			    "active_player_gamelogs_name_included_has_reb": {
-			      "Binding": {
-			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "active_player_gamelogs_name_included": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included"
-			          }
-			        },
-			        "active_player_gamelogs_name_included.reb": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included.reb"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "active_player_gamelogs_name_included"
-			            },
-			            "Object": {
-			              "Role": "active_player_gamelogs_name_included.reb"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "active_player_gamelogs_name_included_have_rebs"
-			        }
-			      ]
-			    },
-			    "active_player_gamelogs_name_included_has_ast": {
-			      "Binding": {
-			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "active_player_gamelogs_name_included": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included"
-			          }
-			        },
-			        "active_player_gamelogs_name_included.ast": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included.ast"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "active_player_gamelogs_name_included"
-			            },
-			            "Object": {
-			              "Role": "active_player_gamelogs_name_included.ast"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "active_player_gamelogs_name_included_have_ast"
-			        }
-			      ]
-			    },
-			    "active_player_gamelogs_name_included_has_stl": {
-			      "Binding": {
-			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "active_player_gamelogs_name_included": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included"
-			          }
-			        },
-			        "active_player_gamelogs_name_included.stl": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included.stl"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "active_player_gamelogs_name_included"
-			            },
-			            "Object": {
-			              "Role": "active_player_gamelogs_name_included.stl"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "active_player_gamelogs_name_included_have_stls"
-			        }
-			      ]
-			    },
-			    "active_player_gamelogs_name_included_has_blk": {
-			      "Binding": {
-			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "active_player_gamelogs_name_included": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included"
-			          }
-			        },
-			        "active_player_gamelogs_name_included.blk": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included.blk"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "active_player_gamelogs_name_included"
-			            },
-			            "Object": {
-			              "Role": "active_player_gamelogs_name_included.blk"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "active_player_gamelogs_name_included_have_blks"
-			        }
-			      ]
-			    },
-			    "active_player_gamelogs_name_included_has_tov": {
-			      "Binding": {
-			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "active_player_gamelogs_name_included": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included"
-			          }
-			        },
-			        "active_player_gamelogs_name_included.tov": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included.tov"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "active_player_gamelogs_name_included"
-			            },
-			            "Object": {
-			              "Role": "active_player_gamelogs_name_included.tov"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "active_player_gamelogs_name_included_have_tovs"
-			        }
-			      ]
-			    },
-			    "active_player_gamelogs_name_included_has_pf": {
-			      "Binding": {
-			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "active_player_gamelogs_name_included": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included"
-			          }
-			        },
-			        "active_player_gamelogs_name_included.pf": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included.pf"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "active_player_gamelogs_name_included"
-			            },
-			            "Object": {
-			              "Role": "active_player_gamelogs_name_included.pf"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "active_player_gamelogs_name_included_have_pf"
-			        }
-			      ]
-			    },
-			    "active_player_gamelogs_name_included_has_pt": {
-			      "Binding": {
-			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "active_player_gamelogs_name_included": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included"
-			          }
-			        },
-			        "active_player_gamelogs_name_included.pt": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included.pt"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "active_player_gamelogs_name_included"
-			            },
-			            "Object": {
-			              "Role": "active_player_gamelogs_name_included.pt"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "active_player_gamelogs_name_included_have_pt"
-			        }
-			      ]
-			    },
-			    "active_player_gamelogs_name_included_has_plus_minus": {
-			      "Binding": {
-			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "active_player_gamelogs_name_included": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included"
-			          }
-			        },
-			        "active_player_gamelogs_name_included.plus_minus": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included.plus_minus"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "active_player_gamelogs_name_included"
-			            },
-			            "Object": {
-			              "Role": "active_player_gamelogs_name_included.plus_minus"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "active_player_gamelogs_name_included_have_plus_minus"
-			        }
-			      ]
-			    },
-			    "active_player_gamelogs_name_included_has_video_available": {
-			      "Binding": {
-			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "active_player_gamelogs_name_included": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included"
-			          }
-			        },
-			        "active_player_gamelogs_name_included.video_available": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included.video_available"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "active_player_gamelogs_name_included"
-			            },
-			            "Object": {
-			              "Role": "active_player_gamelogs_name_included.video_available"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "active_player_gamelogs_name_included_have_video_available"
-			        }
-			      ]
-			    },
-			    "active_player_gamelogs_name_included_has_id": {
-			      "Binding": {
-			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "active_player_gamelogs_name_included": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included"
-			          }
-			        },
-			        "active_player_gamelogs_name_included.id": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included.id"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "active_player_gamelogs_name_included"
-			            },
-			            "Object": {
-			              "Role": "active_player_gamelogs_name_included.id"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "active_player_gamelogs_name_included_have_ids"
-			        }
-			      ]
-			    },
-			    "active_player_gamelogs_name_included_has_full_name": {
-			      "Binding": {
-			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "active_player_gamelogs_name_included": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included"
-			          }
-			        },
-			        "active_player_gamelogs_name_included.full_name": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included.full_name"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "active_player_gamelogs_name_included"
-			            },
-			            "Object": {
-			              "Role": "active_player_gamelogs_name_included.full_name"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "active_player_gamelogs_name_included_have_full_names"
-			        }
-			      ]
-			    },
-			    "active_player_gamelogs_name_included_has_first_name": {
-			      "Binding": {
-			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "active_player_gamelogs_name_included": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included"
-			          }
-			        },
-			        "active_player_gamelogs_name_included.first_name": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included.first_name"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "active_player_gamelogs_name_included"
-			            },
-			            "Object": {
-			              "Role": "active_player_gamelogs_name_included.first_name"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "active_player_gamelogs_name_included_have_first_names"
-			        }
-			      ]
-			    },
-			    "active_player_gamelogs_name_included_has_last_name": {
-			      "Binding": {
-			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "active_player_gamelogs_name_included": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included"
-			          }
-			        },
-			        "active_player_gamelogs_name_included.last_name": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included.last_name"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "active_player_gamelogs_name_included"
-			            },
-			            "Object": {
-			              "Role": "active_player_gamelogs_name_included.last_name"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "active_player_gamelogs_name_included_have_last_names"
-			        }
-			      ]
-			    },
-			    "active_player_gamelogs_name_included_has_is_active": {
-			      "Binding": {
-			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "active_player_gamelogs_name_included": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included"
-			          }
-			        },
-			        "active_player_gamelogs_name_included.is_active": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included.is_active"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "active_player_gamelogs_name_included"
-			            },
-			            "Object": {
-			              "Role": "active_player_gamelogs_name_included.is_active"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "active_player_gamelogs_name_included_have_is_actives"
-			        }
-			      ]
-			    },
-			    "active_player_gamelogs_name_included_has_pt_next": {
-			      "Binding": {
-			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "active_player_gamelogs_name_included": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included"
-			          }
-			        },
-			        "active_player_gamelogs_name_included.pt_next": {
-			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included.pt_next"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "active_player_gamelogs_name_included"
-			            },
-			            "Object": {
-			              "Role": "active_player_gamelogs_name_included.pt_next"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "active_player_gamelogs_name_included_have_pt_next"
-			        }
-			      ]
-			    },
-			    "date_table_has_date": {
+			    "date_table_start_of_week_has_date_hierarchy": {
 			      "Binding": {
 			        "ConceptualEntity": "Date Table"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "date_table": {
-			          "Target": {
-			            "Entity": "date_table"
-			          }
-			        },
-			        "date_table.date": {
-			          "Target": {
-			            "Entity": "date_table.date"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "date_table"
-			            },
-			            "Object": {
-			              "Role": "date_table.date"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "date_tables_have_dates"
-			        }
-			      ]
-			    },
-			    "date_table_has_date_integer": {
-			      "Binding": {
-			        "ConceptualEntity": "Date Table"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "date_table": {
-			          "Target": {
-			            "Entity": "date_table"
-			          }
-			        },
-			        "date_table.date_integer": {
-			          "Target": {
-			            "Entity": "date_table.date_integer"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "date_table"
-			            },
-			            "Object": {
-			              "Role": "date_table.date_integer"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "date_tables_have_date_integers"
-			        }
-			      ]
-			    },
-			    "date_table_has_year": {
-			      "Binding": {
-			        "ConceptualEntity": "Date Table"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "date_table": {
-			          "Target": {
-			            "Entity": "date_table"
-			          }
-			        },
-			        "date_table.year": {
-			          "Target": {
-			            "Entity": "date_table.year"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "date_table"
-			            },
-			            "Object": {
-			              "Role": "date_table.year"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "date_tables_have_years"
-			        }
-			      ]
-			    },
-			    "date_table_has_year_default": {
-			      "Binding": {
-			        "ConceptualEntity": "Date Table"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "date_table": {
-			          "Target": {
-			            "Entity": "date_table"
-			          }
-			        },
-			        "date_table.year_default": {
-			          "Target": {
-			            "Entity": "date_table.year_default"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "date_table"
-			            },
-			            "Object": {
-			              "Role": "date_table.year_default"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "date_tables_have_year_defaults"
-			        }
-			      ]
-			    },
-			    "date_table_has_yyyymm": {
-			      "Binding": {
-			        "ConceptualEntity": "Date Table"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "date_table": {
-			          "Target": {
-			            "Entity": "date_table"
-			          }
-			        },
-			        "date_table.yyyymm": {
-			          "Target": {
-			            "Entity": "date_table.yyyymm"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "date_table"
-			            },
-			            "Object": {
-			              "Role": "date_table.yyyymm"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "date_tables_have_yyyymms"
-			        }
-			      ]
-			    },
-			    "date_table_has_monthyear": {
-			      "Binding": {
-			        "ConceptualEntity": "Date Table"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "date_table": {
-			          "Target": {
-			            "Entity": "date_table"
-			          }
-			        },
-			        "date_table.monthyear": {
-			          "Target": {
-			            "Entity": "date_table.monthyear"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "date_table"
-			            },
-			            "Object": {
-			              "Role": "date_table.monthyear"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "date_tables_have_monthyears"
-			        }
-			      ]
-			    },
-			    "date_table_has_month_of_year": {
-			      "Binding": {
-			        "ConceptualEntity": "Date Table"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "date_table": {
-			          "Target": {
-			            "Entity": "date_table"
-			          }
-			        },
-			        "date_table.month_of_year": {
-			          "Target": {
-			            "Entity": "date_table.month_of_year"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "date_table"
-			            },
-			            "Object": {
-			              "Role": "date_table.month_of_year"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "date_tables_have_month_of_year"
-			        }
-			      ]
-			    },
-			    "date_table_has_month_name": {
-			      "Binding": {
-			        "ConceptualEntity": "Date Table"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "date_table": {
-			          "Target": {
-			            "Entity": "date_table"
-			          }
-			        },
-			        "date_table.month_name": {
-			          "Target": {
-			            "Entity": "date_table.month_name"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "date_table"
-			            },
-			            "Object": {
-			              "Role": "date_table.month_name"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "date_tables_have_month_names"
-			        }
-			      ]
-			    },
-			    "date_table_has_month_name_short": {
-			      "Binding": {
-			        "ConceptualEntity": "Date Table"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "date_table": {
-			          "Target": {
-			            "Entity": "date_table"
-			          }
-			        },
-			        "date_table.month_name_short": {
-			          "Target": {
-			            "Entity": "date_table.month_name_short"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "date_table"
-			            },
-			            "Object": {
-			              "Role": "date_table.month_name_short"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "date_tables_have_month_name_shorts"
-			        }
-			      ]
-			    },
-			    "date_table_has_month_name_default": {
-			      "Binding": {
-			        "ConceptualEntity": "Date Table"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "date_table": {
-			          "Target": {
-			            "Entity": "date_table"
-			          }
-			        },
-			        "date_table.month_name_default": {
-			          "Target": {
-			            "Entity": "date_table.month_name_default"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "date_table"
-			            },
-			            "Object": {
-			              "Role": "date_table.month_name_default"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "date_tables_have_month_name_defaults"
-			        }
-			      ]
-			    },
-			    "date_table_has_start_of_month": {
-			      "Binding": {
-			        "ConceptualEntity": "Date Table"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "date_table": {
-			          "Target": {
-			            "Entity": "date_table"
-			          }
-			        },
-			        "date_table.start_of_month": {
-			          "Target": {
-			            "Entity": "date_table.start_of_month"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "date_table"
-			            },
-			            "Object": {
-			              "Role": "date_table.start_of_month"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "date_tables_have_start_of_month"
-			        }
-			      ]
-			    },
-			    "date_table_has_end_of_month": {
-			      "Binding": {
-			        "ConceptualEntity": "Date Table"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "date_table": {
-			          "Target": {
-			            "Entity": "date_table"
-			          }
-			        },
-			        "date_table.end_of_month": {
-			          "Target": {
-			            "Entity": "date_table.end_of_month"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "date_table"
-			            },
-			            "Object": {
-			              "Role": "date_table.end_of_month"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "date_tables_have_end_of_month"
-			        }
-			      ]
-			    },
-			    "date_table_has_day_in_month": {
-			      "Binding": {
-			        "ConceptualEntity": "Date Table"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "date_table": {
-			          "Target": {
-			            "Entity": "date_table"
-			          }
-			        },
-			        "date_table.day_in_month": {
-			          "Target": {
-			            "Entity": "date_table.day_in_month"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "date_table"
-			            },
-			            "Object": {
-			              "Role": "date_table.day_in_month"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "date_tables_have_day_in_month"
-			        }
-			      ]
-			    },
-			    "date_table_has_ISO_weeknumber": {
-			      "Binding": {
-			        "ConceptualEntity": "Date Table"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "date_table": {
-			          "Target": {
-			            "Entity": "date_table"
-			          }
-			        },
-			        "date_table.ISO_weeknumber": {
-			          "Target": {
-			            "Entity": "date_table.ISO_weeknumber"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "date_table"
-			            },
-			            "Object": {
-			              "Role": "date_table.ISO_weeknumber"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "date_tables_have_ISO_weeknumbers"
-			        }
-			      ]
-			    },
-			    "date_table_has_ISO_year": {
-			      "Binding": {
-			        "ConceptualEntity": "Date Table"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "date_table": {
-			          "Target": {
-			            "Entity": "date_table"
-			          }
-			        },
-			        "date_table.ISO_year": {
-			          "Target": {
-			            "Entity": "date_table.ISO_year"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "date_table"
-			            },
-			            "Object": {
-			              "Role": "date_table.ISO_year"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "date_tables_have_ISO_years"
-			        }
-			      ]
-			    },
-			    "date_table_has_start_of_week": {
-			      "Binding": {
-			        "ConceptualEntity": "Date Table"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "date_table": {
-			          "Target": {
-			            "Entity": "date_table"
-			          }
-			        },
 			        "date_table.start_of_week": {
 			          "Target": {
 			            "Entity": "date_table.start_of_week"
 			          }
+			        },
+			        "date_table.start_of_week.date_hierarchy": {
+			          "Target": {
+			            "Entity": "date_table.start_of_week.date_hierarchy"
+			          }
 			        }
 			      },
 			      "Phrasings": [
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "date_table"
-			            },
-			            "Object": {
 			              "Role": "date_table.start_of_week"
+			            },
+			            "Object": {
+			              "Role": "date_table.start_of_week.date_hierarchy"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "date_tables_have_start_of_week"
+			          "ID": "start_of_week_have_start_of_week_date_hierarchy"
 			        }
 			      ]
 			    },
-			    "date_table_has_quarter_number": {
+			    "date_table_end_of_month_date_hierarchy_has_date_table_end_of_month_day": {
 			      "Binding": {
 			        "ConceptualEntity": "Date Table"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "date_table": {
+			        "date_table.end_of_month.date_hierarchy": {
 			          "Target": {
-			            "Entity": "date_table"
+			            "Entity": "date_table.end_of_month.date_hierarchy"
 			          }
 			        },
-			        "date_table.quarter_number": {
+			        "date_table.end_of_month.day": {
 			          "Target": {
-			            "Entity": "date_table.quarter_number"
+			            "Entity": "date_table.end_of_month.day"
 			          }
 			        }
 			      },
@@ -7829,32 +6113,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "date_table"
+			              "Role": "date_table.end_of_month.date_hierarchy"
 			            },
 			            "Object": {
-			              "Role": "date_table.quarter_number"
+			              "Role": "date_table.end_of_month.day"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "date_tables_have_quarter_numbers"
+			          "ID": "end_of_month_date_hierarchy_have_end_of_month_day"
 			        }
 			      ]
 			    },
-			    "date_table_has_quarter": {
+			    "date_table_end_of_month_date_hierarchy_has_date_table_end_of_month_month": {
 			      "Binding": {
 			        "ConceptualEntity": "Date Table"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "date_table": {
+			        "date_table.end_of_month.date_hierarchy": {
 			          "Target": {
-			            "Entity": "date_table"
+			            "Entity": "date_table.end_of_month.date_hierarchy"
 			          }
 			        },
-			        "date_table.quarter": {
+			        "date_table.end_of_month.month": {
 			          "Target": {
-			            "Entity": "date_table.quarter"
+			            "Entity": "date_table.end_of_month.month"
 			          }
 			        }
 			      },
@@ -7862,32 +6146,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "date_table"
+			              "Role": "date_table.end_of_month.date_hierarchy"
 			            },
 			            "Object": {
-			              "Role": "date_table.quarter"
+			              "Role": "date_table.end_of_month.month"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "date_tables_have_quarters"
+			          "ID": "end_of_month_date_hierarchy_have_end_of_month_month"
 			        }
 			      ]
 			    },
-			    "date_table_has_yearquarter": {
+			    "date_table_end_of_month_date_hierarchy_has_date_table_end_of_month_quarter": {
 			      "Binding": {
 			        "ConceptualEntity": "Date Table"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "date_table": {
+			        "date_table.end_of_month.date_hierarchy": {
 			          "Target": {
-			            "Entity": "date_table"
+			            "Entity": "date_table.end_of_month.date_hierarchy"
 			          }
 			        },
-			        "date_table.yearquarter": {
+			        "date_table.end_of_month.quarter": {
 			          "Target": {
-			            "Entity": "date_table.yearquarter"
+			            "Entity": "date_table.end_of_month.quarter"
 			          }
 			        }
 			      },
@@ -7895,32 +6179,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "date_table"
+			              "Role": "date_table.end_of_month.date_hierarchy"
 			            },
 			            "Object": {
-			              "Role": "date_table.yearquarter"
+			              "Role": "date_table.end_of_month.quarter"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "date_tables_have_yearquarters"
+			          "ID": "end_of_month_date_hierarchy_have_end_of_month_quarter"
 			        }
 			      ]
 			    },
-			    "date_table_has_day_name": {
+			    "date_table_end_of_month_date_hierarchy_has_date_table_end_of_month_year": {
 			      "Binding": {
 			        "ConceptualEntity": "Date Table"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "date_table": {
+			        "date_table.end_of_month.date_hierarchy": {
 			          "Target": {
-			            "Entity": "date_table"
+			            "Entity": "date_table.end_of_month.date_hierarchy"
 			          }
 			        },
-			        "date_table.day_name": {
+			        "date_table.end_of_month.year": {
 			          "Target": {
-			            "Entity": "date_table.day_name"
+			            "Entity": "date_table.end_of_month.year"
 			          }
 			        }
 			      },
@@ -7928,32 +6212,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "date_table"
+			              "Role": "date_table.end_of_month.date_hierarchy"
 			            },
 			            "Object": {
-			              "Role": "date_table.day_name"
+			              "Role": "date_table.end_of_month.year"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "date_tables_have_day_names"
+			          "ID": "end_of_month_date_hierarchy_have_end_of_month_year"
 			        }
 			      ]
 			    },
-			    "date_table_has_day_name_short": {
+			    "date_table_end_of_month_has_date_hierarchy": {
 			      "Binding": {
 			        "ConceptualEntity": "Date Table"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "date_table": {
+			        "date_table.end_of_month": {
 			          "Target": {
-			            "Entity": "date_table"
+			            "Entity": "date_table.end_of_month"
 			          }
 			        },
-			        "date_table.day_name_short": {
+			        "date_table.end_of_month.date_hierarchy": {
 			          "Target": {
-			            "Entity": "date_table.day_name_short"
+			            "Entity": "date_table.end_of_month.date_hierarchy"
 			          }
 			        }
 			      },
@@ -7961,32 +6245,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "date_table"
+			              "Role": "date_table.end_of_month"
 			            },
 			            "Object": {
-			              "Role": "date_table.day_name_short"
+			              "Role": "date_table.end_of_month.date_hierarchy"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "date_tables_have_day_name_shorts"
+			          "ID": "end_of_month_have_end_of_month_date_hierarchy"
 			        }
 			      ]
 			    },
-			    "date_table_has_day_of_month_number": {
+			    "date_table_start_of_month_date_hierarchy_has_date_table_start_of_month_day": {
 			      "Binding": {
 			        "ConceptualEntity": "Date Table"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "date_table": {
+			        "date_table.start_of_month.date_hierarchy": {
 			          "Target": {
-			            "Entity": "date_table"
+			            "Entity": "date_table.start_of_month.date_hierarchy"
 			          }
 			        },
-			        "date_table.day_of_month_number": {
+			        "date_table.start_of_month.day": {
 			          "Target": {
-			            "Entity": "date_table.day_of_month_number"
+			            "Entity": "date_table.start_of_month.day"
 			          }
 			        }
 			      },
@@ -7994,32 +6278,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "date_table"
+			              "Role": "date_table.start_of_month.date_hierarchy"
 			            },
 			            "Object": {
-			              "Role": "date_table.day_of_month_number"
+			              "Role": "date_table.start_of_month.day"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "date_tables_have_day_of_month_number"
+			          "ID": "start_of_month_date_hierarchy_have_start_of_month_day"
 			        }
 			      ]
 			    },
-			    "date_table_has_day_of_week_number": {
+			    "date_table_start_of_month_date_hierarchy_has_date_table_start_of_month_month": {
 			      "Binding": {
 			        "ConceptualEntity": "Date Table"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "date_table": {
+			        "date_table.start_of_month.date_hierarchy": {
 			          "Target": {
-			            "Entity": "date_table"
+			            "Entity": "date_table.start_of_month.date_hierarchy"
 			          }
 			        },
-			        "date_table.day_of_week_number": {
+			        "date_table.start_of_month.month": {
 			          "Target": {
-			            "Entity": "date_table.day_of_week_number"
+			            "Entity": "date_table.start_of_month.month"
 			          }
 			        }
 			      },
@@ -8027,32 +6311,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "date_table"
+			              "Role": "date_table.start_of_month.date_hierarchy"
 			            },
 			            "Object": {
-			              "Role": "date_table.day_of_week_number"
+			              "Role": "date_table.start_of_month.month"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "date_tables_have_day_of_week_number"
+			          "ID": "start_of_month_date_hierarchy_have_start_of_month_month"
 			        }
 			      ]
 			    },
-			    "date_table_has_day_of_year_number": {
+			    "date_table_start_of_month_date_hierarchy_has_date_table_start_of_month_quarter": {
 			      "Binding": {
 			        "ConceptualEntity": "Date Table"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "date_table": {
+			        "date_table.start_of_month.date_hierarchy": {
 			          "Target": {
-			            "Entity": "date_table"
+			            "Entity": "date_table.start_of_month.date_hierarchy"
 			          }
 			        },
-			        "date_table.day_of_year_number": {
+			        "date_table.start_of_month.quarter": {
 			          "Target": {
-			            "Entity": "date_table.day_of_year_number"
+			            "Entity": "date_table.start_of_month.quarter"
 			          }
 			        }
 			      },
@@ -8060,32 +6344,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "date_table"
+			              "Role": "date_table.start_of_month.date_hierarchy"
 			            },
 			            "Object": {
-			              "Role": "date_table.day_of_year_number"
+			              "Role": "date_table.start_of_month.quarter"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "date_tables_have_day_of_year_number"
+			          "ID": "start_of_month_date_hierarchy_have_start_of_month_quarter"
 			        }
 			      ]
 			    },
-			    "date_table_has_day_offset": {
+			    "date_table_start_of_month_date_hierarchy_has_date_table_start_of_month_year": {
 			      "Binding": {
 			        "ConceptualEntity": "Date Table"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "date_table": {
+			        "date_table.start_of_month.date_hierarchy": {
 			          "Target": {
-			            "Entity": "date_table"
+			            "Entity": "date_table.start_of_month.date_hierarchy"
 			          }
 			        },
-			        "date_table.day_offset": {
+			        "date_table.start_of_month.year": {
 			          "Target": {
-			            "Entity": "date_table.day_offset"
+			            "Entity": "date_table.start_of_month.year"
 			          }
 			        }
 			      },
@@ -8093,32 +6377,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "date_table"
+			              "Role": "date_table.start_of_month.date_hierarchy"
 			            },
 			            "Object": {
-			              "Role": "date_table.day_offset"
+			              "Role": "date_table.start_of_month.year"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "date_tables_have_day_offsets"
+			          "ID": "start_of_month_date_hierarchy_have_start_of_month_year"
 			        }
 			      ]
 			    },
-			    "date_table_has_week_offset": {
+			    "date_table_start_of_month_has_date_hierarchy": {
 			      "Binding": {
 			        "ConceptualEntity": "Date Table"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "date_table": {
+			        "date_table.start_of_month": {
 			          "Target": {
-			            "Entity": "date_table"
+			            "Entity": "date_table.start_of_month"
 			          }
 			        },
-			        "date_table.week_offset": {
+			        "date_table.start_of_month.date_hierarchy": {
 			          "Target": {
-			            "Entity": "date_table.week_offset"
+			            "Entity": "date_table.start_of_month.date_hierarchy"
 			          }
 			        }
 			      },
@@ -8126,32 +6410,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "date_table"
+			              "Role": "date_table.start_of_month"
 			            },
 			            "Object": {
-			              "Role": "date_table.week_offset"
+			              "Role": "date_table.start_of_month.date_hierarchy"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "date_tables_have_week_offsets"
+			          "ID": "start_of_month_have_start_of_month_date_hierarchy"
 			        }
 			      ]
 			    },
-			    "date_table_has_month_offset": {
+			    "date_table_date_date_hierarchy_has_date_table_date_day": {
 			      "Binding": {
 			        "ConceptualEntity": "Date Table"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "date_table": {
+			        "date_table.date.date_hierarchy": {
 			          "Target": {
-			            "Entity": "date_table"
+			            "Entity": "date_table.date.date_hierarchy"
 			          }
 			        },
-			        "date_table.month_offset": {
+			        "date_table.date.day": {
 			          "Target": {
-			            "Entity": "date_table.month_offset"
+			            "Entity": "date_table.date.day"
 			          }
 			        }
 			      },
@@ -8159,32 +6443,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "date_table"
+			              "Role": "date_table.date.date_hierarchy"
 			            },
 			            "Object": {
-			              "Role": "date_table.month_offset"
+			              "Role": "date_table.date.day"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "date_tables_have_month_offsets"
+			          "ID": "date_hierarchies_have_days"
 			        }
 			      ]
 			    },
-			    "date_table_has_quarter_offset": {
+			    "date_table_date_date_hierarchy_has_date_table_date_month": {
 			      "Binding": {
 			        "ConceptualEntity": "Date Table"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "date_table": {
+			        "date_table.date.date_hierarchy": {
 			          "Target": {
-			            "Entity": "date_table"
+			            "Entity": "date_table.date.date_hierarchy"
 			          }
 			        },
-			        "date_table.quarter_offset": {
+			        "date_table.date.month": {
 			          "Target": {
-			            "Entity": "date_table.quarter_offset"
+			            "Entity": "date_table.date.month"
 			          }
 			        }
 			      },
@@ -8192,32 +6476,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "date_table"
+			              "Role": "date_table.date.date_hierarchy"
 			            },
 			            "Object": {
-			              "Role": "date_table.quarter_offset"
+			              "Role": "date_table.date.month"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "date_tables_have_quarter_offsets"
+			          "ID": "date_hierarchies_have_months"
 			        }
 			      ]
 			    },
-			    "date_table_has_year_offset": {
+			    "date_table_date_date_hierarchy_has_date_table_date_quarter": {
 			      "Binding": {
 			        "ConceptualEntity": "Date Table"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "date_table": {
+			        "date_table.date.date_hierarchy": {
 			          "Target": {
-			            "Entity": "date_table"
+			            "Entity": "date_table.date.date_hierarchy"
 			          }
 			        },
-			        "date_table.year_offset": {
+			        "date_table.date.quarter": {
 			          "Target": {
-			            "Entity": "date_table.year_offset"
+			            "Entity": "date_table.date.quarter"
 			          }
 			        }
 			      },
@@ -8225,32 +6509,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "date_table"
+			              "Role": "date_table.date.date_hierarchy"
 			            },
 			            "Object": {
-			              "Role": "date_table.year_offset"
+			              "Role": "date_table.date.quarter"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "date_tables_have_year_offsets"
+			          "ID": "date_hierarchies_have_quarters"
 			        }
 			      ]
 			    },
-			    "active_player_gamelogs_name_included_has_table_total_points": {
+			    "date_table_date_date_hierarchy_has_date_table_date_year": {
 			      "Binding": {
-			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
+			        "ConceptualEntity": "Date Table"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "active_player_gamelogs_name_included": {
+			        "date_table.date.date_hierarchy": {
 			          "Target": {
-			            "Entity": "active_player_gamelogs_name_included"
+			            "Entity": "date_table.date.date_hierarchy"
 			          }
 			        },
-			        "table.total_points": {
+			        "date_table.date.year": {
 			          "Target": {
-			            "Entity": "table.total_points"
+			            "Entity": "date_table.date.year"
 			          }
 			        }
 			      },
@@ -8258,15 +6542,48 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "active_player_gamelogs_name_included"
+			              "Role": "date_table.date.date_hierarchy"
 			            },
 			            "Object": {
-			              "Role": "table.total_points"
+			              "Role": "date_table.date.year"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "active_player_gamelogs_name_included_have_total_points"
+			          "ID": "date_hierarchies_have_years"
+			        }
+			      ]
+			    },
+			    "date_table_date_has_date_hierarchy": {
+			      "Binding": {
+			        "ConceptualEntity": "Date Table"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_table.date": {
+			          "Target": {
+			            "Entity": "date_table.date"
+			          }
+			        },
+			        "date_table.date.date_hierarchy": {
+			          "Target": {
+			            "Entity": "date_table.date.date_hierarchy"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_table.date"
+			            },
+			            "Object": {
+			              "Role": "date_table.date.date_hierarchy"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dates_have_date_hierarchies"
 			        }
 			      ]
 			    },
@@ -8316,20 +6633,20 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "date_table_date_has_date_hierarchy": {
+			    "active_player_gamelogs_name_included_has_table_total_points": {
 			      "Binding": {
-			        "ConceptualEntity": "Date Table"
+			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "date_table.date": {
+			        "active_player_gamelogs_name_included": {
 			          "Target": {
-			            "Entity": "date_table.date"
+			            "Entity": "active_player_gamelogs_name_included"
 			          }
 			        },
-			        "date_table.date.date_hierarchy": {
+			        "table.total_points": {
 			          "Target": {
-			            "Entity": "date_table.date.date_hierarchy"
+			            "Entity": "table.total_points"
 			          }
 			        }
 			      },
@@ -8337,32 +6654,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "date_table.date"
+			              "Role": "active_player_gamelogs_name_included"
 			            },
 			            "Object": {
-			              "Role": "date_table.date.date_hierarchy"
+			              "Role": "table.total_points"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "dates_have_date_hierarchies"
+			          "ID": "active_player_gamelogs_name_included_have_total_points"
 			        }
 			      ]
 			    },
-			    "date_table_date_date_hierarchy_has_date_table_date_year": {
+			    "date_table_has_is_weekday": {
 			      "Binding": {
 			        "ConceptualEntity": "Date Table"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "date_table.date.date_hierarchy": {
+			        "date_table": {
 			          "Target": {
-			            "Entity": "date_table.date.date_hierarchy"
+			            "Entity": "date_table"
 			          }
 			        },
-			        "date_table.date.year": {
+			        "date_table.is_weekday": {
 			          "Target": {
-			            "Entity": "date_table.date.year"
+			            "Entity": "date_table.is_weekday"
 			          }
 			        }
 			      },
@@ -8370,32 +6687,52 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "date_table.date.date_hierarchy"
+			              "Role": "date_table"
 			            },
 			            "Object": {
-			              "Role": "date_table.date.year"
+			              "Role": "date_table.is_weekday"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "date_hierarchies_have_years"
+			          "ID": "date_tables_have_is_weekdays"
+			        },
+			        {
+			          "Adjective": {
+			            "Subject": {
+			              "Role": "date_table"
+			            },
+			            "Adjectives": [
+			              {
+			                "weekday": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Measurement": {
+			              "Role": "date_table.is_weekday"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "is_weekday_indicates_how_weekday_date_tables_are"
 			        }
 			      ]
 			    },
-			    "date_table_date_date_hierarchy_has_date_table_date_quarter": {
+			    "date_table_has_is_weekend": {
 			      "Binding": {
 			        "ConceptualEntity": "Date Table"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "date_table.date.date_hierarchy": {
+			        "date_table": {
 			          "Target": {
-			            "Entity": "date_table.date.date_hierarchy"
+			            "Entity": "date_table"
 			          }
 			        },
-			        "date_table.date.quarter": {
+			        "date_table.is_weekend": {
 			          "Target": {
-			            "Entity": "date_table.date.quarter"
+			            "Entity": "date_table.is_weekend"
 			          }
 			        }
 			      },
@@ -8403,32 +6740,52 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "date_table.date.date_hierarchy"
+			              "Role": "date_table"
 			            },
 			            "Object": {
-			              "Role": "date_table.date.quarter"
+			              "Role": "date_table.is_weekend"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "date_hierarchies_have_quarters"
+			          "ID": "date_tables_have_is_weekends"
+			        },
+			        {
+			          "Adjective": {
+			            "Subject": {
+			              "Role": "date_table"
+			            },
+			            "Adjectives": [
+			              {
+			                "weekend": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Measurement": {
+			              "Role": "date_table.is_weekend"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "is_weekend_indicates_how_weekend_date_tables_are"
 			        }
 			      ]
 			    },
-			    "date_table_date_date_hierarchy_has_date_table_date_month": {
+			    "date_table_has_year_offset": {
 			      "Binding": {
 			        "ConceptualEntity": "Date Table"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "date_table.date.date_hierarchy": {
+			        "date_table": {
 			          "Target": {
-			            "Entity": "date_table.date.date_hierarchy"
+			            "Entity": "date_table"
 			          }
 			        },
-			        "date_table.date.month": {
+			        "date_table.year_offset": {
 			          "Target": {
-			            "Entity": "date_table.date.month"
+			            "Entity": "date_table.year_offset"
 			          }
 			        }
 			      },
@@ -8436,32 +6793,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "date_table.date.date_hierarchy"
+			              "Role": "date_table"
 			            },
 			            "Object": {
-			              "Role": "date_table.date.month"
+			              "Role": "date_table.year_offset"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "date_hierarchies_have_months"
+			          "ID": "date_tables_have_year_offsets"
 			        }
 			      ]
 			    },
-			    "date_table_date_date_hierarchy_has_date_table_date_day": {
+			    "date_table_has_quarter_offset": {
 			      "Binding": {
 			        "ConceptualEntity": "Date Table"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "date_table.date.date_hierarchy": {
+			        "date_table": {
 			          "Target": {
-			            "Entity": "date_table.date.date_hierarchy"
+			            "Entity": "date_table"
 			          }
 			        },
-			        "date_table.date.day": {
+			        "date_table.quarter_offset": {
 			          "Target": {
-			            "Entity": "date_table.date.day"
+			            "Entity": "date_table.quarter_offset"
 			          }
 			        }
 			      },
@@ -8469,32 +6826,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "date_table.date.date_hierarchy"
+			              "Role": "date_table"
 			            },
 			            "Object": {
-			              "Role": "date_table.date.day"
+			              "Role": "date_table.quarter_offset"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "date_hierarchies_have_days"
+			          "ID": "date_tables_have_quarter_offsets"
 			        }
 			      ]
 			    },
-			    "date_table_start_of_month_has_date_hierarchy": {
+			    "date_table_has_month_offset": {
 			      "Binding": {
 			        "ConceptualEntity": "Date Table"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "date_table.start_of_month": {
+			        "date_table": {
 			          "Target": {
-			            "Entity": "date_table.start_of_month"
+			            "Entity": "date_table"
 			          }
 			        },
-			        "date_table.start_of_month.date_hierarchy": {
+			        "date_table.month_offset": {
 			          "Target": {
-			            "Entity": "date_table.start_of_month.date_hierarchy"
+			            "Entity": "date_table.month_offset"
 			          }
 			        }
 			      },
@@ -8502,32 +6859,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "date_table.start_of_month"
+			              "Role": "date_table"
 			            },
 			            "Object": {
-			              "Role": "date_table.start_of_month.date_hierarchy"
+			              "Role": "date_table.month_offset"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "start_of_month_have_start_of_month_date_hierarchy"
+			          "ID": "date_tables_have_month_offsets"
 			        }
 			      ]
 			    },
-			    "date_table_start_of_month_date_hierarchy_has_date_table_start_of_month_year": {
+			    "date_table_has_week_offset": {
 			      "Binding": {
 			        "ConceptualEntity": "Date Table"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "date_table.start_of_month.date_hierarchy": {
+			        "date_table": {
 			          "Target": {
-			            "Entity": "date_table.start_of_month.date_hierarchy"
+			            "Entity": "date_table"
 			          }
 			        },
-			        "date_table.start_of_month.year": {
+			        "date_table.week_offset": {
 			          "Target": {
-			            "Entity": "date_table.start_of_month.year"
+			            "Entity": "date_table.week_offset"
 			          }
 			        }
 			      },
@@ -8535,32 +6892,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "date_table.start_of_month.date_hierarchy"
+			              "Role": "date_table"
 			            },
 			            "Object": {
-			              "Role": "date_table.start_of_month.year"
+			              "Role": "date_table.week_offset"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "start_of_month_date_hierarchy_have_start_of_month_year"
+			          "ID": "date_tables_have_week_offsets"
 			        }
 			      ]
 			    },
-			    "date_table_start_of_month_date_hierarchy_has_date_table_start_of_month_quarter": {
+			    "date_table_has_day_offset": {
 			      "Binding": {
 			        "ConceptualEntity": "Date Table"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "date_table.start_of_month.date_hierarchy": {
+			        "date_table": {
 			          "Target": {
-			            "Entity": "date_table.start_of_month.date_hierarchy"
+			            "Entity": "date_table"
 			          }
 			        },
-			        "date_table.start_of_month.quarter": {
+			        "date_table.day_offset": {
 			          "Target": {
-			            "Entity": "date_table.start_of_month.quarter"
+			            "Entity": "date_table.day_offset"
 			          }
 			        }
 			      },
@@ -8568,32 +6925,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "date_table.start_of_month.date_hierarchy"
+			              "Role": "date_table"
 			            },
 			            "Object": {
-			              "Role": "date_table.start_of_month.quarter"
+			              "Role": "date_table.day_offset"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "start_of_month_date_hierarchy_have_start_of_month_quarter"
+			          "ID": "date_tables_have_day_offsets"
 			        }
 			      ]
 			    },
-			    "date_table_start_of_month_date_hierarchy_has_date_table_start_of_month_month": {
+			    "date_table_has_day_of_year_number": {
 			      "Binding": {
 			        "ConceptualEntity": "Date Table"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "date_table.start_of_month.date_hierarchy": {
+			        "date_table": {
 			          "Target": {
-			            "Entity": "date_table.start_of_month.date_hierarchy"
+			            "Entity": "date_table"
 			          }
 			        },
-			        "date_table.start_of_month.month": {
+			        "date_table.day_of_year_number": {
 			          "Target": {
-			            "Entity": "date_table.start_of_month.month"
+			            "Entity": "date_table.day_of_year_number"
 			          }
 			        }
 			      },
@@ -8601,32 +6958,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "date_table.start_of_month.date_hierarchy"
+			              "Role": "date_table"
 			            },
 			            "Object": {
-			              "Role": "date_table.start_of_month.month"
+			              "Role": "date_table.day_of_year_number"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "start_of_month_date_hierarchy_have_start_of_month_month"
+			          "ID": "date_tables_have_day_of_year_number"
 			        }
 			      ]
 			    },
-			    "date_table_start_of_month_date_hierarchy_has_date_table_start_of_month_day": {
+			    "date_table_has_day_of_week_number": {
 			      "Binding": {
 			        "ConceptualEntity": "Date Table"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "date_table.start_of_month.date_hierarchy": {
+			        "date_table": {
 			          "Target": {
-			            "Entity": "date_table.start_of_month.date_hierarchy"
+			            "Entity": "date_table"
 			          }
 			        },
-			        "date_table.start_of_month.day": {
+			        "date_table.day_of_week_number": {
 			          "Target": {
-			            "Entity": "date_table.start_of_month.day"
+			            "Entity": "date_table.day_of_week_number"
 			          }
 			        }
 			      },
@@ -8634,32 +6991,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "date_table.start_of_month.date_hierarchy"
+			              "Role": "date_table"
 			            },
 			            "Object": {
-			              "Role": "date_table.start_of_month.day"
+			              "Role": "date_table.day_of_week_number"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "start_of_month_date_hierarchy_have_start_of_month_day"
+			          "ID": "date_tables_have_day_of_week_number"
 			        }
 			      ]
 			    },
-			    "date_table_end_of_month_has_date_hierarchy": {
+			    "date_table_has_day_of_month_number": {
 			      "Binding": {
 			        "ConceptualEntity": "Date Table"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "date_table.end_of_month": {
+			        "date_table": {
 			          "Target": {
-			            "Entity": "date_table.end_of_month"
+			            "Entity": "date_table"
 			          }
 			        },
-			        "date_table.end_of_month.date_hierarchy": {
+			        "date_table.day_of_month_number": {
 			          "Target": {
-			            "Entity": "date_table.end_of_month.date_hierarchy"
+			            "Entity": "date_table.day_of_month_number"
 			          }
 			        }
 			      },
@@ -8667,32 +7024,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "date_table.end_of_month"
+			              "Role": "date_table"
 			            },
 			            "Object": {
-			              "Role": "date_table.end_of_month.date_hierarchy"
+			              "Role": "date_table.day_of_month_number"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "end_of_month_have_end_of_month_date_hierarchy"
+			          "ID": "date_tables_have_day_of_month_number"
 			        }
 			      ]
 			    },
-			    "date_table_end_of_month_date_hierarchy_has_date_table_end_of_month_year": {
+			    "date_table_has_day_name_short": {
 			      "Binding": {
 			        "ConceptualEntity": "Date Table"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "date_table.end_of_month.date_hierarchy": {
+			        "date_table": {
 			          "Target": {
-			            "Entity": "date_table.end_of_month.date_hierarchy"
+			            "Entity": "date_table"
 			          }
 			        },
-			        "date_table.end_of_month.year": {
+			        "date_table.day_name_short": {
 			          "Target": {
-			            "Entity": "date_table.end_of_month.year"
+			            "Entity": "date_table.day_name_short"
 			          }
 			        }
 			      },
@@ -8700,32 +7057,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "date_table.end_of_month.date_hierarchy"
+			              "Role": "date_table"
 			            },
 			            "Object": {
-			              "Role": "date_table.end_of_month.year"
+			              "Role": "date_table.day_name_short"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "end_of_month_date_hierarchy_have_end_of_month_year"
+			          "ID": "date_tables_have_day_name_shorts"
 			        }
 			      ]
 			    },
-			    "date_table_end_of_month_date_hierarchy_has_date_table_end_of_month_quarter": {
+			    "date_table_has_day_name": {
 			      "Binding": {
 			        "ConceptualEntity": "Date Table"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "date_table.end_of_month.date_hierarchy": {
+			        "date_table": {
 			          "Target": {
-			            "Entity": "date_table.end_of_month.date_hierarchy"
+			            "Entity": "date_table"
 			          }
 			        },
-			        "date_table.end_of_month.quarter": {
+			        "date_table.day_name": {
 			          "Target": {
-			            "Entity": "date_table.end_of_month.quarter"
+			            "Entity": "date_table.day_name"
 			          }
 			        }
 			      },
@@ -8733,32 +7090,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "date_table.end_of_month.date_hierarchy"
+			              "Role": "date_table"
 			            },
 			            "Object": {
-			              "Role": "date_table.end_of_month.quarter"
+			              "Role": "date_table.day_name"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "end_of_month_date_hierarchy_have_end_of_month_quarter"
+			          "ID": "date_tables_have_day_names"
 			        }
 			      ]
 			    },
-			    "date_table_end_of_month_date_hierarchy_has_date_table_end_of_month_month": {
+			    "date_table_has_yearquarter": {
 			      "Binding": {
 			        "ConceptualEntity": "Date Table"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "date_table.end_of_month.date_hierarchy": {
+			        "date_table": {
 			          "Target": {
-			            "Entity": "date_table.end_of_month.date_hierarchy"
+			            "Entity": "date_table"
 			          }
 			        },
-			        "date_table.end_of_month.month": {
+			        "date_table.yearquarter": {
 			          "Target": {
-			            "Entity": "date_table.end_of_month.month"
+			            "Entity": "date_table.yearquarter"
 			          }
 			        }
 			      },
@@ -8766,32 +7123,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "date_table.end_of_month.date_hierarchy"
+			              "Role": "date_table"
 			            },
 			            "Object": {
-			              "Role": "date_table.end_of_month.month"
+			              "Role": "date_table.yearquarter"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "end_of_month_date_hierarchy_have_end_of_month_month"
+			          "ID": "date_tables_have_yearquarters"
 			        }
 			      ]
 			    },
-			    "date_table_end_of_month_date_hierarchy_has_date_table_end_of_month_day": {
+			    "date_table_has_quarter": {
 			      "Binding": {
 			        "ConceptualEntity": "Date Table"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "date_table.end_of_month.date_hierarchy": {
+			        "date_table": {
 			          "Target": {
-			            "Entity": "date_table.end_of_month.date_hierarchy"
+			            "Entity": "date_table"
 			          }
 			        },
-			        "date_table.end_of_month.day": {
+			        "date_table.quarter": {
 			          "Target": {
-			            "Entity": "date_table.end_of_month.day"
+			            "Entity": "date_table.quarter"
 			          }
 			        }
 			      },
@@ -8799,65 +7156,98 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "date_table.end_of_month.date_hierarchy"
+			              "Role": "date_table"
 			            },
 			            "Object": {
-			              "Role": "date_table.end_of_month.day"
+			              "Role": "date_table.quarter"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "end_of_month_date_hierarchy_have_end_of_month_day"
+			          "ID": "date_tables_have_quarters"
 			        }
 			      ]
 			    },
-			    "date_table_start_of_week_has_date_hierarchy": {
+			    "date_table_has_quarter_number": {
 			      "Binding": {
 			        "ConceptualEntity": "Date Table"
 			      },
 			      "State": "Generated",
 			      "Roles": {
+			        "date_table": {
+			          "Target": {
+			            "Entity": "date_table"
+			          }
+			        },
+			        "date_table.quarter_number": {
+			          "Target": {
+			            "Entity": "date_table.quarter_number"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_table"
+			            },
+			            "Object": {
+			              "Role": "date_table.quarter_number"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_tables_have_quarter_numbers"
+			        }
+			      ]
+			    },
+			    "date_table_has_start_of_week": {
+			      "Binding": {
+			        "ConceptualEntity": "Date Table"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_table": {
+			          "Target": {
+			            "Entity": "date_table"
+			          }
+			        },
 			        "date_table.start_of_week": {
 			          "Target": {
 			            "Entity": "date_table.start_of_week"
 			          }
-			        },
-			        "date_table.start_of_week.date_hierarchy": {
-			          "Target": {
-			            "Entity": "date_table.start_of_week.date_hierarchy"
-			          }
 			        }
 			      },
 			      "Phrasings": [
 			        {
 			          "Attribute": {
 			            "Subject": {
+			              "Role": "date_table"
+			            },
+			            "Object": {
 			              "Role": "date_table.start_of_week"
-			            },
-			            "Object": {
-			              "Role": "date_table.start_of_week.date_hierarchy"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "start_of_week_have_start_of_week_date_hierarchy"
+			          "ID": "date_tables_have_start_of_week"
 			        }
 			      ]
 			    },
-			    "date_table_start_of_week_date_hierarchy_has_date_table_start_of_week_year": {
+			    "date_table_has_ISO_year": {
 			      "Binding": {
 			        "ConceptualEntity": "Date Table"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "date_table.start_of_week.date_hierarchy": {
+			        "date_table": {
 			          "Target": {
-			            "Entity": "date_table.start_of_week.date_hierarchy"
+			            "Entity": "date_table"
 			          }
 			        },
-			        "date_table.start_of_week.year": {
+			        "date_table.ISO_year": {
 			          "Target": {
-			            "Entity": "date_table.start_of_week.year"
+			            "Entity": "date_table.ISO_year"
 			          }
 			        }
 			      },
@@ -8865,32 +7255,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "date_table.start_of_week.date_hierarchy"
+			              "Role": "date_table"
 			            },
 			            "Object": {
-			              "Role": "date_table.start_of_week.year"
+			              "Role": "date_table.ISO_year"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "start_of_week_date_hierarchy_have_start_of_week_year"
+			          "ID": "date_tables_have_ISO_years"
 			        }
 			      ]
 			    },
-			    "date_table_start_of_week_date_hierarchy_has_date_table_start_of_week_quarter": {
+			    "date_table_has_ISO_weeknumber": {
 			      "Binding": {
 			        "ConceptualEntity": "Date Table"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "date_table.start_of_week.date_hierarchy": {
+			        "date_table": {
 			          "Target": {
-			            "Entity": "date_table.start_of_week.date_hierarchy"
+			            "Entity": "date_table"
 			          }
 			        },
-			        "date_table.start_of_week.quarter": {
+			        "date_table.ISO_weeknumber": {
 			          "Target": {
-			            "Entity": "date_table.start_of_week.quarter"
+			            "Entity": "date_table.ISO_weeknumber"
 			          }
 			        }
 			      },
@@ -8898,15 +7288,1625 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "date_table.start_of_week.date_hierarchy"
+			              "Role": "date_table"
 			            },
 			            "Object": {
-			              "Role": "date_table.start_of_week.quarter"
+			              "Role": "date_table.ISO_weeknumber"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "start_of_week_date_hierarchy_have_start_of_week_quarter"
+			          "ID": "date_tables_have_ISO_weeknumbers"
+			        }
+			      ]
+			    },
+			    "date_table_has_day_in_month": {
+			      "Binding": {
+			        "ConceptualEntity": "Date Table"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_table": {
+			          "Target": {
+			            "Entity": "date_table"
+			          }
+			        },
+			        "date_table.day_in_month": {
+			          "Target": {
+			            "Entity": "date_table.day_in_month"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_table"
+			            },
+			            "Object": {
+			              "Role": "date_table.day_in_month"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_tables_have_day_in_month"
+			        }
+			      ]
+			    },
+			    "date_table_has_end_of_month": {
+			      "Binding": {
+			        "ConceptualEntity": "Date Table"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_table": {
+			          "Target": {
+			            "Entity": "date_table"
+			          }
+			        },
+			        "date_table.end_of_month": {
+			          "Target": {
+			            "Entity": "date_table.end_of_month"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_table"
+			            },
+			            "Object": {
+			              "Role": "date_table.end_of_month"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_tables_have_end_of_month"
+			        }
+			      ]
+			    },
+			    "date_table_has_start_of_month": {
+			      "Binding": {
+			        "ConceptualEntity": "Date Table"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_table": {
+			          "Target": {
+			            "Entity": "date_table"
+			          }
+			        },
+			        "date_table.start_of_month": {
+			          "Target": {
+			            "Entity": "date_table.start_of_month"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_table"
+			            },
+			            "Object": {
+			              "Role": "date_table.start_of_month"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_tables_have_start_of_month"
+			        }
+			      ]
+			    },
+			    "date_table_has_month_name_default": {
+			      "Binding": {
+			        "ConceptualEntity": "Date Table"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_table": {
+			          "Target": {
+			            "Entity": "date_table"
+			          }
+			        },
+			        "date_table.month_name_default": {
+			          "Target": {
+			            "Entity": "date_table.month_name_default"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_table"
+			            },
+			            "Object": {
+			              "Role": "date_table.month_name_default"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_tables_have_month_name_defaults"
+			        }
+			      ]
+			    },
+			    "date_table_has_month_name_short": {
+			      "Binding": {
+			        "ConceptualEntity": "Date Table"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_table": {
+			          "Target": {
+			            "Entity": "date_table"
+			          }
+			        },
+			        "date_table.month_name_short": {
+			          "Target": {
+			            "Entity": "date_table.month_name_short"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_table"
+			            },
+			            "Object": {
+			              "Role": "date_table.month_name_short"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_tables_have_month_name_shorts"
+			        }
+			      ]
+			    },
+			    "date_table_has_month_name": {
+			      "Binding": {
+			        "ConceptualEntity": "Date Table"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_table": {
+			          "Target": {
+			            "Entity": "date_table"
+			          }
+			        },
+			        "date_table.month_name": {
+			          "Target": {
+			            "Entity": "date_table.month_name"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_table"
+			            },
+			            "Object": {
+			              "Role": "date_table.month_name"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_tables_have_month_names"
+			        }
+			      ]
+			    },
+			    "date_table_has_month_of_year": {
+			      "Binding": {
+			        "ConceptualEntity": "Date Table"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_table": {
+			          "Target": {
+			            "Entity": "date_table"
+			          }
+			        },
+			        "date_table.month_of_year": {
+			          "Target": {
+			            "Entity": "date_table.month_of_year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_table"
+			            },
+			            "Object": {
+			              "Role": "date_table.month_of_year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_tables_have_month_of_year"
+			        }
+			      ]
+			    },
+			    "date_table_has_monthyear": {
+			      "Binding": {
+			        "ConceptualEntity": "Date Table"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_table": {
+			          "Target": {
+			            "Entity": "date_table"
+			          }
+			        },
+			        "date_table.monthyear": {
+			          "Target": {
+			            "Entity": "date_table.monthyear"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_table"
+			            },
+			            "Object": {
+			              "Role": "date_table.monthyear"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_tables_have_monthyears"
+			        }
+			      ]
+			    },
+			    "date_table_has_yyyymm": {
+			      "Binding": {
+			        "ConceptualEntity": "Date Table"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_table": {
+			          "Target": {
+			            "Entity": "date_table"
+			          }
+			        },
+			        "date_table.yyyymm": {
+			          "Target": {
+			            "Entity": "date_table.yyyymm"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_table"
+			            },
+			            "Object": {
+			              "Role": "date_table.yyyymm"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_tables_have_yyyymms"
+			        }
+			      ]
+			    },
+			    "date_table_has_year_default": {
+			      "Binding": {
+			        "ConceptualEntity": "Date Table"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_table": {
+			          "Target": {
+			            "Entity": "date_table"
+			          }
+			        },
+			        "date_table.year_default": {
+			          "Target": {
+			            "Entity": "date_table.year_default"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_table"
+			            },
+			            "Object": {
+			              "Role": "date_table.year_default"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_tables_have_year_defaults"
+			        }
+			      ]
+			    },
+			    "date_table_has_year": {
+			      "Binding": {
+			        "ConceptualEntity": "Date Table"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_table": {
+			          "Target": {
+			            "Entity": "date_table"
+			          }
+			        },
+			        "date_table.year": {
+			          "Target": {
+			            "Entity": "date_table.year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_table"
+			            },
+			            "Object": {
+			              "Role": "date_table.year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_tables_have_years"
+			        }
+			      ]
+			    },
+			    "date_table_has_date_integer": {
+			      "Binding": {
+			        "ConceptualEntity": "Date Table"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_table": {
+			          "Target": {
+			            "Entity": "date_table"
+			          }
+			        },
+			        "date_table.date_integer": {
+			          "Target": {
+			            "Entity": "date_table.date_integer"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_table"
+			            },
+			            "Object": {
+			              "Role": "date_table.date_integer"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_tables_have_date_integers"
+			        }
+			      ]
+			    },
+			    "date_table_has_date": {
+			      "Binding": {
+			        "ConceptualEntity": "Date Table"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_table": {
+			          "Target": {
+			            "Entity": "date_table"
+			          }
+			        },
+			        "date_table.date": {
+			          "Target": {
+			            "Entity": "date_table.date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_table"
+			            },
+			            "Object": {
+			              "Role": "date_table.date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_tables_have_dates"
+			        }
+			      ]
+			    },
+			    "active_player_gamelogs_name_included_has_pt_next": {
+			      "Binding": {
+			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "active_player_gamelogs_name_included": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included"
+			          }
+			        },
+			        "active_player_gamelogs_name_included.pt_next": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included.pt_next"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "active_player_gamelogs_name_included"
+			            },
+			            "Object": {
+			              "Role": "active_player_gamelogs_name_included.pt_next"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "active_player_gamelogs_name_included_have_pt_next"
+			        }
+			      ]
+			    },
+			    "active_player_gamelogs_name_included_has_is_active": {
+			      "Binding": {
+			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "active_player_gamelogs_name_included": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included"
+			          }
+			        },
+			        "active_player_gamelogs_name_included.is_active": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included.is_active"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "active_player_gamelogs_name_included"
+			            },
+			            "Object": {
+			              "Role": "active_player_gamelogs_name_included.is_active"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "active_player_gamelogs_name_included_have_is_actives"
+			        }
+			      ]
+			    },
+			    "active_player_gamelogs_name_included_has_last_name": {
+			      "Binding": {
+			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "active_player_gamelogs_name_included": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included"
+			          }
+			        },
+			        "active_player_gamelogs_name_included.last_name": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included.last_name"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "active_player_gamelogs_name_included"
+			            },
+			            "Object": {
+			              "Role": "active_player_gamelogs_name_included.last_name"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "active_player_gamelogs_name_included_have_last_names"
+			        }
+			      ]
+			    },
+			    "active_player_gamelogs_name_included_has_first_name": {
+			      "Binding": {
+			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "active_player_gamelogs_name_included": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included"
+			          }
+			        },
+			        "active_player_gamelogs_name_included.first_name": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included.first_name"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "active_player_gamelogs_name_included"
+			            },
+			            "Object": {
+			              "Role": "active_player_gamelogs_name_included.first_name"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "active_player_gamelogs_name_included_have_first_names"
+			        }
+			      ]
+			    },
+			    "active_player_gamelogs_name_included_has_full_name": {
+			      "Binding": {
+			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "active_player_gamelogs_name_included": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included"
+			          }
+			        },
+			        "active_player_gamelogs_name_included.full_name": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included.full_name"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "active_player_gamelogs_name_included"
+			            },
+			            "Object": {
+			              "Role": "active_player_gamelogs_name_included.full_name"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "active_player_gamelogs_name_included_have_full_names"
+			        }
+			      ]
+			    },
+			    "active_player_gamelogs_name_included_has_id": {
+			      "Binding": {
+			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "active_player_gamelogs_name_included": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included"
+			          }
+			        },
+			        "active_player_gamelogs_name_included.id": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included.id"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "active_player_gamelogs_name_included"
+			            },
+			            "Object": {
+			              "Role": "active_player_gamelogs_name_included.id"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "active_player_gamelogs_name_included_have_ids"
+			        }
+			      ]
+			    },
+			    "active_player_gamelogs_name_included_has_video_available": {
+			      "Binding": {
+			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "active_player_gamelogs_name_included": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included"
+			          }
+			        },
+			        "active_player_gamelogs_name_included.video_available": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included.video_available"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "active_player_gamelogs_name_included"
+			            },
+			            "Object": {
+			              "Role": "active_player_gamelogs_name_included.video_available"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "active_player_gamelogs_name_included_have_video_available"
+			        }
+			      ]
+			    },
+			    "active_player_gamelogs_name_included_has_plus_minus": {
+			      "Binding": {
+			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "active_player_gamelogs_name_included": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included"
+			          }
+			        },
+			        "active_player_gamelogs_name_included.plus_minus": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included.plus_minus"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "active_player_gamelogs_name_included"
+			            },
+			            "Object": {
+			              "Role": "active_player_gamelogs_name_included.plus_minus"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "active_player_gamelogs_name_included_have_plus_minus"
+			        }
+			      ]
+			    },
+			    "active_player_gamelogs_name_included_has_pt": {
+			      "Binding": {
+			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "active_player_gamelogs_name_included": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included"
+			          }
+			        },
+			        "active_player_gamelogs_name_included.pt": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included.pt"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "active_player_gamelogs_name_included"
+			            },
+			            "Object": {
+			              "Role": "active_player_gamelogs_name_included.pt"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "active_player_gamelogs_name_included_have_pt"
+			        }
+			      ]
+			    },
+			    "active_player_gamelogs_name_included_has_pf": {
+			      "Binding": {
+			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "active_player_gamelogs_name_included": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included"
+			          }
+			        },
+			        "active_player_gamelogs_name_included.pf": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included.pf"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "active_player_gamelogs_name_included"
+			            },
+			            "Object": {
+			              "Role": "active_player_gamelogs_name_included.pf"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "active_player_gamelogs_name_included_have_pf"
+			        }
+			      ]
+			    },
+			    "active_player_gamelogs_name_included_has_tov": {
+			      "Binding": {
+			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "active_player_gamelogs_name_included": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included"
+			          }
+			        },
+			        "active_player_gamelogs_name_included.tov": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included.tov"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "active_player_gamelogs_name_included"
+			            },
+			            "Object": {
+			              "Role": "active_player_gamelogs_name_included.tov"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "active_player_gamelogs_name_included_have_tovs"
+			        }
+			      ]
+			    },
+			    "active_player_gamelogs_name_included_has_blk": {
+			      "Binding": {
+			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "active_player_gamelogs_name_included": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included"
+			          }
+			        },
+			        "active_player_gamelogs_name_included.blk": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included.blk"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "active_player_gamelogs_name_included"
+			            },
+			            "Object": {
+			              "Role": "active_player_gamelogs_name_included.blk"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "active_player_gamelogs_name_included_have_blks"
+			        }
+			      ]
+			    },
+			    "active_player_gamelogs_name_included_has_stl": {
+			      "Binding": {
+			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "active_player_gamelogs_name_included": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included"
+			          }
+			        },
+			        "active_player_gamelogs_name_included.stl": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included.stl"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "active_player_gamelogs_name_included"
+			            },
+			            "Object": {
+			              "Role": "active_player_gamelogs_name_included.stl"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "active_player_gamelogs_name_included_have_stls"
+			        }
+			      ]
+			    },
+			    "active_player_gamelogs_name_included_has_ast": {
+			      "Binding": {
+			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "active_player_gamelogs_name_included": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included"
+			          }
+			        },
+			        "active_player_gamelogs_name_included.ast": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included.ast"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "active_player_gamelogs_name_included"
+			            },
+			            "Object": {
+			              "Role": "active_player_gamelogs_name_included.ast"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "active_player_gamelogs_name_included_have_ast"
+			        }
+			      ]
+			    },
+			    "active_player_gamelogs_name_included_has_reb": {
+			      "Binding": {
+			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "active_player_gamelogs_name_included": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included"
+			          }
+			        },
+			        "active_player_gamelogs_name_included.reb": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included.reb"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "active_player_gamelogs_name_included"
+			            },
+			            "Object": {
+			              "Role": "active_player_gamelogs_name_included.reb"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "active_player_gamelogs_name_included_have_rebs"
+			        }
+			      ]
+			    },
+			    "active_player_gamelogs_name_included_has_dreb": {
+			      "Binding": {
+			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "active_player_gamelogs_name_included": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included"
+			          }
+			        },
+			        "active_player_gamelogs_name_included.dreb": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included.dreb"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "active_player_gamelogs_name_included"
+			            },
+			            "Object": {
+			              "Role": "active_player_gamelogs_name_included.dreb"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "active_player_gamelogs_name_included_have_drebs"
+			        }
+			      ]
+			    },
+			    "active_player_gamelogs_name_included_has_oreb": {
+			      "Binding": {
+			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "active_player_gamelogs_name_included": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included"
+			          }
+			        },
+			        "active_player_gamelogs_name_included.oreb": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included.oreb"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "active_player_gamelogs_name_included"
+			            },
+			            "Object": {
+			              "Role": "active_player_gamelogs_name_included.oreb"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "active_player_gamelogs_name_included_have_orebs"
+			        }
+			      ]
+			    },
+			    "active_player_gamelogs_name_included_has_ft_pct": {
+			      "Binding": {
+			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "active_player_gamelogs_name_included": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included"
+			          }
+			        },
+			        "active_player_gamelogs_name_included.ft_pct": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included.ft_pct"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "active_player_gamelogs_name_included"
+			            },
+			            "Object": {
+			              "Role": "active_player_gamelogs_name_included.ft_pct"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "active_player_gamelogs_name_included_have_ft_pcts"
+			        }
+			      ]
+			    },
+			    "active_player_gamelogs_name_included_has_fta": {
+			      "Binding": {
+			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "active_player_gamelogs_name_included": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included"
+			          }
+			        },
+			        "active_player_gamelogs_name_included.fta": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included.fta"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "active_player_gamelogs_name_included"
+			            },
+			            "Object": {
+			              "Role": "active_player_gamelogs_name_included.fta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "active_player_gamelogs_name_included_have_ftas"
+			        }
+			      ]
+			    },
+			    "active_player_gamelogs_name_included_has_ftm": {
+			      "Binding": {
+			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "active_player_gamelogs_name_included": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included"
+			          }
+			        },
+			        "active_player_gamelogs_name_included.ftm": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included.ftm"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "active_player_gamelogs_name_included"
+			            },
+			            "Object": {
+			              "Role": "active_player_gamelogs_name_included.ftm"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "active_player_gamelogs_name_included_have_ftms"
+			        }
+			      ]
+			    },
+			    "active_player_gamelogs_name_included_has_fg_3_pct": {
+			      "Binding": {
+			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "active_player_gamelogs_name_included": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included"
+			          }
+			        },
+			        "active_player_gamelogs_name_included.fg_3_pct": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included.fg_3_pct"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "active_player_gamelogs_name_included"
+			            },
+			            "Object": {
+			              "Role": "active_player_gamelogs_name_included.fg_3_pct"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "active_player_gamelogs_name_included_have_fg_3_pcts"
+			        }
+			      ]
+			    },
+			    "active_player_gamelogs_name_included_has_fg_3a": {
+			      "Binding": {
+			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "active_player_gamelogs_name_included": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included"
+			          }
+			        },
+			        "active_player_gamelogs_name_included.fg_3a": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included.fg_3a"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "active_player_gamelogs_name_included"
+			            },
+			            "Object": {
+			              "Role": "active_player_gamelogs_name_included.fg_3a"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "active_player_gamelogs_name_included_have_fg_3as"
+			        }
+			      ]
+			    },
+			    "active_player_gamelogs_name_included_has_fg_3m": {
+			      "Binding": {
+			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "active_player_gamelogs_name_included": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included"
+			          }
+			        },
+			        "active_player_gamelogs_name_included.fg_3m": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included.fg_3m"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "active_player_gamelogs_name_included"
+			            },
+			            "Object": {
+			              "Role": "active_player_gamelogs_name_included.fg_3m"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "active_player_gamelogs_name_included_have_fg_3m"
+			        }
+			      ]
+			    },
+			    "active_player_gamelogs_name_included_has_fg_pct": {
+			      "Binding": {
+			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "active_player_gamelogs_name_included": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included"
+			          }
+			        },
+			        "active_player_gamelogs_name_included.fg_pct": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included.fg_pct"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "active_player_gamelogs_name_included"
+			            },
+			            "Object": {
+			              "Role": "active_player_gamelogs_name_included.fg_pct"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "active_player_gamelogs_name_included_have_fg_pcts"
+			        }
+			      ]
+			    },
+			    "active_player_gamelogs_name_included_has_fga": {
+			      "Binding": {
+			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "active_player_gamelogs_name_included": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included"
+			          }
+			        },
+			        "active_player_gamelogs_name_included.fga": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included.fga"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "active_player_gamelogs_name_included"
+			            },
+			            "Object": {
+			              "Role": "active_player_gamelogs_name_included.fga"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "active_player_gamelogs_name_included_have_fga"
+			        }
+			      ]
+			    },
+			    "active_player_gamelogs_name_included_has_fgm": {
+			      "Binding": {
+			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "active_player_gamelogs_name_included": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included"
+			          }
+			        },
+			        "active_player_gamelogs_name_included.fgm": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included.fgm"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "active_player_gamelogs_name_included"
+			            },
+			            "Object": {
+			              "Role": "active_player_gamelogs_name_included.fgm"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "active_player_gamelogs_name_included_have_fgms"
+			        }
+			      ]
+			    },
+			    "active_player_gamelogs_name_included_has_min": {
+			      "Binding": {
+			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "active_player_gamelogs_name_included": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included"
+			          }
+			        },
+			        "active_player_gamelogs_name_included.min": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included.min"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "active_player_gamelogs_name_included"
+			            },
+			            "Object": {
+			              "Role": "active_player_gamelogs_name_included.min"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "active_player_gamelogs_name_included_have_mins"
+			        }
+			      ]
+			    },
+			    "active_player_gamelogs_name_included_has_wl": {
+			      "Binding": {
+			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "active_player_gamelogs_name_included": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included"
+			          }
+			        },
+			        "active_player_gamelogs_name_included.wl": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included.wl"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "active_player_gamelogs_name_included"
+			            },
+			            "Object": {
+			              "Role": "active_player_gamelogs_name_included.wl"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "active_player_gamelogs_name_included_have_wl"
+			        }
+			      ]
+			    },
+			    "active_player_gamelogs_name_included_has_matchup": {
+			      "Binding": {
+			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "active_player_gamelogs_name_included": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included"
+			          }
+			        },
+			        "active_player_gamelogs_name_included.matchup": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included.matchup"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "active_player_gamelogs_name_included"
+			            },
+			            "Object": {
+			              "Role": "active_player_gamelogs_name_included.matchup"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "active_player_gamelogs_name_included_have_matchups"
+			        }
+			      ]
+			    },
+			    "active_player_gamelogs_name_included_has_game_date": {
+			      "Binding": {
+			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "active_player_gamelogs_name_included": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included"
+			          }
+			        },
+			        "active_player_gamelogs_name_included.game_date": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included.game_date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "active_player_gamelogs_name_included"
+			            },
+			            "Object": {
+			              "Role": "active_player_gamelogs_name_included.game_date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "active_player_gamelogs_name_included_have_game_dates"
+			        }
+			      ]
+			    },
+			    "active_player_gamelogs_name_included_has_game_ID": {
+			      "Binding": {
+			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "active_player_gamelogs_name_included": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included"
+			          }
+			        },
+			        "active_player_gamelogs_name_included.game_ID": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included.game_ID"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "active_player_gamelogs_name_included"
+			            },
+			            "Object": {
+			              "Role": "active_player_gamelogs_name_included.game_ID"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "active_player_gamelogs_name_included_have_game_ID"
+			        }
+			      ]
+			    },
+			    "active_player_gamelogs_name_included_has_player_ID": {
+			      "Binding": {
+			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "active_player_gamelogs_name_included": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included"
+			          }
+			        },
+			        "active_player_gamelogs_name_included.player_ID": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included.player_ID"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "active_player_gamelogs_name_included"
+			            },
+			            "Object": {
+			              "Role": "active_player_gamelogs_name_included.player_ID"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "active_player_gamelogs_name_included_have_player_ID"
+			        }
+			      ]
+			    },
+			    "active_player_gamelogs_name_included_has_season_id": {
+			      "Binding": {
+			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "active_player_gamelogs_name_included": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included"
+			          }
+			        },
+			        "active_player_gamelogs_name_included.season_id": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included.season_id"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "active_player_gamelogs_name_included"
+			            },
+			            "Object": {
+			              "Role": "active_player_gamelogs_name_included.season_id"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "active_player_gamelogs_name_included_have_season_ids"
+			        }
+			      ]
+			    },
+			    "active_player_gamelogs_name_included_is_gamed_on_game_date": {
+			      "Binding": {
+			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "active_player_gamelogs_name_included": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included"
+			          }
+			        },
+			        "active_player_gamelogs_name_included.game_date": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included.game_date"
+			          }
+			        }
+			      },
+			      "SemanticSlots": {
+			        "When": {
+			          "Role": "active_player_gamelogs_name_included.game_date"
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Verb": {
+			            "Verbs": [
+			              {
+			                "game": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "active_player_gamelogs_name_included"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.9,
+			          "ID": "active_player_gamelogs_name_included_are_gamed_on_game_dates"
+			        }
+			      ]
+			    },
+			    "active_player_gamelogs_name_included_is_active": {
+			      "Binding": {
+			        "ConceptualEntity": "ActivePlayerGamelogsNamesIncluded"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "active_player_gamelogs_name_included": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included"
+			          }
+			        },
+			        "active_player_gamelogs_name_included.is_active": {
+			          "Target": {
+			            "Entity": "active_player_gamelogs_name_included.is_active"
+			          }
+			        }
+			      },
+			      "Conditions": [
+			        {
+			          "Target": {
+			            "Role": "active_player_gamelogs_name_included.is_active"
+			          },
+			          "Operator": "Equals",
+			          "Value": {
+			            "Boolean": [
+			              true
+			            ]
+			          }
+			        }
+			      ],
+			      "Phrasings": [
+			        {
+			          "Adjective": {
+			            "Subject": {
+			              "Role": "active_player_gamelogs_name_included"
+			            },
+			            "Adjectives": [
+			              {
+			                "active": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ]
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "some_active_player_gamelogs_name_included_are_active_active_player_gamelogs_name_included"
 			        }
 			      ]
 			    },
