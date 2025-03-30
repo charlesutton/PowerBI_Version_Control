@@ -1,0 +1,23 @@
+table Table
+	lineageTag: 578fccaf-32f6-4bc7-bd9b-4635a16db21d
+
+	measure 'Total Points' = SUM(ActivePlayerGamelogsNamesIncluded[PTS])
+		formatString: #,0
+		lineageTag: bee4a049-32b2-4aad-a63f-794596259c0b
+
+	column Column
+		isHidden
+		formatString: 0
+		lineageTag: 5f377a8e-cbd8-4553-88fd-e9e05fe6ad0d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = User
+
+	partition Table = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = f8a3f93d7a7d478ba91d167cbbda5812
+

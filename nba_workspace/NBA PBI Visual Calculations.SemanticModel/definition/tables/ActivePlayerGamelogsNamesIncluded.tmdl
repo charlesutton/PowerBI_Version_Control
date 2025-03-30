@@ -1,0 +1,312 @@
+table ActivePlayerGamelogsNamesIncluded
+	lineageTag: a8712148-a5a5-4f00-a0f1-1c73c6d3e2f2
+
+	column SEASON_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: cae5b2c4-1f06-4421-b0ad-96d850bfe28c
+		summarizeBy: count
+		sourceColumn: SEASON_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Player_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 241073d3-ffd7-457a-b64f-087101d05fa6
+		summarizeBy: count
+		sourceColumn: Player_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Game_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 34d21e30-b2a9-4b0f-bdf8-944084281acd
+		summarizeBy: count
+		sourceColumn: Game_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column GAME_DATE
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: cd692523-7c36-488e-84db-fc03e3369e43
+		summarizeBy: none
+		sourceColumn: GAME_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column MATCHUP
+		dataType: string
+		lineageTag: d3dd76a5-5274-4217-9074-19ffb7d4cda7
+		summarizeBy: none
+		sourceColumn: MATCHUP
+
+		annotation SummarizationSetBy = Automatic
+
+	column WL
+		dataType: string
+		lineageTag: 70f97093-c116-4ebc-b7d4-b42dc82b727e
+		summarizeBy: none
+		sourceColumn: WL
+
+		annotation SummarizationSetBy = Automatic
+
+	column MIN
+		dataType: int64
+		formatString: 0
+		lineageTag: 5b89b6de-5052-499d-b15a-e1bb2562af77
+		summarizeBy: sum
+		sourceColumn: MIN
+
+		annotation SummarizationSetBy = Automatic
+
+	column FGM
+		dataType: int64
+		formatString: 0
+		lineageTag: 96954785-6cbd-4324-9934-636907f183a2
+		summarizeBy: sum
+		sourceColumn: FGM
+
+		annotation SummarizationSetBy = Automatic
+
+	column FGA
+		dataType: int64
+		formatString: 0
+		lineageTag: bce26004-665f-4f2e-b7e7-336c861988c7
+		summarizeBy: sum
+		sourceColumn: FGA
+
+		annotation SummarizationSetBy = Automatic
+
+	column FG_PCT
+		dataType: double
+		lineageTag: 3fea39ee-9d76-42b9-93dc-2b2a52a580b3
+		summarizeBy: sum
+		sourceColumn: FG_PCT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FG3M
+		dataType: int64
+		formatString: 0
+		lineageTag: 6d3f3b80-a38a-440f-8a3e-4c2bdb6c82df
+		summarizeBy: sum
+		sourceColumn: FG3M
+
+		annotation SummarizationSetBy = Automatic
+
+	column FG3A
+		dataType: int64
+		formatString: 0
+		lineageTag: e42bd54d-96e0-42b6-8bc3-2f4bcd4926fa
+		summarizeBy: sum
+		sourceColumn: FG3A
+
+		annotation SummarizationSetBy = Automatic
+
+	column FG3_PCT
+		dataType: double
+		lineageTag: a7517462-1d46-4769-9c87-8d2360281f17
+		summarizeBy: sum
+		sourceColumn: FG3_PCT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FTM
+		dataType: int64
+		formatString: 0
+		lineageTag: 6c9cc220-a347-4400-bde9-f6c3b91d2bdd
+		summarizeBy: sum
+		sourceColumn: FTM
+
+		annotation SummarizationSetBy = Automatic
+
+	column FTA
+		dataType: int64
+		formatString: 0
+		lineageTag: 4ed38ba4-ddf7-4fc6-880a-604b8a624e09
+		summarizeBy: sum
+		sourceColumn: FTA
+
+		annotation SummarizationSetBy = Automatic
+
+	column FT_PCT
+		dataType: double
+		lineageTag: 2da706fb-a8a0-4bd5-bc35-773602f6c45e
+		summarizeBy: sum
+		sourceColumn: FT_PCT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column OREB
+		dataType: int64
+		formatString: 0
+		lineageTag: 87fe252f-d88b-4bae-88e5-eeba574a46e1
+		summarizeBy: sum
+		sourceColumn: OREB
+
+		annotation SummarizationSetBy = Automatic
+
+	column DREB
+		dataType: int64
+		formatString: 0
+		lineageTag: d3a551cd-e63a-467c-acc9-1af6ec99ad9d
+		summarizeBy: sum
+		sourceColumn: DREB
+
+		annotation SummarizationSetBy = Automatic
+
+	column REB
+		dataType: int64
+		formatString: 0
+		lineageTag: 3ef7cef9-a098-4895-99fe-583ec1d0414b
+		summarizeBy: sum
+		sourceColumn: REB
+
+		annotation SummarizationSetBy = Automatic
+
+	column AST
+		dataType: int64
+		formatString: 0
+		lineageTag: 543b60a7-c688-4564-ab98-38908a078f96
+		summarizeBy: sum
+		sourceColumn: AST
+
+		annotation SummarizationSetBy = Automatic
+
+	column STL
+		dataType: int64
+		formatString: 0
+		lineageTag: f63bb2b8-1f17-4583-873b-04181f04db73
+		summarizeBy: sum
+		sourceColumn: STL
+
+		annotation SummarizationSetBy = Automatic
+
+	column BLK
+		dataType: int64
+		formatString: 0
+		lineageTag: a0975505-56d8-42a2-a65e-3f66f04182ef
+		summarizeBy: sum
+		sourceColumn: BLK
+
+		annotation SummarizationSetBy = Automatic
+
+	column TOV
+		dataType: int64
+		formatString: 0
+		lineageTag: 7d57c4dd-0728-4076-b8be-5b3a16e0396a
+		summarizeBy: sum
+		sourceColumn: TOV
+
+		annotation SummarizationSetBy = Automatic
+
+	column PF
+		dataType: int64
+		formatString: 0
+		lineageTag: 6baf865d-9a3a-4f7f-a96b-6bd4cdcd3232
+		summarizeBy: sum
+		sourceColumn: PF
+
+		annotation SummarizationSetBy = Automatic
+
+	column PTS
+		dataType: int64
+		formatString: 0
+		lineageTag: 0217b82d-a8b2-4735-88a4-3aa45a849556
+		summarizeBy: sum
+		sourceColumn: PTS
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLUS_MINUS
+		dataType: int64
+		formatString: 0
+		lineageTag: 00363b52-af5f-4557-a6ca-4981bd0c05d7
+		summarizeBy: sum
+		sourceColumn: PLUS_MINUS
+
+		annotation SummarizationSetBy = Automatic
+
+	column VIDEO_AVAILABLE
+		dataType: int64
+		formatString: 0
+		lineageTag: b4ce5021-9c1a-4c4b-8986-a6b153583e4e
+		summarizeBy: sum
+		sourceColumn: VIDEO_AVAILABLE
+
+		annotation SummarizationSetBy = Automatic
+
+	column id
+		dataType: int64
+		formatString: 0
+		lineageTag: d5f13605-f7c4-4e64-9f34-b2fe92000ee9
+		summarizeBy: sum
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column full_name
+		dataType: string
+		lineageTag: 889d856f-cee0-4b36-bc58-b3493682eec0
+		summarizeBy: none
+		sourceColumn: full_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column first_name
+		dataType: string
+		lineageTag: 1ad22f45-112e-4eb2-9652-ca3b3ebfee70
+		summarizeBy: none
+		sourceColumn: first_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_name
+		dataType: string
+		lineageTag: 32f20ae9-efff-4fd8-b1d7-41e1e67a6d96
+		summarizeBy: none
+		sourceColumn: last_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_active
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: a638cab4-c851-4203-812f-b558b68a03b5
+		summarizeBy: none
+		sourceColumn: is_active
+
+		annotation SummarizationSetBy = Automatic
+
+	column pts_next
+		dataType: int64
+		formatString: 0
+		lineageTag: cb9a0812-0262-431c-bc1f-e8e1321824d6
+		summarizeBy: sum
+		sourceColumn: pts_next
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ActivePlayerGamelogsNamesIncluded = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\charl\OneDrive\Documents\Power BI\datasets\PythonFiles\ActivePlayerGamelogsNamesIncluded.csv"),[Delimiter=",", Columns=33, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"SEASON_ID", Int64.Type}, {"Player_ID", Int64.Type}, {"Game_ID", Int64.Type}, {"GAME_DATE", type date}, {"MATCHUP", type text}, {"WL", type text}, {"MIN", Int64.Type}, {"FGM", Int64.Type}, {"FGA", Int64.Type}, {"FG_PCT", type number}, {"FG3M", Int64.Type}, {"FG3A", Int64.Type}, {"FG3_PCT", type number}, {"FTM", Int64.Type}, {"FTA", Int64.Type}, {"FT_PCT", type number}, {"OREB", Int64.Type}, {"DREB", Int64.Type}, {"REB", Int64.Type}, {"AST", Int64.Type}, {"STL", Int64.Type}, {"BLK", Int64.Type}, {"TOV", Int64.Type}, {"PF", Int64.Type}, {"PTS", Int64.Type}, {"PLUS_MINUS", Int64.Type}, {"VIDEO_AVAILABLE", Int64.Type}, {"id", Int64.Type}, {"full_name", type text}, {"first_name", type text}, {"last_name", type text}, {"is_active", type logical}, {"pts_next", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,24 @@
+relationship dfc444b5-a706-4886-b28f-32e39662becc
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Date Table'.Date
+	toColumn: LocalDateTable_8999966e-164e-40e7-8e38-3277d65791a9.Date
+
+relationship e1de2c22-de38-436a-8841-b30514b25ae6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Date Table'.'Start of Month'
+	toColumn: LocalDateTable_ba678920-4329-4a08-9c11-03ce291fe0ac.Date
+
+relationship f79f5da9-b15c-4243-8625-ad25eda6ca6e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Date Table'.'End of Month'
+	toColumn: LocalDateTable_3ae515ad-a96c-4bd4-b023-511ba9fd9e1c.Date
+
+relationship ba498da5-ec68-4dd5-be05-1fc3b3131ca1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Date Table'.'Start of Week'
+	toColumn: LocalDateTable_10e525e7-83b3-4dd4-90f5-2b318b9034a2.Date
+
+relationship 22ec517d-1d39-cc53-8d44-2b6c4c4372a9
+	fromColumn: ActivePlayerGamelogsNamesIncluded.GAME_DATE
+	toColumn: 'Date Table'.Date
+
