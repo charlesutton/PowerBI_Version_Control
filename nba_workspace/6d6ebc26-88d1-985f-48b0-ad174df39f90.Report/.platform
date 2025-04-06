@@ -1,11 +1,11 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
-    "type": "SemanticModel",
+    "type": "Report",
     "displayName": "NBA PBI Visual Calculations"
   },
   "config": {
     "version": "2.0",
-    "logicalId": "8a97516c-f9d3-82d1-4260-08ae9e3e75e4"
+    "logicalId": "6d6ebc26-88d1-985f-48b0-ad174df39f90"
   }
 }
