@@ -1,16 +1,16 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
-  "name": "4f1ee267ac359c18f9da",
+  "name": "7f382c595d1be4a4b942",
   "position": {
-    "x": 0,
-    "y": 94.346504559270514,
-    "z": 0,
-    "height": 625.41033434650456,
-    "width": 1280,
-    "tabOrder": 0
+    "x": 1023,
+    "y": 94,
+    "z": 3,
+    "height": 200,
+    "width": 257,
+    "tabOrder": 3
   },
   "visual": {
-    "visualType": "clusteredBarChart",
+    "visualType": "clusteredColumnChart",
     "query": {
       "queryState": {
         "Category": {
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "PlayersList"
+                      "Entity": "ActivePlayerGamelogs"
                     }
                   },
-                  "Property": "full_name"
+                  "Property": "WL"
                 }
               },
-              "queryRef": "PlayersList.full_name",
-              "nativeQueryRef": "full_name",
+              "queryRef": "ActivePlayerGamelogs.WL",
+              "nativeQueryRef": "WL",
               "active": true
             }
           ]
@@ -42,11 +42,11 @@
                       "Entity": "ActivePlayerGamelogs"
                     }
                   },
-                  "Property": "Avg PPG"
+                  "Property": "Win Loss Count"
                 }
               },
-              "queryRef": "ActivePlayerGamelogs.Avg PPG",
-              "nativeQueryRef": "Avg PPG"
+              "queryRef": "ActivePlayerGamelogs.Win Loss Count",
+              "nativeQueryRef": "Win Loss Count"
             }
           ]
         }
@@ -61,7 +61,7 @@
                     "Entity": "ActivePlayerGamelogs"
                   }
                 },
-                "Property": "Avg PPG"
+                "Property": "Win Loss Count"
               }
             },
             "direction": "Descending"
@@ -71,19 +71,6 @@
       }
     },
     "objects": {
-      "categoryAxis": [
-        {
-          "properties": {
-            "axisType": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Categorical'"
-                }
-              }
-            }
-          }
-        }
-      ],
       "dataPoint": [
         {
           "properties": {
@@ -92,27 +79,8 @@
                 "color": {
                   "expr": {
                     "ThemeDataColor": {
-                      "ColorId": 3,
+                      "ColorId": 4,
                       "Percent": 0.2
-                    }
-                  }
-                }
-              }
-            },
-            "borderShow": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "borderColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 1,
-                      "Percent": 0
                     }
                   }
                 }
@@ -121,22 +89,7 @@
             "fillTransparency": {
               "expr": {
                 "Literal": {
-                  "Value": "50D"
-                }
-              }
-            }
-          }
-        }
-      ]
-    },
-    "visualContainerObjects": {
-      "border": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
+                  "Value": "33D"
                 }
               }
             }

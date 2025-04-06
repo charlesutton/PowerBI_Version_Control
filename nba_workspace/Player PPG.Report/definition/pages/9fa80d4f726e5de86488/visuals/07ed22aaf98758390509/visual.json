@@ -3,10 +3,10 @@
   "name": "07ed22aaf98758390509",
   "position": {
     "x": 0,
-    "y": 94.25454545454545,
+    "y": 94.346504559270514,
     "z": 2,
-    "height": 200.14545454545456,
-    "width": 1280,
+    "height": 200.36474164133739,
+    "width": 1023.2218844984803,
     "tabOrder": 2
   },
   "visual": {
@@ -97,6 +97,39 @@
               "expr": {
                 "Literal": {
                   "Value": "'Scalar'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#3ECD60'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "ActivePlayerGamelogs.Avg PPG"
+          }
+        }
+      ],
+      "lineStyles": [
+        {
+          "properties": {
+            "strokeTransparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "25D"
                 }
               }
             }

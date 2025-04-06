@@ -1,0 +1,27 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["ActivePlayerGamelogsNamesIncluded","Date Table"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.141.1253.0 (25.03)+74f9999a1e95f78c739f3ea2b96ba340e9ba8729
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table ActivePlayerGamelogsNamesIncluded
+ref table DateTableTemplate_85e644fa-0a87-4251-98a7-10fc25c080cb
+ref table 'Date Table'
+ref table LocalDateTable_8999966e-164e-40e7-8e38-3277d65791a9
+ref table LocalDateTable_ba678920-4329-4a08-9c11-03ce291fe0ac
+ref table LocalDateTable_3ae515ad-a96c-4bd4-b023-511ba9fd9e1c
+ref table LocalDateTable_10e525e7-83b3-4dd4-90f5-2b318b9034a2
+ref table Table
+
+ref cultureInfo en-US
+
